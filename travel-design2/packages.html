@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trekking Packages - Best Deals | Riwash Travel</title>
+    <meta name="description" content="Browse our trekking packages in Nepal. Best prices guaranteed for Everest, Annapurna, Langtang and more.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Modern Packages Page Styles */
+        .packages-hero-modern {
+            min-height: 70vh;
+            background: linear-gradient(135deg, rgba(26,46,38,0.85) 0%, rgba(46,78,66,0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1920') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(26,46,38,0.7));
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(140,184,48,0.2);
+            border: 1px solid rgba(140,184,48,0.5);
+            color: #8CB830;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .hero-title {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        /* Modern Search Bar */
+        .modern-search-bar {
+            background: white;
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .search-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .search-field {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-right: 1px solid #e5e7eb;
+        }
+        
+        .search-field:last-of-type {
+            border-right: none;
+        }
+        
+        .search-field i {
+            color: #8CB830;
+            font-size: 18px;
+        }
+        
+        .search-field select {
+            border: none;
+            background: none;
+            font-size: 14px;
+            color: #374151;
+            font-weight: 500;
+            cursor: pointer;
+            outline: none;
+            width: 100%;
+        }
+        
+        .search-btn {
+            background: linear-gradient(135deg, #8CB830 0%, #6a9a20 100%);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(140,184,48,0.4);
+        }
+        
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            background: white;
+            padding: 40px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .stat-item:hover {
+            background: #f9fafb;
+        }
+        
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #8CB830 0%, #6a9a20 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f2937;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        /* Packages Section */
+        .packages-section-modern {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .section-header-modern {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-subtitle {
+            font-size: 13px;
+            font-weight: 700;
+            color: #8CB830;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        
+        .view-toggle {
+            display: flex;
+            gap: 8px;
+            background: white;
+            padding: 6px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .view-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: transparent;
+            color: #9ca3af;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .view-btn.active {
+            background: #8CB830;
+            color: white;
+        }
+        
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 12px 24px;
+            border: 2px solid #e5e7eb;
+            background: white;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #4b5563;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tab-btn:hover {
+            border-color: #8CB830;
+            color: #8CB830;
+        }
+        
+        .tab-btn.active {
+            background: #8CB830;
+            border-color: #8CB830;
+            color: white;
+        }
+        
+        /* Filter & Sort Bar */
+        .filter-sort-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .filter-chips {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .chip {
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #4b5563;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .chip:hover, .chip.active {
+            background: #1f2937;
+            color: white;
+            border-color: #1f2937;
+        }
+        
+        .sort-dropdown {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sort-dropdown label {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .sort-dropdown select {
+            padding: 10px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: white;
+            font-weight: 500;
+            color: #374151;
+            cursor: pointer;
+        }
+        
+        /* Package Grid */
+        .package-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        /* Modern Package Card */
+        .package-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8CB830, #6a9a20);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+        
+        .package-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .package-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        
+        .package-card:hover .package-image img {
+            transform: scale(1.1);
+        }
+        
+        .package-badges {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .badge-popular { background: linear-gradient(135deg, #ff6b6b, #ee5a5a); color: white; }
+        .badge-new { background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; }
+        .badge-deal { background: linear-gradient(135deg, #8CB830, #6a9a20); color: white; }
+        
+        .wishlist-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 42px;
+            height: 42px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .wishlist-btn:hover { 
+            color: #ff6b6b; 
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .package-content { 
+            padding: 24px;
+        }
+        .package-location {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        .package-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .package-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .stars { color: #ffc107; font-size: 13px; }
+        .package-features {
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        .package-features span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .package-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .package-price {
+            font-size: 13px;
+            color: #64748b;
+        }
+        .package-price strong {
+            font-size: 22px;
+            color: #8CB830;
+        }
+        .view-btn {
+            background: linear-gradient(135deg, #8CB830 0%, #6a9a20 100%);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(140,184,48,0.3);
+        }
+        .view-btn:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(140,184,48,0.4);
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 60px;
+        }
+        .page-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #64748b;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .page-btn:hover, .page-btn.active {
+            background: linear-gradient(135deg, #8CB830 0%, #6a9a20 100%);
+            border-color: #8CB830;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(140,184,48,0.3);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .package-grid-modern { grid-template-columns: repeat(2, 1fr); }
+            .hero-title { font-size: 42px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 32px; }
+            .hero-subtitle { font-size: 16px; }
+            .modern-search-bar { padding: 8px; }
+            .search-row { flex-direction: column; }
+            .search-field { border-right: none; border-bottom: 1px solid #e5e7eb; width: 100%; }
+            .search-btn { width: 100%; justify-content: center; }
+            .category-tabs { gap: 8px; }
+            .tab-btn { padding: 10px 16px; font-size: 14px; }
+            .section-title { font-size: 28px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .stat-icon { width: 40px; height: 40px; font-size: 16px; }
+            .stat-number { font-size: 22px; }
+            .filter-sort-bar { flex-direction: column; align-items: flex-start; }
+        }
+        
+        @media (max-width: 576px) {
+            .package-grid-modern { grid-template-columns: 1fr; }
+            .hero-title { font-size: 26px; }
+            .section-header-modern { flex-direction: column; gap: 20px; align-items: flex-start; }
+            .view-toggle { align-self: flex-end; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-item { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-container">
+            <div id="header-logo">
+                <div class="logo-icon"><i class="fas fa-mountain"></i></div>
+                <div class="logo-text"><h1>RIWASH</h1><p>Travel & Trek</p></div>
+            </div>
+            <nav id="main-nav">
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item"><a href="destinations.html" class="nav-link">Destinations</a></div>
+                <div class="nav-item"><a href="packages.html" class="nav-link active">Packages</a></div>
+                <div class="nav-item dropdown-single"><a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a></div>
+                <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+                <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+            </nav>
+            <div id="header-actions">
+                <div class="header-contact hidden lg:block"><span>Call Us Now</span><strong>+977 1 4XXXXXX</strong></div>
+                <a href="#" class="btn-secondary">Book Now</a>
+                <button id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modern Hero Section with Search -->
+    <section class="packages-hero-modern">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <span class="hero-badge"><i class="fas fa-award mr-2"></i>15+ Years of Excellence</span>
+                    <h1 class="hero-title">Unforgettable Trekking Adventures</h1>
+                    <p class="hero-subtitle">Discover Nepal's most iconic trails with expert local guides. From Everest Base Camp to hidden valleys, we curate journeys that transform.</p>
+                    
+                    <!-- Modern Search Bar -->
+                    <div class="modern-search-bar">
+                        <div class="search-row">
+                            <div class="search-field">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <select>
+                                    <option>All Destinations</option>
+                                    <option>Everest Region</option>
+                                    <option>Annapurna Region</option>
+                                    <option>Langtang Region</option>
+                                    <option>Manaslu Region</option>
+                                    <option>Upper Mustang</option>
+                                </select>
+                            </div>
+                            <div class="search-field">
+                                <i class="fas fa-calendar-alt"></i>
+                                <select>
+                                    <option>Any Duration</option>
+                                    <option>1-7 Days</option>
+                                    <option>8-14 Days</option>
+                                    <option>15-21 Days</option>
+                                    <option>21+ Days</option>
+                                </select>
+                            </div>
+                            <div class="search-field">
+                                <i class="fas fa-signal"></i>
+                                <select>
+                                    <option>Any Difficulty</option>
+                                    <option>Easy</option>
+                                    <option>Moderate</option>
+                                    <option>Challenging</option>
+                                    <option>Extreme</option>
+                                </select>
+                            </div>
+                            <button class="search-btn"><i class="fas fa-search"></i> Search Treks</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container mx-auto px-4">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-route"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Trekking Routes</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-number">15K+</span>
+                        <span class="stat-label">Happy Trekkers</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-star"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-number">4.9</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Safety Record</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section-modern">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="section-header-modern">
+                <div class="section-title-wrapper">
+                    <span class="section-subtitle">OUR COLLECTION</span>
+                    <h2 class="section-title">Popular Trekking Packages</h2>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th-large"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="category-tabs">
+                <button class="tab-btn active" data-filter="all">All Treks</button>
+                <button class="tab-btn" data-filter="everest"><i class="fas fa-mountain"></i> Everest</button>
+                <button class="tab-btn" data-filter="annapurna"><i class="fas fa-mountain"></i> Annapurna</button>
+                <button class="tab-btn" data-filter="langtang"><i class="fas fa-mountain"></i> Langtang</button>
+                <button class="tab-btn" data-filter="manaslu"><i class="fas fa-mountain"></i> Manaslu</button>
+                <button class="tab-btn" data-filter="mustang"><i class="fas fa-mountain"></i> Mustang</button>
+            </div>
+
+            <!-- Filter & Sort Bar -->
+            <div class="filter-sort-bar">
+                <div class="filter-chips">
+                    <span class="chip active">All</span>
+                    <span class="chip">Easy</span>
+                    <span class="chip">Moderate</span>
+                    <span class="chip">Challenging</span>
+                    <span class="chip">Best Sellers</span>
+                    <span class="chip">New Arrivals</span>
+                </div>
+                <div class="sort-dropdown">
+                    <label>Sort by:</label>
+                    <select>
+                        <option>Recommended</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Duration: Short to Long</option>
+                        <option>Most Reviewed</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Modern Package Grid -->
+            <div class="package-grid-modern">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600" alt="EBC">
+                        <div class="package-badges">
+                            <span class="badge badge-popular">Popular</span>
+                        </div>
+                        <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-location"><i class="fas fa-map-marker-alt text-green-500 mr-1"></i> Everest Region, Nepal</div>
+                        <h3>Everest Base Camp Trek</h3>
+                        <div class="package-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
+                            <span class="text-sm text-gray-500">(128 reviews)</span>
+                        </div>
+                        <div class="package-features">
+                            <span><i class="fas fa-clock text-green-500"></i> 14 Days</span>
+                            <span><i class="fas fa-signal text-green-500"></i> Moderate</span>
+                            <span><i class="fas fa-user text-green-500"></i> 2-12 pax</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">From <strong>$1,299</strong></span>
+                            <a href="itinerary.html" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600" alt="Annapurna">
+                        <div class="package-badges">
+                            <span class="badge badge-new">New</span>
+                        </div>
+                        <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-location"><i class="fas fa-map-marker-alt text-green-500 mr-1"></i> Annapurna Region, Nepal</div>
+                        <h3>Annapurna Circuit Trek</h3>
+                        <div class="package-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            <span class="text-sm text-gray-500">(96 reviews)</span>
+                        </div>
+                        <div class="package-features">
+                            <span><i class="fas fa-clock text-green-500"></i> 16 Days</span>
+                            <span><i class="fas fa-signal text-green-500"></i> Challenging</span>
+                            <span><i class="fas fa-user text-green-500"></i> 2-10 pax</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">From <strong>$1,499</strong></span>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600" alt="Langtang">
+                        <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-location"><i class="fas fa-map-marker-alt text-green-500 mr-1"></i> Langtang Region, Nepal</div>
+                        <h3>Langtang Valley Trek</h3>
+                        <div class="package-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            <span class="text-sm text-gray-500">(84 reviews)</span>
+                        </div>
+                        <div class="package-features">
+                            <span><i class="fas fa-clock text-green-500"></i> 10 Days</span>
+                            <span><i class="fas fa-signal text-green-500"></i> Moderate</span>
+                            <span><i class="fas fa-user text-green-500"></i> 2-12 pax</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">From <strong>$899</strong></span>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 4 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600" alt="Manaslu">
+                        <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-location"><i class="fas fa-map-marker-alt text-green-500 mr-1"></i> Manaslu Region, Nepal</div>
+                        <h3>Manaslu Circuit Trek</h3>
+                        <div class="package-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            <span class="text-sm text-gray-500">(72 reviews)</span>
+                        </div>
+                        <div class="package-features">
+                            <span><i class="fas fa-clock text-green-500"></i> 18 Days</span>
+                            <span><i class="fas fa-signal text-green-500"></i> Challenging</span>
+                            <span><i class="fas fa-user text-green-500"></i> 2-8 pax</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">From <strong>$1,699</strong></span>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 5 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" alt="Poon Hill">
+                        <div class="package-badges">
+                            <span class="badge badge-deal">Best Value</span>
+                        </div>
+                        <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-location"><i class="fas fa-map-marker-alt text-green-500 mr-1"></i> Annapurna Region, Nepal</div>
+                        <h3>Ghorepani Poon Hill Trek</h3>
+                        <div class="package-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
+                            <span class="text-sm text-gray-500">(156 reviews)</span>
+                        </div>
+                        <div class="package-features">
+                            <span><i class="fas fa-clock text-green-500"></i> 5 Days</span>
+                            <span><i class="fas fa-signal text-green-500"></i> Easy</span>
+                            <span><i class="fas fa-user text-green-500"></i> 2-16 pax</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">From <strong>$599</strong></span>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 6 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=600" alt="Mustang">
+                        <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-location"><i class="fas fa-map-marker-alt text-green-500 mr-1"></i> Mustang Region, Nepal</div>
+                        <h3>Upper Mustang Trek</h3>
+                        <div class="package-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            <span class="text-sm text-gray-500">(68 reviews)</span>
+                        </div>
+                        <div class="package-features">
+                            <span><i class="fas fa-clock text-green-500"></i> 12 Days</span>
+                            <span><i class="fas fa-signal text-green-500"></i> Moderate</span>
+                            <span><i class="fas fa-user text-green-500"></i> 2-10 pax</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">From <strong>$1,899</strong></span>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 7 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1596329063725-2e9983a0af1d?w=600" alt="Kanchenjunga">
+                        <div class="package-badges">
+                            <span class="badge badge-deal">Adventure</span>
+                        </div>
+                        <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-location"><i class="fas fa-map-marker-alt text-green-500 mr-1"></i> Kanchenjunga Region</div>
+                        <h3>Kanchenjunga Base Camp</h3>
+                        <div class="package-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            <span class="text-sm text-gray-500">(45 reviews)</span>
+                        </div>
+                        <div class="package-features">
+                            <span><i class="fas fa-clock text-green-500"></i> 24 Days</span>
+                            <span><i class="fas fa-signal text-green-500"></i> Challenging</span>
+                            <span><i class="fas fa-user text-green-500"></i> 2-6 pax</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">From <strong>$2,499</strong></span>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 8 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600" alt="Gokyo">
+                        <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-location"><i class="fas fa-map-marker-alt text-green-500 mr-1"></i> Everest Region, Nepal</div>
+                        <h3>Gokyo Lakes Trek</h3>
+                        <div class="package-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            <span class="text-sm text-gray-500">(92 reviews)</span>
+                        </div>
+                        <div class="package-features">
+                            <span><i class="fas fa-clock text-green-500"></i> 14 Days</span>
+                            <span><i class="fas fa-signal text-green-500"></i> Moderate</span>
+                            <span><i class="fas fa-user text-green-500"></i> 2-12 pax</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">From <strong>$1,399</strong></span>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 9 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600" alt="Rara Lake">
+                        <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-location"><i class="fas fa-map-marker-alt text-green-500 mr-1"></i> Karnali Region</div>
+                        <h3>Rara Lake Trek</h3>
+                        <div class="package-rating">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                            <span class="text-sm text-gray-500">(38 reviews)</span>
+                        </div>
+                        <div class="package-features">
+                            <span><i class="fas fa-clock text-green-500"></i> 10 Days</span>
+                            <span><i class="fas fa-signal text-green-500"></i> Moderate</span>
+                            <span><i class="fas fa-user text-green-500"></i> 2-8 pax</span>
+                        </div>
+                        <div class="package-footer">
+                            <span class="package-price">From <strong>$1,199</strong></span>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-section" style="background: #1a2e26;">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <div class="logo-icon" style="width: 45px; height: 45px;"><i class="fas fa-mountain" style="font-size: 20px;"></i></div>
+                        <div class="logo-text"><h3 style="font-size: 22px; color: white;">RIWASH</h3><p style="font-size: 12px; color: #8CB830;">Travel & Trek</p></div>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7);">Your trusted partner for unforgettable Himalayan adventures.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 style="color: white; font-size: 16px; font-weight: 600; margin-bottom: 20px;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="index.html" style="color: rgba(255,255,255,0.7);">Home</a></li>
+                        <li style="margin-bottom: 10px;"><a href="destinations.html" style="color: rgba(255,255,255,0.7);">Destinations</a></li>
+                        <li style="margin-bottom: 10px;"><a href="packages.html" style="color: rgba(255,255,255,0.7);">Packages</a></li>
+                        <li style="margin-bottom: 10px;"><a href="blog.html" style="color: rgba(255,255,255,0.7);">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 style="color: white; font-size: 16px; font-weight: 600; margin-bottom: 20px;">Support</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="about.html" style="color: rgba(255,255,255,0.7);">About Us</a></li>
+                        <li style="margin-bottom: 10px;"><a href="contact.html" style="color: rgba(255,255,255,0.7);">Contact</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.7);">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; font-size: 16px; font-weight: 600; margin-bottom: 20px;">Contact</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 10px;"><i class="fas fa-map-marker-alt mr-2"></i> Thamel, Kathmandu</p>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 10px;"><i class="fas fa-phone mr-2"></i> +977 1 4XXXXXX</p>
+                    <p style="color: rgba(255,255,255,0.7);"><i class="fas fa-envelope mr-2"></i> info@riwashtravel.com</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 40px; text-align: center; color: rgba(255,255,255,0.5);">
+                <p>&copy; 2024 Riwash Travel & Trek. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - RiwashTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A5F',
+                        accent: '#C75B39',
+                        sand: '#F5F1EB',
+                        warm: '#FEFCFA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(30,58,95,0.6) 0%, rgba(30,58,95,0.4) 100%);
+        }
+        .btn-primary {
+            background: #C75B39;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #A9482D;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(199,91,57,0.4);
+        }
+        .section-sand {
+            background: #F5F1EB;
+        }
+        .section-warm {
+            background: #FEFCFA;
+        }
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #C75B39 0%, #E07A53 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-scrolled {
+            background: rgba(255,255,255,0.98);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .divider-accent {
+            width: 60px;
+            height: 3px;
+            background: #C75B39;
+        }
+        .mega-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .mega-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease;
+        }
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #C75B39;
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-warm">
+
+    <!-- Header -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-18 py-4">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><i class="fas fa-mountain text-white text-lg"></i></div>
+                    <span class="text-xl font-serif font-bold text-primary">Riwash<span class="text-accent">Travel</span></span>
+                </a>
+                <nav class="hidden lg:flex items-center gap-6">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition text-sm">Home</a>
+                    <div class="relative" id="tours-mega-menu">
+                        <button class="flex items-center gap-1 text-gray-600 hover:text-primary transition text-sm py-2" id="tours-mega-btn">
+                            Tours <i class="fas fa-chevron-down text-xs transition-transform" id="tours-chevron"></i>
+                        </button>
+                        <div class="mega-menu absolute left-0 top-full w-[700px] bg-white shadow-2xl rounded-xl mt-2 z-50" id="tours-mega-dropdown">
+                            <div class="p-6">
+                                <div class="grid grid-cols-3 gap-6">
+                                    <div>
+                                        <h4 class="font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-mountain text-accent"></i>Trekking</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Everest Base Camp</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Annapurna Circuit</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Langtang Valley</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-om text-accent"></i>Cultural</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Kailash Mansarovar</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Tibet Overland</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Bhutan Cultural</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-hiking text-accent"></i>Adventure</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Peak Climbing</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Jungle Safari</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Rafting</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative dropdown">
+                        <a href="index.html#destinations" class="flex items-center gap-1 text-gray-600 hover:text-primary transition text-sm py-2">Destinations <i class="fas fa-chevron-down text-xs"></i></a>
+                        <div class="dropdown-menu absolute left-0 top-full w-48 bg-white shadow-xl rounded-lg mt-2 py-2 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary"><i class="fas fa-map-marker-alt mr-2 text-accent"></i>Nepal</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary"><i class="fas fa-map-marker-alt mr-2 text-accent"></i>Tibet</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary"><i class="fas fa-map-marker-alt mr-2 text-accent"></i>Bhutan</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary transition text-sm">Blog</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-primary transition text-sm">Gallery</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition text-sm">Contact</a>
+                </nav>
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+9771234567" class="text-primary font-medium text-sm flex items-center gap-2"><i class="fas fa-phone text-accent"></i>+977 123 4567</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-primary p-2"><i class="fas fa-bars text-xl"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
+            <nav class="flex flex-col py-4 px-4 gap-2">
+                <a href="index.html" class="text-gray-600 hover:text-primary py-2">Home</a>
+                <a href="tours.html" class="text-gray-600 hover:text-primary py-2">Tours</a>
+                <a href="blog.html" class="text-gray-600 hover:text-primary py-2">Blog</a>
+                <a href="gallery.html" class="text-gray-600 hover:text-primary py-2">Gallery</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary py-2">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative h-[500px] flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=800&fit=crop" alt="About" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-4">
+            <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-4 border border-white/20"><i class="fas fa-info-circle mr-2 text-accent"></i>Our Story</span>
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4">About <span class="text-accent">RiwashTravel</span></h1>
+            <p class="text-xl text-white/90 max-w-2xl mx-auto">Your trusted partner for Himalayan adventures since 2010</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="py-20 section-warm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-accent font-semibold text-sm uppercase tracking-wider">Our Story</span>
+                    <h2 class="text-4xl font-serif font-bold text-primary mt-3 mb-6">15 Years of <span class="gradient-accent">Excellence</span></h2>
+                    <div class="divider-accent mb-8"></div>
+                    <p class="text-gray-600 leading-relaxed mb-6">Founded in 2010, Riwash Travel began with a simple mission: to share the magic of the Himalayas with travelers from around the world. What started as a small family operation has grown into one of Nepal's most trusted travel companies.</p>
+                    <p class="text-gray-600 leading-relaxed mb-6">Our founders, born and raised in the shadow of the world's highest peaks, understood that the mountains were more than just a destination—they were a way of life. This deep connection to the land and its people has been the foundation of everything we do.</p>
+                    <p class="text-gray-600 leading-relaxed">Today, we've helped over 50,000 travelers from 80+ countries experience the transformative power of the Himalayas. From the iconic Everest Base Camp to the mystical kingdom of Bhutan, we've guided adventurers through some of Earth's most spectacular landscapes.</p>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=600&h=700&fit=crop" alt="Team" class="w-full rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-award text-accent text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-primary text-lg">15+ Years</p>
+                                <p class="text-sm text-gray-500">Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-20 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-accent mb-2">50K+</p>
+                    <p class="text-white/80">Happy Travelers</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-accent mb-2">80+</p>
+                    <p class="text-white/80">Countries Served</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-accent mb-2">100+</p>
+                    <p class="text-white/80">Tour Packages</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-accent mb-2">50+</p>
+                    <p class="text-white/80">Expert Guides</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-20 section-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">What Drives Us</span>
+                <h2 class="text-4xl font-serif font-bold text-primary mt-3 mb-4">Our Core <span class="gradient-accent">Values</span></h2>
+                <div class="divider-accent mx-auto mb-6"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-primary mb-3">Safety First</h3>
+                    <p class="text-gray-600">Your safety is our top priority. We maintain the highest safety standards with trained guides and proper equipment.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-primary mb-3">Authentic Experiences</h3>
+                    <p class="text-gray-600">We believe in genuine cultural immersion. Our tours connect you with local communities and traditions.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-leaf text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-primary mb-3">Sustainable Tourism</h3>
+                    <p class="text-gray-600">We're committed to responsible travel that preserves the environment and benefits local communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-20 section-warm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Our Journey</span>
+                <h2 class="text-4xl font-serif font-bold text-primary mt-3 mb-4">Company <span class="gradient-accent">Milestones</span></h2>
+                <div class="divider-accent mx-auto mb-6"></div>
+            </div>
+            <div class="relative">
+                <div class="timeline-line"></div>
+                <div class="space-y-12">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 md:text-right text-center mb-4 md:mb-0">
+                            <h3 class="font-bold text-xl text-primary">2010</h3>
+                            <h4 class="font-semibold text-accent mb-2">Humble Beginnings</h4>
+                            <p class="text-gray-600">Riwash Travel was founded with just 2 guides and a vision to share the Himalayas with the world.</p>
+                        </div>
+                        <div class="hidden md:block w-4 h-4 bg-accent rounded-full border-4 border-white shadow z-10"></div>
+                        <div class="md:w-1/2 md:pl-12"></div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12"></div>
+                        <div class="hidden md:block w-4 h-4 bg-accent rounded-full border-4 border-white shadow z-10"></div>
+                        <div class="md:w-1/2 md:pl-12 text-center md:text-left mt-4 md:mt-0">
+                            <h3 class="font-bold text-xl text-primary">2015</h3>
+                            <h4 class="font-semibold text-accent mb-2">Expanding Horizons</h4>
+                            <p class="text-gray-600">Expanded operations to include Tibet and Bhutan tours, becoming a multi-destination operator.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 md:text-right text-center mb-4 md:mb-0">
+                            <h3 class="font-bold text-xl text-primary">2018</h3>
+                            <h4 class="font-semibold text-accent mb-2">Award Recognition</h4>
+                            <p class="text-gray-600">Received "Best Trekking Company" award from the Nepal Tourism Board for excellence in service.</p>
+                        </div>
+                        <div class="hidden md:block w-4 h-4 bg-accent rounded-full border-4 border-white shadow z-10"></div>
+                        <div class="md:w-1/2 md:pl-12"></div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12"></div>
+                        <div class="hidden md:block w-4 h-4 bg-accent rounded-full border-4 border-white shadow z-10"></div>
+                        <div class="md:w-1/2 md:pl-12 text-center md:text-left mt-4 md:mt-0">
+                            <h3 class="font-bold text-xl text-primary">2023</h3>
+                            <h4 class="font-semibold text-accent mb-2">50,000+ Travelers</h4>
+                            <p class="text-gray-600">Celebrated our 50,000th traveler milestone with a renewed commitment to sustainable tourism.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-20 section-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">The Experts</span>
+                <h2 class="text-4xl font-serif font-bold text-primary mt-3 mb-4">Meet Our <span class="gradient-accent">Team</span></h2>
+                <div class="divider-accent mx-auto mb-6"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=350&fit=crop&crop=face" alt="Team" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-primary">Rajesh Gurung</h3>
+                        <p class="text-accent text-sm mb-3">Founder & CEO</p>
+                        <p class="text-gray-600 text-sm">Former Everest summiteer with 20+ years of guiding experience.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover text-center">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=350&fit=crop&crop=face" alt="Team" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-primary">Sarah Johnson</h3>
+                        <p class="text-accent text-sm mb-3">Operations Manager</p>
+                        <p class="text-gray-600 text-sm">Ensures seamless experiences from booking to return.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover text-center">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=350&fit=crop&crop=face" alt="Team" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-primary">Tenzing Sherpa</h3>
+                        <p class="text-accent text-sm mb-3">Head Guide</p>
+                        <p class="text-gray-600 text-sm">IFMGA certified mountain guide with 15 years of experience.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover text-center">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=350&fit=crop&crop=face" alt="Team" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-primary">Emma Thompson</h3>
+                        <p class="text-accent text-sm mb-3">Travel Consultant</p>
+                        <p class="text-gray-600 text-sm">Helps craft perfect itineraries for every traveler.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-primary">
+        <div class="max-w-4xl mx-auto px-4 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Ready to Start Your Himalayan Adventure?</h2>
+            <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">Let us help you plan the journey of a lifetime. Our team is ready to create your perfect itinerary.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tours.html" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center">
+                    <i class="fas fa-compass mr-2"></i>Explore Tours
+                </a>
+                <a href="contact.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center hover:bg-white hover:text-primary transition">
+                    <i class="fas fa-phone mr-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-20 pb-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center"><i class="fas fa-mountain text-white text-lg"></i></div>
+                        <span class="text-xl font-serif font-bold">Riwash<span class="text-accent">Travel</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">Your trusted partner for unforgettable Himalayan adventures.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="tours.html" class="hover:text-white transition">Tours</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Destinations</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Nepal</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tibet</a></li>
+                        <li><a href="#" class="hover:text-white transition">Bhutan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent mt-1"></i><span>Kathmandu, Nepal</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone-alt text-accent"></i><span>+977 1 2345678</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-accent"></i><span>info@riwashtravel.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <p class="text-gray-400 text-sm text-center">&copy; 2024 RiwashTravel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+        const toursMegaBtn = document.getElementById('tours-mega-btn');
+        const toursMegaDropdown = document.getElementById('tours-mega-dropdown');
+        const toursChevron = document.getElementById('tours-chevron');
+        toursMegaBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toursMegaDropdown.classList.toggle('active');
+            toursChevron.classList.toggle('rotate-180');
+        });
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('tours-mega-menu').contains(e.target)) {
+                toursMegaDropdown.classList.remove('active');
+                toursChevron.classList.remove('rotate-180');
+            }
+        });
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 50);
+        });
+    </script>
+
+</body>
+</html>

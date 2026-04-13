@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - RiwashTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0EA5E9',
+                        secondary: '#0F172A',
+                        accent: '#F59E0B',
+                        coral: '#F97316',
+                        ocean: '#0369A1',
+                        dark: '#020617',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(2,6,23,0.7) 0%, rgba(15,23,42,0.5) 50%, rgba(14,165,233,0.3) 100%);
+        }
+        .card-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0EA5E9 0%, #F59E0B 50%, #F97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #0EA5E9 0%, #0369A1 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.5);
+        }
+        .btn-accent {
+            background: linear-gradient(135deg, #F59E0B 0%, #F97316 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.5);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+        .section-gradient {
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        .input-field {
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: #0EA5E9;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+        .contact-icon {
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 antialiased">
+
+    <!-- Header -->
+    <header class="nav-blur shadow-lg sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center group cursor-pointer">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity"></div>
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=50&h=50&fit=crop" alt="RiwashTravel" class="relative h-12 w-12 object-contain rounded-xl shadow-lg">
+                    </div>
+                    <span class="ml-3 text-xl font-bold text-secondary tracking-wide">RIWASH<span class="gradient-text">TRAVEL</span></span>
+                </a>
+                <nav class="hidden md:flex space-x-1">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Home</a>
+                    <a href="tours.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Tours</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Blog</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Gallery</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">About</a>
+                    <a href="contact.html" class="text-primary font-medium px-4 py-2 rounded-lg bg-primary/5">Contact</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+1234567890" class="hidden md:flex items-center text-primary font-medium text-sm bg-primary/10 px-4 py-2 rounded-full hover:bg-primary/20 transition">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        +977 9801000000
+                    </a>
+                    <button class="md:hidden text-gray-600 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-slate-100 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[400px] md:h-[500px] overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&h=800&fit=crop" alt="Contact" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-accent/20 rounded-full blur-3xl"></div>
+        
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4 max-w-3xl">
+                <span class="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4 border border-white/30">
+                    <i class="fas fa-comments text-accent mr-2"></i>Get in Touch
+                </span>
+                <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4 drop-shadow-2xl">
+                    Contact <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-coral">Us</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+                    Ready to start your Himalayan adventure? We're here to help plan your perfect journey.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center text-sm">
+                <a href="index.html" class="text-slate-500 hover:text-primary transition flex items-center">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <i class="fas fa-chevron-right mx-3 text-xs text-slate-300"></i>
+                <span class="text-primary font-medium">Contact Us</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Info Cards -->
+    <section class="py-16 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Phone -->
+                <div class="contact-card group bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover-lift text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-6 contact-icon">
+                        <i class="fas fa-phone-alt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-secondary mb-2">Call Us</h3>
+                    <p class="text-slate-500 text-sm mb-4">Mon-Sat: 9AM - 6PM (NPT)</p>
+                    <a href="tel:+97712345678" class="text-primary font-semibold hover:underline">+977 1 2345678</a>
+                    <p class="text-slate-400 text-sm mt-1">+977 9801000000</p>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-card group bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover-lift text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl flex items-center justify-center mx-auto mb-6 contact-icon">
+                        <i class="fas fa-envelope text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-secondary mb-2">Email Us</h3>
+                    <p class="text-slate-500 text-sm mb-4">We'll respond within 24 hours</p>
+                    <a href="mailto:info@riwashtravel.com" class="text-primary font-semibold hover:underline">info@riwashtravel.com</a>
+                    <p class="text-slate-400 text-sm mt-1">bookings@riwashtravel.com</p>
+                </div>
+
+                <!-- Location -->
+                <div class="contact-card group bg-white rounded-2xl p-8 shadow-lg border border-slate-100 hover-lift text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-coral/20 to-coral/5 rounded-2xl flex items-center justify-center mx-auto mb-6 contact-icon">
+                        <i class="fas fa-map-marker-alt text-coral text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-secondary mb-2">Visit Us</h3>
+                    <p class="text-slate-500 text-sm mb-4">Thamel, Kathmandu</p>
+                    <p class="text-primary font-semibold">Near Garden of Dreams</p>
+                    <p class="text-slate-400 text-sm mt-1">Nepal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map Section -->
+    <section class="py-16 section-gradient relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+                    <span class="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                    </span>
+                    <h2 class="text-3xl font-serif font-bold text-secondary mb-2">Get in Touch</h2>
+                    <p class="text-slate-500 mb-8">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                    
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">First Name</label>
+                                <input type="text" placeholder="John" class="input-field w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
+                                <input type="text" placeholder="Doe" class="input-field w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                                <input type="email" placeholder="john@example.com" class="input-field w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                                <input type="tel" placeholder="+1 234 567 890" class="input-field w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Interested In</label>
+                            <select class="input-field w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none">
+                                <option value="">Select a tour package</option>
+                                <option value="everest">Everest Base Camp Trek</option>
+                                <option value="annapurna">Annapurna Circuit Trek</option>
+                                <option value="tibet">Tibet Overland Tour</option>
+                                <option value="bhutan">Bhutan Cultural Tour</option>
+                                <option value="kailash">Kailash Mansarovar Yatra</option>
+                                <option value="custom">Custom Itinerary</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                            <textarea rows="5" placeholder="Tell us about your travel plans, questions, or special requirements..." class="input-field w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-gradient text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map & Additional Info -->
+                <div class="space-y-8">
+                    <!-- Map -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                        <div class="relative h-80 bg-slate-100">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.2345678901234!2d85.31056789012345!3d27.715678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDQyJzU2LjQiTjg1wrAxOCczOC4wIkU!5e0!3m2!1sen!2snp!4v1234567890123!5m2!1sen!2snp"
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="absolute inset-0">
+                            </iframe>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-secondary mb-2">Our Location</h3>
+                            <p class="text-slate-500 text-sm">Thamel, Kathmandu, Nepal</p>
+                            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center text-primary font-medium mt-3 hover:underline">
+                                <i class="fas fa-external-link-alt mr-2"></i>Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Office Hours -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+                        <h3 class="font-bold text-secondary mb-4 flex items-center">
+                            <i class="fas fa-clock text-primary mr-2"></i>Office Hours
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between">
+                                <span class="text-slate-500">Monday - Friday</span>
+                                <span class="text-secondary font-medium">9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-slate-500">Saturday</span>
+                                <span class="text-secondary font-medium">10:00 AM - 4:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-slate-500">Sunday</span>
+                                <span class="text-rose-500 font-medium">Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="bg-gradient-to-r from-rose-500 to-rose-600 rounded-2xl shadow-lg p-6 text-white">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-first-aid mr-2"></i>24/7 Emergency Support
+                        </h3>
+                        <p class="text-white/80 text-sm mb-4">For urgent matters during your trek, contact our emergency hotline.</p>
+                        <a href="tel:+9779801000000" class="inline-flex items-center bg-white text-rose-500 px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition">
+                            <i class="fas fa-phone-alt mr-2"></i>+977 9801000000
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-question-circle mr-2"></i>FAQ
+                </span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary">
+                    Frequently Asked <span class="gradient-text">Questions</span>
+                </h2>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                        <span class="font-medium text-secondary">How do I book a tour with RiwashTravel?</span>
+                        <i class="fas fa-chevron-down text-primary transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                        You can book a tour by filling out our contact form, calling us directly, or sending an email. Our team will get back to you within 24 hours with a customized itinerary and quote. A 20% deposit is required to confirm your booking.
+                    </div>
+                </div>
+                
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                        <span class="font-medium text-secondary">What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down text-primary transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                        We accept bank transfers, credit/debit cards, PayPal, and cash payments at our office. For international transfers, we recommend Wise or bank wire for the best exchange rates.
+                    </div>
+                </div>
+                
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                        <span class="font-medium text-secondary">What is your cancellation policy?</span>
+                        <i class="fas fa-chevron-down text-primary transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                        Cancellations made 30+ days before departure receive a full refund minus administrative fees. 15-29 days: 50% refund. Less than 14 days: no refund, but you can reschedule for a future date within 12 months.
+                    </div>
+                </div>
+                
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
+                        <span class="font-medium text-secondary">Do you offer group discounts?</span>
+                        <i class="fas fa-chevron-down text-primary transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-5 pb-5 text-slate-600 text-sm leading-relaxed">
+                        Yes! Groups of 4-6 people receive 10% off, 7-10 people get 15% off, and groups of 11+ receive 20% discount. Contact us for custom group packages.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0F172A] text-white pt-20 pb-8 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+            </svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-md opacity-50"></div>
+                            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=50&h=50&fit=crop" alt="Logo" class="relative h-12 w-12 object-contain rounded-xl shadow-lg">
+                        </div>
+                        <span class="ml-3 text-xl font-bold tracking-wide">RIWASH<span class="text-primary">TRAVEL</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Your trusted partner for unforgettable Himalayan adventures.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-accent hover:scale-110 transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-coral hover:scale-110 transition-all"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>About Us</a></li>
+                        <li><a href="tours.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Tour Packages</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Travel Blog</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Destinations</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Nepal</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Tibet</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Bhutan</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>India</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Contact Us</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-accent text-xs"></i>
+                            </div>
+                            <span>Thamel, Kathmandu, Nepal</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-phone-alt text-accent text-xs"></i>
+                            </div>
+                            <span>+977 1 2345678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-envelope text-coral text-xs"></i>
+                            </div>
+                            <span>info@riwashtravel.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-slate-500 text-sm">
+                        <p>&copy; 2024 RiwashTravel. All rights reserved.</p>
+                    </div>
+                    <div class="flex items-center gap-6 text-sm text-slate-500">
+                        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

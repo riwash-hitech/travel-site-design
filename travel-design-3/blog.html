@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog - RiwashTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0EA5E9',
+                        secondary: '#0F172A',
+                        accent: '#F59E0B',
+                        coral: '#F97316',
+                        ocean: '#0369A1',
+                        dark: '#020617',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(2,6,23,0.7) 0%, rgba(15,23,42,0.5) 50%, rgba(14,165,233,0.3) 100%);
+        }
+        .card-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0EA5E9 0%, #F59E0B 50%, #F97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #0EA5E9 0%, #0369A1 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.5);
+        }
+        .btn-accent {
+            background: linear-gradient(135deg, #F59E0B 0%, #F97316 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.5);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+        .image-zoom {
+            overflow: hidden;
+        }
+        .image-zoom img {
+            transition: transform 0.7s ease;
+        }
+        .image-zoom:hover img {
+            transform: scale(1.1);
+        }
+        .section-gradient {
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        .tag-pulse {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 antialiased">
+
+    <!-- Header -->
+    <header class="nav-blur shadow-lg sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center group cursor-pointer">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity"></div>
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=50&h=50&fit=crop" alt="RiwashTravel" class="relative h-12 w-12 object-contain rounded-xl shadow-lg">
+                    </div>
+                    <span class="ml-3 text-xl font-bold text-secondary tracking-wide">RIWASH<span class="gradient-text">TRAVEL</span></span>
+                </a>
+                <nav class="hidden md:flex space-x-1">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Home</a>
+                    <a href="tours.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Tours</a>
+                    <a href="blog.html" class="text-primary font-medium px-4 py-2 rounded-lg bg-primary/5">Blog</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Gallery</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">About</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Contact</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+1234567890" class="hidden md:flex items-center text-primary font-medium text-sm bg-primary/10 px-4 py-2 rounded-full hover:bg-primary/20 transition">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        +977 9801000000
+                    </a>
+                    <button class="md:hidden text-gray-600 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-slate-100 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[400px] md:h-[500px] overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1920&h=800&fit=crop" alt="Travel Blog" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-accent/20 rounded-full blur-3xl"></div>
+        
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4 max-w-3xl">
+                <span class="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4 border border-white/30">
+                    <i class="fas fa-pen-fancy text-accent mr-2"></i>Stories & Insights
+                </span>
+                <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4 drop-shadow-2xl">
+                    Travel <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-coral">Blog</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+                    Discover travel tips, destination guides, and inspiring stories from the Himalayas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center text-sm">
+                <a href="index.html" class="text-slate-500 hover:text-primary transition flex items-center">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <i class="fas fa-chevron-right mx-3 text-xs text-slate-300"></i>
+                <span class="text-primary font-medium">Blog</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Post -->
+    <section class="py-16 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative group cursor-pointer" onclick="window.location.href='blog-detail.html'">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop" alt="Featured Post" class="w-full h-[400px] object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="inline-block px-3 py-1 bg-accent text-white text-xs font-bold rounded-full mb-3">
+                                <i class="fas fa-star mr-1"></i>Featured
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold">Trekking</span>
+                        <span class="text-slate-400 text-sm"><i class="far fa-calendar mr-2"></i>Dec 15, 2024</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary mb-4 group-hover:text-primary transition cursor-pointer" onclick="window.location.href='blog-detail.html'">
+                        10 Essential Tips for Your First Everest Base Camp Trek
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Embarking on the Everest Base Camp trek is a dream for many adventurers. This comprehensive guide covers everything from preparation and acclimatization to what to pack and expect on the trail. Learn from experienced guides who've led hundreds of successful treks.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop" alt="Author" class="w-10 h-10 rounded-full object-cover mr-3">
+                            <div>
+                                <p class="font-medium text-secondary text-sm">Ramesh Gurung</p>
+                                <p class="text-slate-400 text-xs">Senior Trekking Guide</p>
+                            </div>
+                        </div>
+                        <a href="blog-detail.html" class="btn-gradient text-white px-6 py-3 rounded-full font-medium inline-flex items-center hover:shadow-lg transition">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="py-8 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button class="px-6 py-2 bg-primary text-white rounded-full text-sm font-medium hover:shadow-lg transition">All Posts</button>
+                <button class="px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition">Trekking</button>
+                <button class="px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition">Culture</button>
+                <button class="px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition">Travel Tips</button>
+                <button class="px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition">Photography</button>
+                <button class="px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition">Food & Cuisine</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="py-16 section-gradient relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Card 1 -->
+                <article class="group bg-white rounded-2xl overflow-hidden hover-lift card-glass border border-slate-100 cursor-pointer" onclick="window.location.href='blog-detail.html'">
+                    <div class="relative h-56 image-zoom">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=300&fit=crop" alt="Blog 1" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                            <i class="fas fa-hiking mr-1"></i>Trekking
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3 text-sm text-slate-400">
+                            <span><i class="far fa-calendar mr-1"></i>Dec 10, 2024</span>
+                            <span><i class="far fa-clock mr-1"></i>5 min read</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-secondary mb-3 group-hover:text-primary transition line-clamp-2">
+                            Best Time to Visit Nepal: A Seasonal Guide
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-4">
+                            Nepal offers different experiences throughout the year. Discover the ideal seasons for trekking, cultural tours, and wildlife adventures.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-secondary">Sita Sharma</span>
+                            </div>
+                            <span class="text-primary text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="group bg-white rounded-2xl overflow-hidden hover-lift card-glass border border-slate-100 cursor-pointer" onclick="window.location.href='blog-detail.html'">
+                    <div class="relative h-56 image-zoom">
+                        <img src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=400&h=300&fit=crop" alt="Blog 2" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                            <i class="fas fa-landmark mr-1"></i>Culture
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3 text-sm text-slate-400">
+                            <span><i class="far fa-calendar mr-1"></i>Dec 5, 2024</span>
+                            <span><i class="far fa-clock mr-1"></i>7 min read</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-secondary mb-3 group-hover:text-primary transition line-clamp-2">
+                            Exploring Bhutan: The Land of Happiness
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-4">
+                            Discover why Bhutan measures success through Gross National Happiness. Explore ancient monasteries, vibrant festivals, and pristine nature.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-secondary">Dorji Wangchuk</span>
+                            </div>
+                            <span class="text-primary text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="group bg-white rounded-2xl overflow-hidden hover-lift card-glass border border-slate-100 cursor-pointer" onclick="window.location.href='blog-detail.html'">
+                    <div class="relative h-56 image-zoom">
+                        <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&h=300&fit=crop" alt="Blog 3" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 bg-coral text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                            <i class="fas fa-camera mr-1"></i>Photography
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3 text-sm text-slate-400">
+                            <span><i class="far fa-calendar mr-1"></i>Nov 28, 2024</span>
+                            <span><i class="far fa-clock mr-1"></i>6 min read</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-secondary mb-3 group-hover:text-primary transition line-clamp-2">
+                            Photography Tips for Himalayan Landscapes
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-4">
+                            Capture breathtaking mountain vistas with these professional photography tips. Learn about lighting, composition, and equipment.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-secondary">Priya Patel</span>
+                            </div>
+                            <span class="text-primary text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article class="group bg-white rounded-2xl overflow-hidden hover-lift card-glass border border-slate-100 cursor-pointer" onclick="window.location.href='blog-detail.html'">
+                    <div class="relative h-56 image-zoom">
+                        <img src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=400&h=300&fit=crop" alt="Blog 4" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                            <i class="fas fa-lightbulb mr-1"></i>Tips
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3 text-sm text-slate-400">
+                            <span><i class="far fa-calendar mr-1"></i>Nov 20, 2024</span>
+                            <span><i class="far fa-clock mr-1"></i>4 min read</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-secondary mb-3 group-hover:text-primary transition line-clamp-2">
+                            Essential Packing List for Nepal Trekking
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-4">
+                            Don't forget anything important! Our comprehensive packing list covers all essentials for a comfortable Himalayan trek.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-secondary">Ramesh Gurung</span>
+                            </div>
+                            <span class="text-primary text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 5 -->
+                <article class="group bg-white rounded-2xl overflow-hidden hover-lift card-glass border border-slate-100 cursor-pointer" onclick="window.location.href='blog-detail.html'">
+                    <div class="relative h-56 image-zoom">
+                        <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=400&h=300&fit=crop" alt="Blog 5" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 bg-rose-500 text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                            <i class="fas fa-utensils mr-1"></i>Food
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3 text-sm text-slate-400">
+                            <span><i class="far fa-calendar mr-1"></i>Nov 15, 2024</span>
+                            <span><i class="far fa-clock mr-1"></i>8 min read</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-secondary mb-3 group-hover:text-primary transition line-clamp-2">
+                            Nepali Cuisine: Must-Try Dishes on Your Journey
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-4">
+                            From momos to dal bhat, explore the flavors of Nepal. Discover local delicacies and where to find the best authentic food.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-secondary">Maya Rai</span>
+                            </div>
+                            <span class="text-primary text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 6 -->
+                <article class="group bg-white rounded-2xl overflow-hidden hover-lift card-glass border border-slate-100 cursor-pointer" onclick="window.location.href='blog-detail.html'">
+                    <div class="relative h-56 image-zoom">
+                        <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=400&h=300&fit=crop" alt="Blog 6" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 bg-purple-500 text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                            <i class="fas fa-yin-yang mr-1"></i>Spiritual
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-3 text-sm text-slate-400">
+                            <span><i class="far fa-calendar mr-1"></i>Nov 8, 2024</span>
+                            <span><i class="far fa-clock mr-1"></i>10 min read</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-secondary mb-3 group-hover:text-primary transition line-clamp-2">
+                            Spiritual Journeys: Temples & Monasteries of Tibet
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-4">
+                            Explore the sacred sites of Tibet. From the Potala Palace to remote monasteries, discover spiritual enlightenment in the Himalayas.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm font-medium text-secondary">Tenzin Norbu</span>
+                            </div>
+                            <span class="text-primary text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-14 flex justify-center gap-2">
+                <button class="w-12 h-12 rounded-xl bg-white border border-slate-200 text-slate-400 hover:border-primary hover:text-primary transition flex items-center justify-center">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="w-12 h-12 rounded-xl bg-primary text-white font-medium shadow-lg shadow-primary/30 flex items-center justify-center">1</button>
+                <button class="w-12 h-12 rounded-xl bg-white border border-slate-200 text-slate-600 hover:border-primary hover:text-primary transition flex items-center justify-center">2</button>
+                <button class="w-12 h-12 rounded-xl bg-white border border-slate-200 text-slate-600 hover:border-primary hover:text-primary transition flex items-center justify-center">3</button>
+                <span class="w-12 h-12 flex items-center justify-center text-slate-400">...</span>
+                <button class="w-12 h-12 rounded-xl bg-white border border-slate-200 text-slate-600 hover:border-primary hover:text-primary transition flex items-center justify-center">8</button>
+                <button class="w-12 h-12 rounded-xl bg-white border border-slate-200 text-slate-400 hover:border-primary hover:text-primary transition flex items-center justify-center">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gradient-to-br from-secondary via-ocean to-secondary relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block px-4 py-1 bg-white/10 text-white rounded-full text-sm font-semibold mb-4 backdrop-blur-sm">
+                <i class="fas fa-envelope mr-2"></i>Stay Updated
+            </span>
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+                Subscribe to Our <span class="text-accent">Newsletter</span>
+            </h2>
+            <p class="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+                Get the latest travel tips, destination guides, and exclusive offers delivered to your inbox.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Enter your email" class="flex-1 bg-white/10 border border-white/20 rounded-xl px-6 py-4 text-white placeholder-white/50 focus:outline-none focus:border-primary backdrop-blur-sm transition">
+                <button class="btn-accent text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition flex items-center justify-center">
+                    <i class="fas fa-paper-plane mr-2"></i>Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0F172A] text-white pt-20 pb-8 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-[#f1f5f9]"></path>
+            </svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-md opacity-50"></div>
+                            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=50&h=50&fit=crop" alt="Logo" class="relative h-12 w-12 object-contain rounded-xl shadow-lg">
+                        </div>
+                        <span class="ml-3 text-xl font-bold tracking-wide">RIWASH<span class="text-primary">TRAVEL</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Your trusted partner for unforgettable Himalayan adventures. Explore Tibet, Nepal, Bhutan & India with our expert guidance.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-accent hover:scale-110 transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-coral hover:scale-110 transition-all"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>About Us</a></li>
+                        <li><a href="tours.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Tour Packages</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Travel Blog</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Destinations -->
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Destinations</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Nepal</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Tibet</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Bhutan</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>India</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Contact Us</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-accent text-xs"></i>
+                            </div>
+                            <span>Thamel, Kathmandu, Nepal</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-phone-alt text-accent text-xs"></i>
+                            </div>
+                            <span>+977 1 2345678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-envelope text-coral text-xs"></i>
+                            </div>
+                            <span>info@riwashtravel.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-slate-500 text-sm">
+                        <p>&copy; 2024 RiwashTravel. All rights reserved.</p>
+                    </div>
+                    <div class="flex items-center gap-6 text-sm text-slate-500">
+                        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

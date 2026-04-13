@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - RiwashTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0EA5E9',
+                        secondary: '#0F172A',
+                        accent: '#F59E0B',
+                        coral: '#F97316',
+                        ocean: '#0369A1',
+                        dark: '#020617',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(2,6,23,0.7) 0%, rgba(15,23,42,0.5) 50%, rgba(14,165,233,0.3) 100%);
+        }
+        .card-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0EA5E9 0%, #F59E0B 50%, #F97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #0EA5E9 0%, #0369A1 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.5);
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            transition: transform 0.7s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.3) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .gallery-icon {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        .filter-btn.active {
+            background: linear-gradient(135deg, #0EA5E9 0%, #0369A1 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 antialiased">
+
+    <!-- Header -->
+    <header class="nav-blur shadow-lg sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center group cursor-pointer">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity"></div>
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=50&h=50&fit=crop" alt="RiwashTravel" class="relative h-12 w-12 object-contain rounded-xl shadow-lg">
+                    </div>
+                    <span class="ml-3 text-xl font-bold text-secondary tracking-wide">RIWASH<span class="gradient-text">TRAVEL</span></span>
+                </a>
+                <nav class="hidden md:flex space-x-1">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Home</a>
+                    <a href="tours.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Tours</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Blog</a>
+                    <a href="gallery.html" class="text-primary font-medium px-4 py-2 rounded-lg bg-primary/5">Gallery</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">About</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Contact</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+1234567890" class="hidden md:flex items-center text-primary font-medium text-sm bg-primary/10 px-4 py-2 rounded-full hover:bg-primary/20 transition">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        +977 9801000000
+                    </a>
+                    <button class="md:hidden text-gray-600 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-slate-100 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[400px] md:h-[500px] overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&h=800&fit=crop" alt="Gallery" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-accent/20 rounded-full blur-3xl"></div>
+        
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4 max-w-3xl">
+                <span class="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4 border border-white/30">
+                    <i class="fas fa-images text-accent mr-2"></i>Visual Journey
+                </span>
+                <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4 drop-shadow-2xl">
+                    Photo <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-coral">Gallery</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+                    Explore breathtaking moments captured across the Himalayas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center text-sm">
+                <a href="index.html" class="text-slate-500 hover:text-primary transition flex items-center">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <i class="fas fa-chevron-right mx-3 text-xs text-slate-300"></i>
+                <span class="text-primary font-medium">Gallery</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Filter -->
+    <section class="py-8 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button class="filter-btn active px-6 py-2 rounded-full text-sm font-medium transition shadow-md">All</button>
+                <button class="filter-btn px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition">Nepal</button>
+                <button class="filter-btn px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition">Tibet</button>
+                <button class="filter-btn px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition">Bhutan</button>
+                <button class="filter-btn px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition">Trekking</button>
+                <button class="filter-btn px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-full text-sm font-medium hover:border-primary hover:text-primary transition">Culture</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-12 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="masonry-grid">
+                <!-- Gallery Item 1 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=800&fit=crop" alt="Mount Everest" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-primary/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Nepal
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Mount Everest at Sunrise</h3>
+                        <p class="text-white/80 text-sm">View from Kala Patthar (5,545m)</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1545063328-c8e3fcf02ec1?w=600&h=400&fit=crop" alt="Potala Palace" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-accent/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Tibet
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Potala Palace</h3>
+                        <p class="text-white/80 text-sm">Historic residence of Dalai Lama</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=600&h=700&fit=crop" alt="Tiger's Nest" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-emerald-500/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Bhutan
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Tiger's Nest Monastery</h3>
+                        <p class="text-white/80 text-sm">Paro Taktsang - Iconic cliffside temple</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=600&h=500&fit=crop" alt="Nepal Temple" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-coral/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Culture
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Ancient Temple Architecture</h3>
+                        <p class="text-white/80 text-sm">Kathmandu Valley heritage</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=800&fit=crop" alt="Himalayan Mountains" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-primary/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Trekking
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Annapurna Range</h3>
+                        <p class="text-white/80 text-sm">Panoramic mountain vistas</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=450&fit=crop" alt="Desert Mountains" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-accent/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Tibet
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Tibetan Highlands</h3>
+                        <p class="text-white/80 text-sm">Vast plateau landscapes</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(6)">
+                    <img src="https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=600&h=750&fit=crop" alt="Mountain Trek" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-primary/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Trekking
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Mountain Trails</h3>
+                        <p class="text-white/80 text-sm">Adventure through the Himalayas</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(7)">
+                    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=400&fit=crop" alt="Taj Mahal" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-purple-500/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            India
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Iconic Architecture</h3>
+                        <p class="text-white/80 text-sm">Heritage sites of India</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(8)">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&h=700&fit=crop" alt="Trekker" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-coral/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Adventure
+                        </span>
+                        <h3 class="text-white font-bold text-lg">The Journey Within</h3>
+                        <p class="text-white/80 text-sm">Finding yourself in nature</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(9)">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&h=550&fit=crop" alt="Prayer Flags" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-emerald-500/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Culture
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Prayer Flags in Wind</h3>
+                        <p class="text-white/80 text-sm">Spiritual traditions of the Himalayas</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(10)">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=480&fit=crop" alt="Forest" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-green-500/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Nature
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Himalayan Forests</h3>
+                        <p class="text-white/80 text-sm">Lush valleys and wildlife</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 12 -->
+                <div class="masonry-item gallery-item rounded-2xl overflow-hidden shadow-lg" onclick="openLightbox(11)">
+                    <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=600&h=650&fit=crop" alt="Monastery" class="w-full h-auto object-cover">
+                    <div class="gallery-icon w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                        <i class="fas fa-search-plus text-primary text-xl"></i>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="inline-block px-3 py-1 bg-rose-500/90 text-white text-xs font-bold rounded-full mb-2 w-fit">
+                            Spiritual
+                        </span>
+                        <h3 class="text-white font-bold text-lg">Buddhist Monastery</h3>
+                        <p class="text-white/80 text-sm">Peace and meditation</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="btn-gradient text-white px-10 py-4 rounded-full font-semibold hover:shadow-lg transition inline-flex items-center">
+                    <i class="fas fa-spinner mr-2"></i>Load More Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-video mr-2"></i>Watch
+                </span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary mb-4">
+                    Video <span class="gradient-text">Highlights</span>
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Experience the Himalayas through our video collection
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer" onclick="playVideo(this)">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Video Thumbnail" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition">
+                        <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition shadow-lg">
+                            <i class="fas fa-play text-primary text-xl ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-white font-bold mb-1">Everest Base Camp Trek</h3>
+                        <p class="text-white/70 text-sm">12 min video journey</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer" onclick="playVideo(this)">
+                    <img src="https://images.unsplash.com/photo-1545063328-c8e3fcf02ec1?w=600&h=400&fit=crop" alt="Video Thumbnail" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition">
+                        <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition shadow-lg">
+                            <i class="fas fa-play text-primary text-xl ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-white font-bold mb-1">Tibet: Roof of the World</h3>
+                        <p class="text-white/70 text-sm">8 min documentary</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer" onclick="playVideo(this)">
+                    <img src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=600&h=400&fit=crop" alt="Video Thumbnail" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition">
+                        <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition shadow-lg">
+                            <i class="fas fa-play text-primary text-xl ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-white font-bold mb-1">Bhutan: Kingdom of Happiness</h3>
+                        <p class="text-white/70 text-sm">10 min feature</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-secondary via-ocean to-secondary relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+                Create Your Own <span class="text-accent">Memories</span>
+            </h2>
+            <p class="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
+                Let us take you to these incredible places. Start planning your Himalayan adventure today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tours.html" class="btn-accent text-white px-10 py-4 rounded-full font-semibold hover:shadow-lg transition inline-flex items-center justify-center">
+                    <i class="fas fa-suitcase mr-2"></i>View Tours
+                </a>
+                <a href="contact.html" class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-4 rounded-full font-semibold hover:bg-white/20 transition inline-flex items-center justify-center">
+                    <i class="fas fa-paper-plane mr-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/95" onclick="closeLightbox()"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <button class="absolute top-4 right-4 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition z-10" onclick="closeLightbox()">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <button class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition z-10" onclick="prevImage()">
+                <i class="fas fa-chevron-left text-xl"></i>
+            </button>
+            <button class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition z-10" onclick="nextImage()">
+                <i class="fas fa-chevron-right text-xl"></i>
+            </button>
+            <img id="lightbox-img" src="" alt="Gallery Image" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl">
+        </div>
+        <div class="absolute bottom-4 left-0 right-0 text-center text-white">
+            <p id="lightbox-caption" class="text-lg font-medium"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0F172A] text-white pt-20 pb-8 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+            </svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-md opacity-50"></div>
+                            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=50&h=50&fit=crop" alt="Logo" class="relative h-12 w-12 object-contain rounded-xl shadow-lg">
+                        </div>
+                        <span class="ml-3 text-xl font-bold tracking-wide">RIWASH<span class="text-primary">TRAVEL</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Your trusted partner for unforgettable Himalayan adventures.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-accent hover:scale-110 transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-coral hover:scale-110 transition-all"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>About Us</a></li>
+                        <li><a href="tours.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Tour Packages</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Travel Blog</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Destinations</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Nepal</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Tibet</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Bhutan</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>India</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Contact Us</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-accent text-xs"></i>
+                            </div>
+                            <span>Thamel, Kathmandu, Nepal</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-phone-alt text-accent text-xs"></i>
+                            </div>
+                            <span>+977 1 2345678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-envelope text-coral text-xs"></i>
+                            </div>
+                            <span>info@riwashtravel.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-slate-500 text-sm">
+                        <p>&copy; 2024 RiwashTravel. All rights reserved.</p>
+                    </div>
+                    <div class="flex items-center gap-6 text-sm text-slate-500">
+                        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery Images Data
+        const galleryImages = [
+            { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop', caption: 'Mount Everest at Sunrise - View from Kala Patthar (5,545m)' },
+            { src: 'https://images.unsplash.com/photo-1545063328-c8e3fcf02ec1?w=1200&h=800&fit=crop', caption: 'Potala Palace - Historic residence of Dalai Lama in Tibet' },
+            { src: 'https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&h=800&fit=crop', caption: "Tiger's Nest Monastery - Paro Taktsang, Bhutan" },
+            { src: 'https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=1200&h=800&fit=crop', caption: 'Ancient Temple Architecture - Kathmandu Valley Heritage' },
+            { src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&h=800&fit=crop', caption: 'Annapurna Range - Panoramic Mountain Vistas' },
+            { src: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&h=800&fit=crop', caption: 'Tibetan Highlands - Vast Plateau Landscapes' },
+            { src: 'https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=1200&h=800&fit=crop', caption: 'Mountain Trails - Adventure Through the Himalayas' },
+            { src: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&h=800&fit=crop', caption: 'Iconic Architecture - Heritage Sites of India' },
+            { src: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&h=800&fit=crop', caption: 'The Journey Within - Finding Yourself in Nature' },
+            { src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&h=800&fit=crop', caption: 'Prayer Flags in Wind - Spiritual Traditions of the Himalayas' },
+            { src: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&h=800&fit=crop', caption: 'Himalayan Forests - Lush Valleys and Wildlife' },
+            { src: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=1200&h=800&fit=crop', caption: 'Buddhist Monastery - Peace and Meditation' }
+        ];
+
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const caption = document.getElementById('lightbox-caption');
+            
+            img.src = galleryImages[index].src;
+            caption.textContent = galleryImages[index].caption;
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateLightbox();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            const img = document.getElementById('lightbox-img');
+            const caption = document.getElementById('lightbox-caption');
+            img.src = galleryImages[currentImageIndex].src;
+            caption.textContent = galleryImages[currentImageIndex].caption;
+        }
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('lightbox');
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            }
+        });
+
+        // Filter Buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.classList.add('bg-white', 'text-slate-600');
+                    b.classList.remove('bg-primary', 'text-white');
+                });
+                this.classList.add('active');
+                this.classList.remove('bg-white', 'text-slate-600');
+            });
+        });
+
+        // Video Player Placeholder
+        function playVideo(element) {
+            alert('Video player would open here. In production, this would load an embedded video player.');
+        }
+    </script>
+
+</body>
+</html>

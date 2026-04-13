@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Guide to Everest Base Camp Trek - RiwashTravel Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A5F',
+                        accent: '#C75B39',
+                        sand: '#F5F1EB',
+                        warm: '#FEFCFA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(30,58,95,0.7) 0%, rgba(30,58,95,0.5) 100%);
+        }
+        .btn-primary {
+            background: #C75B39;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #A9482D;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(199,91,57,0.4);
+        }
+        .section-sand {
+            background: #F5F1EB;
+        }
+        .section-warm {
+            background: #FEFCFA;
+        }
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #C75B39 0%, #E07A53 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-scrolled {
+            background: rgba(255,255,255,0.98);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .divider-accent {
+            width: 60px;
+            height: 3px;
+            background: #C75B39;
+        }
+        .mega-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .mega-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease;
+        }
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        /* Blog Content Styles */
+        .blog-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1E3A5F;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .blog-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1E3A5F;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #4B5563;
+        }
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .blog-content li {
+            margin-bottom: 0.5rem;
+            color: #4B5563;
+        }
+        .blog-content blockquote {
+            border-left: 4px solid #C75B39;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #374151;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-warm">
+
+    <!-- Header -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-18 py-4">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><i class="fas fa-mountain text-white text-lg"></i></div>
+                    <span class="text-xl font-serif font-bold text-primary">Riwash<span class="text-accent">Travel</span></span>
+                </a>
+                <nav class="hidden lg:flex items-center gap-6">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition text-sm">Home</a>
+                    <div class="relative" id="tours-mega-menu">
+                        <button class="flex items-center gap-1 text-gray-600 hover:text-primary transition text-sm py-2" id="tours-mega-btn">
+                            Tours <i class="fas fa-chevron-down text-xs transition-transform" id="tours-chevron"></i>
+                        </button>
+                        <div class="mega-menu absolute left-0 top-full w-[700px] bg-white shadow-2xl rounded-xl mt-2 z-50" id="tours-mega-dropdown">
+                            <div class="p-6">
+                                <div class="grid grid-cols-3 gap-6">
+                                    <div>
+                                        <h4 class="font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-mountain text-accent"></i>Trekking</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Everest Base Camp</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Annapurna Circuit</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Langtang Valley</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-om text-accent"></i>Cultural</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Kailash Mansarovar</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Tibet Overland</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Bhutan Cultural</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-hiking text-accent"></i>Adventure</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Peak Climbing</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Jungle Safari</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Rafting</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative dropdown">
+                        <a href="index.html#destinations" class="flex items-center gap-1 text-gray-600 hover:text-primary transition text-sm py-2">Destinations <i class="fas fa-chevron-down text-xs"></i></a>
+                        <div class="dropdown-menu absolute left-0 top-full w-48 bg-white shadow-xl rounded-lg mt-2 py-2 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary"><i class="fas fa-map-marker-alt mr-2 text-accent"></i>Nepal</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary"><i class="fas fa-map-marker-alt mr-2 text-accent"></i>Tibet</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary"><i class="fas fa-map-marker-alt mr-2 text-accent"></i>Bhutan</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="text-primary font-medium text-sm">Blog</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-primary transition text-sm">Gallery</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition text-sm">Contact</a>
+                </nav>
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+9771234567" class="text-primary font-medium text-sm flex items-center gap-2"><i class="fas fa-phone text-accent"></i>+977 123 4567</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-primary p-2"><i class="fas fa-bars text-xl"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
+            <nav class="flex flex-col py-4 px-4 gap-2">
+                <a href="index.html" class="text-gray-600 hover:text-primary py-2">Home</a>
+                <a href="tours.html" class="text-gray-600 hover:text-primary py-2">Tours</a>
+                <a href="blog.html" class="text-primary font-medium py-2">Blog</a>
+                <a href="gallery.html" class="text-gray-600 hover:text-primary py-2">Gallery</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary py-2">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative h-[500px] flex items-end pb-12 overflow-hidden pt-20">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=800&fit=crop" alt="EBC" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-3xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="px-3 py-1 bg-accent text-white text-xs font-bold rounded-full">Guide</span>
+                    <span class="text-white/80 text-sm"><i class="far fa-calendar mr-1"></i>Oct 12, 2024</span>
+                    <span class="text-white/80 text-sm"><i class="far fa-clock mr-1"></i>8 min read</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Complete Guide to Everest Base Camp Trek: Everything You Need to Know</h1>
+                <div class="flex items-center gap-4">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Author" class="w-12 h-12 rounded-full object-cover border-2 border-white">
+                    <div class="text-white">
+                        <p class="font-semibold">John Smith</p>
+                        <p class="text-sm text-white/80">Senior Trekking Guide • 15+ years experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="py-20 section-warm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <div class="blog-content">
+                            <p class="text-xl text-gray-600 leading-relaxed mb-8">The Everest Base Camp trek is one of the most iconic adventures in the world. Standing at the foot of the world's highest mountain is a bucket-list experience for many trekkers. This comprehensive guide covers everything you need to know before embarking on this incredible journey.</p>
+                            
+                            <h2>Why Trek to Everest Base Camp?</h2>
+                            <p>The EBC trek offers breathtaking mountain scenery, unique Sherpa culture, and a sense of accomplishment that few other adventures can match. You'll walk through Sagarmatha National Park, a UNESCO World Heritage site, and experience the warm hospitality of the Nepalese people.</p>
+                            
+                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=500&fit=crop" alt="Mountains" class="w-full rounded-xl my-8">
+                            
+                            <h2>Best Time to Trek</h2>
+                            <p>The optimal seasons for the EBC trek are:</p>
+                            <ul>
+                                <li><strong>Spring (March-May):</strong> Clear skies, blooming rhododendrons, moderate temperatures</li>
+                                <li><strong>Autumn (September-November):</strong> Best visibility, stable weather, festival season</li>
+                            </ul>
+                            <p>Avoid the monsoon season (June-August) due to heavy rains and potential landslides. Winter (December-February) is possible but extremely cold.</p>
+                            
+                            <h2>Required Permits</h2>
+                            <p>You'll need two permits for the EBC trek:</p>
+                            <ol>
+                                <li><strong>Sagarmatha National Park Entry Permit:</strong> NPR 3,000 + 13% VAT (~$35)</li>
+                                <li><strong>Khumbu Pasang Lhamu Rural Municipality Permit:</strong> NPR 2,000 (~$17)</li>
+                            </ol>
+                            
+                            <blockquote>
+                                "The EBC trek isn't just about reaching the base camp. It's about the journey, the people you meet, and the transformation that happens within you."
+                            </blockquote>
+                            
+                            <h2>Physical Preparation</h2>
+                            <p>While technical climbing skills aren't required, good cardiovascular fitness is essential. Start training at least 3-4 months before your trek:</p>
+                            <ul>
+                                <li>Regular hiking with a weighted backpack</li>
+                                <li>Cardio exercises (running, swimming, cycling)</li>
+                                <li>Leg strength training</li>
+                                <li>Practice hiking at altitude if possible</li>
+                            </ul>
+                            
+                            <h2>What to Pack</h2>
+                            <p>Essential items include:</p>
+                            <ul>
+                                <li>Quality trekking boots (broken in!)</li>
+                                <li>Down jacket and sleeping bag (rated to -10°C)</li>
+                                <li>Trekking poles</li>
+                                <li>Water purification tablets</li>
+                                <li>Sunscreen and sunglasses (high UV at altitude)</li>
+                                <li>First aid kit with Diamox for altitude sickness</li>
+                            </ul>
+                            
+                            <h2>Itinerary Overview</h2>
+                            <p>The standard EBC trek takes 12-14 days. Here's a typical itinerary:</p>
+                            <ol>
+                                <li><strong>Day 1-2:</strong> Fly to Lukla, trek to Phakding and Namche Bazaar</li>
+                                <li><strong>Day 3:</strong> Acclimatization day in Namche</li>
+                                <li><strong>Day 4-5:</strong> Trek to Tengboche and Dingboche</li>
+                                <li><strong>Day 6:</strong> Acclimatization in Dingboche</li>
+                                <li><strong>Day 7-8:</strong> Trek to Lobuche and Everest Base Camp</li>
+                                <li><strong>Day 9:</strong> Hike Kala Patthar, descend to Pheriche</li>
+                                <li><strong>Day 10-12:</strong> Return trek to Lukla</li>
+                            </ol>
+                            
+                            <h2>Altitude Sickness Prevention</h2>
+                            <p>Acute Mountain Sickness (AMS) is a serious concern. Follow these guidelines:</p>
+                            <ul>
+                                <li>Acclimatize properly with rest days</li>
+                                <li>Stay hydrated (drink 3-4 liters daily)</li>
+                                <li>Ascend slowly (max 500m per day above 3,000m)</li>
+                                <li>Listen to your body and descend if symptoms worsen</li>
+                                <li>Consider taking Diamox as a preventive measure</li>
+                            </ul>
+                            
+                            <h2>Cost Breakdown</h2>
+                            <p>Expect to budget $1,200-2,000 for the trek, including:</p>
+                            <ul>
+                                <li>Guide and porter (highly recommended)</li>
+                                <li>Accommodation and meals</li>
+                                <li>Permits and Lukla flights</li>
+                                <li>Gear and equipment</li>
+                                <li>Travel insurance</li>
+                            </ul>
+                            
+                            <h2>Final Thoughts</h2>
+                            <p>The Everest Base Camp trek is challenging but incredibly rewarding. With proper preparation, the right mindset, and respect for the mountains, it will be an experience you'll cherish forever. Remember, reaching the base camp is an achievement, but the memories you make along the way are what truly matter.</p>
+                        </div>
+                        
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mt-8 pt-8 border-t border-gray-100">
+                            <span class="text-gray-500 text-sm"><i class="fas fa-tags mr-2"></i>Tags:</span>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full hover:bg-accent hover:text-white transition">Everest</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full hover:bg-accent hover:text-white transition">Trekking</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full hover:bg-accent hover:text-white transition">Nepal</a>
+                            <a href="#" class="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full hover:bg-accent hover:text-white transition">Guide</a>
+                        </div>
+                        
+                        <!-- Share -->
+                        <div class="flex items-center gap-4 mt-6">
+                            <span class="text-gray-500 text-sm">Share:</span>
+                            <a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-600 transition"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700 transition"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Author Box -->
+                    <div class="bg-white rounded-2xl shadow-lg p-8 mt-8">
+                        <div class="flex items-start gap-6">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Author" class="w-24 h-24 rounded-xl object-cover">
+                            <div>
+                                <h3 class="font-bold text-xl text-primary mb-2">John Smith</h3>
+                                <p class="text-accent text-sm font-medium mb-3">Senior Trekking Guide</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">John has been leading treks in the Himalayas for over 15 years. He has summited Everest twice and knows every trail in the Khumbu region like the back of his hand.</p>
+                                <div class="flex gap-3 mt-4">
+                                    <a href="#" class="text-gray-400 hover:text-accent transition"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-accent transition"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-accent transition"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="lg:col-span-1">
+                    <!-- Search -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+                        <h3 class="font-bold text-lg text-primary mb-4">Search</h3>
+                        <div class="relative">
+                            <input type="text" placeholder="Search articles..." class="w-full bg-gray-50 border border-gray-200 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-accent transition">
+                            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+                        <h3 class="font-bold text-lg text-primary mb-4">Categories</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="flex items-center justify-between text-gray-600 hover:text-accent transition"><span><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Guides</span><span class="text-sm text-gray-400">12</span></a></li>
+                            <li><a href="#" class="flex items-center justify-between text-gray-600 hover:text-accent transition"><span><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Tips</span><span class="text-sm text-gray-400">8</span></a></li>
+                            <li><a href="#" class="flex items-center justify-between text-gray-600 hover:text-accent transition"><span><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Stories</span><span class="text-sm text-gray-400">15</span></a></li>
+                            <li><a href="#" class="flex items-center justify-between text-gray-600 hover:text-accent transition"><span><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Packing</span><span class="text-sm text-gray-400">6</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Recent Posts -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+                        <h3 class="font-bold text-lg text-primary mb-4">Recent Posts</h3>
+                        <div class="space-y-4">
+                            <a href="#" class="flex gap-4 group">
+                                <img src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=100&h=100&fit=crop" class="w-20 h-20 rounded-lg object-cover flex-shrink-0">
+                                <div>
+                                    <h4 class="font-semibold text-primary text-sm group-hover:text-accent transition line-clamp-2">10 Things to Know Before Visiting Bhutan</h4>
+                                    <span class="text-gray-400 text-xs">Oct 8, 2024</span>
+                                </div>
+                            </a>
+                            <a href="#" class="flex gap-4 group">
+                                <img src="https://images.unsplash.com/photo-1545063328-c8e3fcf02ec1?w=100&h=100&fit=crop" class="w-20 h-20 rounded-lg object-cover flex-shrink-0">
+                                <div>
+                                    <h4 class="font-semibold text-primary text-sm group-hover:text-accent transition line-clamp-2">Essential Packing List for Himalayan Treks</h4>
+                                    <span class="text-gray-400 text-xs">Oct 3, 2024</span>
+                                </div>
+                            </a>
+                            <a href="#" class="flex gap-4 group">
+                                <img src="https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=100&h=100&fit=crop" class="w-20 h-20 rounded-lg object-cover flex-shrink-0">
+                                <div>
+                                    <h4 class="font-semibold text-primary text-sm group-hover:text-accent transition line-clamp-2">Annapurna Circuit vs Base Camp</h4>
+                                    <span class="text-gray-400 text-xs">Sep 28, 2024</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div class="bg-primary rounded-2xl shadow-lg p-6 text-white">
+                        <h3 class="font-bold text-lg mb-2">Newsletter</h3>
+                        <p class="text-white/80 text-sm mb-4">Subscribe for travel tips and exclusive offers.</p>
+                        <form class="space-y-3">
+                            <input type="email" placeholder="Your email" class="w-full px-4 py-3 rounded-xl text-gray-800 text-sm focus:outline-none">
+                            <button type="submit" class="w-full btn-primary text-white py-3 rounded-xl font-semibold text-sm">Subscribe</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Posts -->
+    <section class="py-20 section-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-primary mb-4">Related <span class="gradient-accent">Articles</span></h2>
+                <div class="divider-accent mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <article class="bg-white rounded-2xl overflow-hidden card-hover shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=400&h=250&fit=crop" alt="Related" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-accent text-xs font-bold">Guide</span>
+                        <h3 class="font-bold text-lg text-primary mt-2 mb-3 hover:text-accent transition">Annapurna Circuit Trek Guide</h3>
+                        <a href="#" class="text-accent text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-2xl overflow-hidden card-hover shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=250&fit=crop" alt="Related" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-accent text-xs font-bold">Tips</span>
+                        <h3 class="font-bold text-lg text-primary mt-2 mb-3 hover:text-accent transition">High Altitude Sickness Prevention</h3>
+                        <a href="#" class="text-accent text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-2xl overflow-hidden card-hover shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=250&fit=crop" alt="Related" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-accent text-xs font-bold">Packing</span>
+                        <h3 class="font-bold text-lg text-primary mt-2 mb-3 hover:text-accent transition">Best Trekking Gear for 2024</h3>
+                        <a href="#" class="text-accent text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center"><i class="fas fa-mountain text-white text-lg"></i></div>
+                        <span class="text-xl font-serif font-bold">Riwash<span class="text-accent">Travel</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">Your trusted partner for unforgettable Himalayan adventures.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="tours.html" class="hover:text-white transition">Tours</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Destinations</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Nepal</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tibet</a></li>
+                        <li><a href="#" class="hover:text-white transition">Bhutan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent mt-1"></i><span>Kathmandu, Nepal</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone-alt text-accent"></i><span>+977 1 2345678</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <p class="text-gray-400 text-sm text-center">&copy; 2024 RiwashTravel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+        const toursMegaBtn = document.getElementById('tours-mega-btn');
+        const toursMegaDropdown = document.getElementById('tours-mega-dropdown');
+        const toursChevron = document.getElementById('tours-chevron');
+        toursMegaBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toursMegaDropdown.classList.toggle('active');
+            toursChevron.classList.toggle('rotate-180');
+        });
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('tours-mega-menu').contains(e.target)) {
+                toursMegaDropdown.classList.remove('active');
+                toursChevron.classList.remove('rotate-180');
+            }
+        });
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 50);
+        });
+    </script>
+
+</body>
+</html>

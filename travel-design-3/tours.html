@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal Couple Tour Packages - RiwashTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0EA5E9',
+                        secondary: '#0F172A',
+                        accent: '#F59E0B',
+                        coral: '#F97316',
+                        ocean: '#0369A1',
+                        dark: '#020617',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(2,6,23,0.7) 0%, rgba(15,23,42,0.5) 50%, rgba(14,165,233,0.3) 100%);
+        }
+        .card-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0EA5E9 0%, #F59E0B 50%, #F97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #0EA5E9 0%, #0369A1 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.5);
+        }
+        .btn-accent {
+            background: linear-gradient(135deg, #F59E0B 0%, #F97316 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.5);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+        .image-zoom {
+            overflow: hidden;
+        }
+        .image-zoom img {
+            transition: transform 0.7s ease;
+        }
+        .image-zoom:hover img {
+            transform: scale(1.1);
+        }
+        .section-gradient {
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        .faq-active {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+            border-color: #0EA5E9;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 antialiased">
+
+    <!-- Header -->
+    <header class="nav-blur shadow-lg sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center group cursor-pointer">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-lg opacity-50 group-hover:opacity-80 transition-opacity"></div>
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=50&h=50&fit=crop" alt="RiwashTravel" class="relative h-12 w-12 object-contain rounded-xl shadow-lg">
+                    </div>
+                    <span class="ml-3 text-xl font-bold text-secondary tracking-wide">RIWASH<span class="gradient-text">TRAVEL</span></span>
+                </a>
+                <nav class="hidden md:flex space-x-1">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Home</a>
+                    <a href="#" class="text-primary font-medium px-4 py-2 rounded-lg bg-primary/5">Tours</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Treks</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Company</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition px-4 py-2 rounded-lg hover:bg-slate-50">Blog</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+1234567890" class="hidden md:flex items-center text-primary font-medium text-sm bg-primary/10 px-4 py-2 rounded-full hover:bg-primary/20 transition">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        +977 9801000000
+                    </a>
+                    <button class="md:hidden text-gray-600 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-slate-100 transition">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[450px] md:h-[550px] overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1920&h=800&fit=crop" alt="Couple hiking in Nepal" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-accent/20 rounded-full blur-3xl"></div>
+        
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4 max-w-3xl">
+                <span class="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4 border border-white/30">
+                    <i class="fas fa-heart text-accent mr-2"></i>Romantic Getaways
+                </span>
+                <h1 class="text-5xl md:text-6xl font-serif font-bold mb-4 drop-shadow-2xl">
+                    Nepal <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-coral">Couple</span> Tours
+                </h1>
+                <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+                    Unforgettable romantic experiences in the heart of the Himalayas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center text-sm">
+                <a href="index.html" class="text-slate-500 hover:text-primary transition flex items-center">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <i class="fas fa-chevron-right mx-3 text-xs text-slate-300"></i>
+                <span class="text-primary font-medium">Nepal Couple Tours</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <section class="py-16 bg-white relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-heart mr-2"></i>Romance & Adventure
+                </span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary mb-4">
+                    Perfect for <span class="gradient-text">Couples</span>
+                </h2>
+            </div>
+            <div class="prose prose-slate mx-auto text-slate-600 leading-relaxed">
+                <p class="mb-6">
+                    Coupled images of destinations that offer romantic views, activities and stay surrounded by breathtaking scenery, cultural experiences, and adventure sports. That's exactly what you will find in Nepal.
+                </p>
+                <p class="mb-6">
+                    Nepal has everything for couples with romantic experience seekers, honeymooners, comfort, and adventure enjoyers, cultural and spiritual travelers. We have carefully designed our tours to balance the adventure with relaxation. So whether you are a thrill-seeking couple or a duo seeking relaxation, we have you covered with Nepal's most visited sights.
+                </p>
+                <p class="mb-8">
+                    Our packages offer first-class hotels and inns, romantic candlelight dinners, boat tours with live cultural models to couples who enjoy romance in their views. From Pokhara's tranquil lakeside to Kathmandu's hustle and bustle, romantic sunset views, and adventure experiences.
+                </p>
+            </div>
+            <div class="text-center">
+                <a href="#packages" class="btn-accent text-white px-8 py-3 rounded-full font-semibold inline-flex items-center hover:shadow-lg transition">
+                    <i class="fas fa-suitcase-rolling mr-2"></i>View Packages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Packages Section -->
+    <section id="packages" class="py-20 section-gradient relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-14">
+                <span class="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-star mr-2"></i>Handpicked
+                </span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-secondary mb-4">
+                    Nepal Couple <span class="gradient-text">Tour Packages</span>
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Curated romantic experiences designed to create unforgettable memories
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="group bg-white rounded-2xl overflow-hidden hover-lift card-glass border border-slate-100">
+                    <div class="relative h-56 image-zoom">
+                        <img src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=400&h=300&fit=crop" alt="Nepal Luxury Tour" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center">
+                            <i class="fas fa-gem mr-1"></i>Luxury
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-secondary mb-2 group-hover:text-primary transition">Nepal Luxury Tour Package For Couple</h3>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-medium text-slate-500"><i class="fas fa-map-marker-alt mr-1 text-primary"></i>Kathmandu, Pokhara</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                            This Luxury Nepal Tour has been uniquely designed for couples seeking an ideal mix of cultural experiences and romantic stays. Visit the UNESCO World Heritage sites of Kathmandu Valley and enjoy scenic mountain views from luxury resorts.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">$2,299</span>
+                                <span class="text-slate-400 text-sm">/couple</span>
+                            </div>
+                            <div class="flex items-center text-slate-500 text-sm mr-4">
+                                <i class="far fa-clock mr-1 text-primary"></i>
+                                <span>7 Days</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 btn-gradient text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition">
+                            <i class="fas fa-paper-plane mr-2"></i>Enquire Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="group bg-white rounded-2xl overflow-hidden hover-lift card-glass border border-slate-100">
+                    <div class="relative h-56 image-zoom">
+                        <img src="https://images.unsplash.com/photo-1594902644869-934ae09c5998?w=400&h=300&fit=crop" alt="Nepal Honeymoon Tour" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 bg-rose-500 text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center">
+                            <i class="fas fa-heart mr-1"></i>Honeymoon
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-secondary mb-2 group-hover:text-primary transition">Nepal Honeymoon Tour</h3>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-medium text-slate-500"><i class="fas fa-map-marker-alt mr-1 text-primary"></i>Kathmandu, Pokhara, Nagarkot</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                            Nepal honeymoon tour is an ideal way for newlyweds who have cultural immersion, a romantic dinner in the evening, and walks while enjoying the spectacular mountain views. Explore the rich heritage and create unforgettable memories.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">$1,550</span>
+                                <span class="text-slate-400 text-sm">/couple</span>
+                            </div>
+                            <div class="flex items-center text-slate-500 text-sm mr-4">
+                                <i class="far fa-clock mr-1 text-primary"></i>
+                                <span>6 Days</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 btn-gradient text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition">
+                            <i class="fas fa-paper-plane mr-2"></i>Enquire Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="group bg-white rounded-2xl overflow-hidden hover-lift card-glass border border-slate-100">
+                    <div class="relative h-56 image-zoom">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Nepal Tour Package" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center">
+                            <i class="fas fa-check-circle mr-1"></i>Popular
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-secondary mb-2 group-hover:text-primary transition">Nepal Tour Package For Couple</h3>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-medium text-slate-500"><i class="fas fa-map-marker-alt mr-1 text-primary"></i>Kathmandu, Pokhara</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                            This 6-day Nepal Tour Package for Couples offers a perfect blend of cultural heritage, natural beauty, and adventure. Visit ancient temples, enjoy boat rides on Phewa Lake, and watch sunrise over the Himalayas with your loved one.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">$1,200</span>
+                                <span class="text-slate-400 text-sm">/couple</span>
+                            </div>
+                            <div class="flex items-center text-slate-500 text-sm mr-4">
+                                <i class="far fa-clock mr-1 text-primary"></i>
+                                <span>6 Days</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 btn-gradient text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition">
+                            <i class="fas fa-paper-plane mr-2"></i>Enquire Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Package Card Below -->
+            <div class="mt-8 max-w-md mx-auto md:mx-0">
+                <div class="group bg-white rounded-2xl overflow-hidden hover-lift card-glass border border-slate-100">
+                    <div class="relative h-56 image-zoom">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop" alt="Nepal 7 Days Tour" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center">
+                            <i class="fas fa-tag mr-1"></i>Best Value
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-secondary mb-2 group-hover:text-primary transition">Nepal 7 Days Tour Package</h3>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-medium text-slate-500"><i class="fas fa-map-marker-alt mr-1 text-primary"></i>Kathmandu, Pokhara, Nagarkot</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                            Experience the best of Nepal with our 7-day tour package that covers Kathmandu, Pokhara, and Nagarkot. Enjoy cultural tours, mountain views, and romantic evenings at premium accommodations.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-2xl font-bold text-primary">$1,350</span>
+                                <span class="text-slate-400 text-sm">/couple</span>
+                            </div>
+                            <div class="flex items-center text-slate-500 text-sm mr-4">
+                                <i class="far fa-clock mr-1 text-primary"></i>
+                                <span>7 Days</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 btn-gradient text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition">
+                            <i class="fas fa-paper-plane mr-2"></i>Enquire Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-sky-50 to-transparent"></div>
+        <div class="absolute -bottom-32 -left-32 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Left Side -->
+                <div class="lg:col-span-1">
+                    <span class="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                        <i class="fas fa-question-circle mr-2"></i>FAQ
+                    </span>
+                    <h2 class="text-4xl font-serif font-bold text-secondary mb-4">Frequently Asked Questions</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">Get all your doubts cleared before you book Nepal tour for couples and give wings to your romantic dreams!</p>
+                    <a href="#" class="btn-gradient text-white px-8 py-3 rounded-full font-semibold inline-flex items-center hover:shadow-lg transition">
+                        <i class="fas fa-list-ul mr-2"></i>See All FAQs
+                    </a>
+                </div>
+
+                <!-- Right Side - Accordion -->
+                <div class="lg:col-span-2 space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
+                        <button class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition" onclick="toggleFaq(this)">
+                            <span class="font-medium text-secondary flex items-center">
+                                <span class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-gift text-primary text-sm"></i>
+                                </span>
+                                Can we get customised packages for anniversaries or proposals?
+                            </span>
+                            <i class="fas fa-chevron-down text-primary transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="hidden px-5 pb-5 text-slate-600 text-sm leading-relaxed pl-16">
+                            Absolutely! We specialize in creating custom packages for special occasions. Whether it's a surprise proposal at sunrise over the Himalayas or a romantic anniversary dinner, we can arrange everything to make your moment memorable. Contact our team to discuss your specific requirements.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
+                        <button class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition" onclick="toggleFaq(this)">
+                            <span class="font-medium text-secondary flex items-center">
+                                <span class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-hotel text-accent text-sm"></i>
+                                </span>
+                                Are unmarried couples allowed to stay together in hotels in Nepal?
+                            </span>
+                            <i class="fas fa-chevron-down text-primary transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="hidden px-5 pb-5 text-slate-600 text-sm leading-relaxed pl-16">
+                            Yes, unmarried couples can stay together in most hotels in Nepal, especially in tourist areas like Kathmandu and Pokhara. We partner with couple-friendly hotels that welcome all guests without any discrimination. Our team ensures your stay is comfortable and hassle-free.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
+                        <button class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition" onclick="toggleFaq(this)">
+                            <span class="font-medium text-secondary flex items-center">
+                                <span class="w-8 h-8 bg-coral/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-sliders-h text-coral text-sm"></i>
+                                </span>
+                                Can we modify itinerary or upgrade hotels for our romantic trip?
+                            </span>
+                            <i class="fas fa-chevron-down text-primary transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="hidden px-5 pb-5 text-slate-600 text-sm leading-relaxed pl-16">
+                            Of course! All our packages are fully customizable. You can modify the itinerary, upgrade to luxury hotels, add special romantic dinners, spa sessions, or any other experiences you'd like. Just let us know your preferences and we'll tailor the perfect package for you.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
+                        <button class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition" onclick="toggleFaq(this)">
+                            <span class="font-medium text-secondary flex items-center">
+                                <span class="w-8 h-8 bg-emerald-500/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-hiking text-emerald-500 text-sm"></i>
+                                </span>
+                                Is it possible to include a short trek or hike in our romantic Nepal trip?
+                            </span>
+                            <i class="fas fa-chevron-down text-primary transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="hidden px-5 pb-5 text-slate-600 text-sm leading-relaxed pl-16">
+                            Definitely! Nepal offers many easy to moderate treks perfect for couples. Popular options include the Ghorepani Poon Hill trek (3-4 days), Nagarkot hiking, or short treks around Pokhara. These offer stunning mountain views and intimate moments in nature.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="border border-slate-200 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
+                        <button class="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50 transition" onclick="toggleFaq(this)">
+                            <span class="font-medium text-secondary flex items-center">
+                                <span class="w-8 h-8 bg-purple-500/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-users text-purple-500 text-sm"></i>
+                                </span>
+                                Can we travel as part of a group or do we still get couple time?
+                            </span>
+                            <i class="fas fa-chevron-down text-primary transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="hidden px-5 pb-5 text-slate-600 text-sm leading-relaxed pl-16">
+                            Yes, you can join our small group tours and still enjoy couple time. Our tours balance group activities with free time for couples. Alternatively, you can opt for a private tour exclusively for just the two of you for maximum privacy and romance.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-16 bg-gradient-to-br from-secondary via-ocean to-secondary relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <p class="text-center text-white/60 text-sm mb-8 uppercase tracking-widest">Our Trusted Partners</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 items-center">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center h-16 border border-white/10 hover:bg-white/20 transition cursor-pointer">
+                    <span class="text-accent font-bold text-sm">KEEP NEPAL<br/>FIT</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center h-16 border border-white/10 hover:bg-white/20 transition cursor-pointer">
+                    <span class="text-emerald-400 font-bold text-sm">HIMAVAT<br/>FOUNDATION</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center h-16 border border-white/10 hover:bg-white/20 transition cursor-pointer">
+                    <span class="text-primary font-bold text-sm">RIWASH<br/>TRAVEL</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center h-16 border border-white/10 hover:bg-white/20 transition cursor-pointer">
+                    <span class="text-coral font-bold text-sm">Paragliding<br/>Nepal</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 flex items-center justify-center h-16 border border-white/10 hover:bg-white/20 transition cursor-pointer">
+                    <span class="text-accent font-bold text-sm">HIGH<br/>HUT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0F172A] text-white pt-20 pb-8 relative overflow-hidden">
+        <!-- Wave decoration -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+            </svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-xl blur-md opacity-50"></div>
+                            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=50&h=50&fit=crop" alt="Logo" class="relative h-12 w-12 object-contain rounded-xl shadow-lg">
+                        </div>
+                        <span class="ml-3 text-xl font-bold tracking-wide">RIWASH<span class="text-primary">TRAVEL</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Your trusted partner for unforgettable Himalayan adventures. Explore Tibet, Nepal, Bhutan & India with our expert guidance.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-primary hover:scale-110 transition-all"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-accent hover:scale-110 transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-coral hover:scale-110 transition-all"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Trip Resources -->
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Trip Resources</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Travel Insurance</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Best Time To Visit Nepal</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Trekking Permit Fee</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>How To Book</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-primary"></i>Travel Tips</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Destinations</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Tour Packages</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Partner With Us</a></li>
+                        <li><a href="#" class="hover:text-white transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2 text-accent"></i>Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold text-sm mb-5 text-white uppercase tracking-wider">Contact Us</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li class="flex items-start">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-accent text-xs"></i>
+                            </div>
+                            <span>Thamel, Kathmandu, Nepal<br>Near Garden of Dreams</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-phone-alt text-accent text-xs"></i>
+                            </div>
+                            <span>+977 1 2345678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-envelope text-coral text-xs"></i>
+                            </div>
+                            <span>info@riwashtravel.com</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <p class="text-sm text-slate-400 mb-3 font-medium">Subscribe to Newsletter</p>
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="flex-1 bg-white/10 border border-white/10 rounded-l-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary transition">
+                            <button class="bg-gradient-to-r from-primary to-ocean px-5 py-2.5 rounded-r-xl hover:shadow-lg hover:shadow-primary/30 transition-all"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-slate-500 text-sm">
+                        <p>&copy; 2024 RiwashTravel. All rights reserved.</p>
+                    </div>
+                    <div class="flex items-center gap-6 text-sm text-slate-500">
+                        <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition">Terms of Service</a>
+                        <a href="#" class="hover:text-white transition">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+
+</body>
+</html>

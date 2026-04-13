@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Riwash Travel & Trek Nepal</title>
+    <meta name="description" content="Learn about Riwash Travel - your trusted Nepal trekking company with 15+ years of experience in Himalayan adventures.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Modern About Page Styles */
+        .about-hero {
+            min-height: 65vh;
+            background: linear-gradient(135deg, rgba(26,46,38,0.9) 0%, rgba(46,78,66,0.92) 100%), 
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, white, transparent);
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(140,184,48,0.2);
+            border: 1px solid rgba(140,184,48,0.5);
+            color: #8CB830;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .story-section {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+        
+        .section-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #8CB830;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .story-content h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        .story-content p {
+            font-size: 16px;
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .story-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f3f4f6;
+        }
+        
+        .story-stat h4 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #8CB830;
+            margin-bottom: 5px;
+        }
+        
+        .story-stat p {
+            font-size: 14px;
+            color: #9ca3af;
+            margin: 0;
+        }
+        
+        .story-images {
+            position: relative;
+        }
+        
+        .story-img-main {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+        
+        .story-img-main img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .story-img-main:hover img {
+            transform: scale(1.05);
+        }
+        
+        .story-img-small {
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 280px;
+            height: 220px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 6px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+        
+        .story-img-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .experience-badge {
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            background: linear-gradient(135deg, #8CB830, #6a9a20);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(140,184,48,0.4);
+        }
+        
+        .experience-badge .years {
+            font-size: 42px;
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+        
+        .experience-badge .text {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .values-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f8fafc 0%, white 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 16px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 24px;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #f3f4f6;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+            border-color: #8CB830;
+        }
+        
+        .value-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #8CB830, #6a9a20);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 36px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(140,184,48,0.3);
+        }
+        
+        .value-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 12px;
+        }
+        
+        .value-card p {
+            font-size: 15px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        .team-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #f3f4f6;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+        }
+        
+        .team-img {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        
+        .team-card:hover .team-img img {
+            transform: scale(1.1);
+        }
+        
+        .team-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .team-card:hover .team-img::after {
+            opacity: 1;
+        }
+        
+        .team-info {
+            padding: 28px;
+            text-align: center;
+        }
+        
+        .team-info h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 6px;
+        }
+        
+        .team-role {
+            color: #8CB830;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        
+        .team-bio {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background: #f3f4f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .team-social a:hover {
+            background: linear-gradient(135deg, #8CB830, #6a9a20);
+            color: white;
+            transform: translateY(-3px);
+        }
+        .stats-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a3d2e 0%, #2d4a3e 50%, #1a3d2e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></svg>');
+            background-size: 60px 60px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-item {
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        
+        .stat-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .stat-icon-large {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #8CB830, #6a9a20);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: white;
+        }
+        
+        .stat-item h3 {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-item p {
+            color: rgba(255,255,255,0.7);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .certifications {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .cert-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .cert-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 12px;
+        }
+        
+        .cert-header p {
+            font-size: 18px;
+            color: #6b7280;
+        }
+        
+        .cert-logos {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .cert-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 30px 40px;
+            background: #f8fafc;
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+        
+        .cert-item:hover {
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .cert-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #8CB830, #6a9a20);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+        }
+        
+        .cert-item span {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a3d2e 0%, #2d4a3e 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: radial-gradient(circle, rgba(140,184,48,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 20px;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #8CB830, #6a9a20);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(140,184,48,0.4);
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(140,184,48,0.5);
+        }
+        
+        @media (max-width: 1200px) {
+            .hero-title { font-size: 48px; }
+            .story-grid { gap: 60px; }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-title { font-size: 40px; }
+            .story-grid { grid-template-columns: 1fr; gap: 40px; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .story-img-small {
+                position: static;
+                width: 100%;
+                margin-top: 20px;
+                right: 0;
+            }
+            .experience-badge {
+                left: 20px;
+                top: 20px;
+            }
+            .section-header h2 { font-size: 36px; }
+            .cta-content h2 { font-size: 36px; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 32px; }
+            .hero-subtitle { font-size: 16px; }
+            .story-content h2 { font-size: 32px; }
+            .story-stats { flex-direction: column; gap: 20px; }
+            .stats-grid { gap: 20px; }
+            .stat-item h3 { font-size: 36px; }
+        }
+        
+        @media (max-width: 576px) {
+            .values-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .section-header h2 { font-size: 28px; }
+            .cert-logos { gap: 20px; }
+            .cta-content h2 { font-size: 28px; }
+            .cta-content p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-container">
+            <div id="header-logo">
+                <div class="logo-icon"><i class="fas fa-mountain"></i></div>
+                <div class="logo-text"><h1>RIWASH</h1><p>Travel & Trek</p></div>
+            </div>
+            <nav id="main-nav">
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item"><a href="destinations.html" class="nav-link">Destinations</a></div>
+                <div class="nav-item"><a href="packages.html" class="nav-link">Packages</a></div>
+                <div class="nav-item dropdown-single"><a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a></div>
+                <div class="nav-item"><a href="about.html" class="nav-link active">About</a></div>
+                <div class="nav-item"><a href="blog.html" class="nav-link">Blog</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+            </nav>
+            <div id="header-actions">
+                <div class="header-contact hidden lg:block"><span>Call Us Now</span><strong>+977 1 4XXXXXX</strong></div>
+                <a href="#" class="btn-secondary">Book Now</a>
+                <button id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="about-hero">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl">
+                <span class="hero-badge"><i class="fas fa-award mr-2"></i>Nepal's Trusted Trekking Partner</span>
+                <h1 class="hero-title">About Riwash Travel</h1>
+                <p class="hero-subtitle">
+                    Your trusted partner for authentic Himalayan adventures since 2009. 
+                    We create unforgettable trekking experiences with expert local guides, 
+                    sustainable practices, and a deep passion for the mountains.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story-section">
+        <div class="max-w-1200 mx-auto px-4">
+            <div class="story-grid">
+                <div class="story-content">
+                    <span class="section-label">Our Story</span>
+                    <h2>Passionate About the Himalayas Since 2009</h2>
+                    <p>
+                        Founded by a group of experienced local guides, Riwash Travel began with a simple mission: 
+                        to share the magic of the Himalayas with travelers from around the world while supporting the 
+                        local communities we call home. We believe in responsible tourism that benefits both visitors and locals.
+                    </p>
+                    <p>
+                        What started as a small team of passionate trekkers has grown into one of Nepal's most trusted 
+                        trekking companies. Over the past 15 years, we've guided thousands of adventurers to Everest Base Camp, 
+                        through the Annapurna Circuit, and to countless other breathtaking destinations across Nepal.
+                    </p>
+                    <p>
+                        Our name "Riwash" comes from the local dialect meaning "path to the mountains" - and that's exactly 
+                        what we provide: a well-prepared, safe, and memorable path to the world's greatest mountain experiences.
+                    </p>
+                    <div class="story-stats">
+                        <div class="story-stat">
+                            <h4>15+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="story-stat">
+                            <h4>15K+</h4>
+                            <p>Happy Trekkers</p>
+                        </div>
+                        <div class="story-stat">
+                            <h4>50+</h4>
+                            <p>Trekking Routes</p>
+                        </div>
+                        <div class="story-stat">
+                            <h4>4.9</h4>
+                            <p>Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-images">
+                    <div class="experience-badge">
+                        <span class="years">15+</span>
+                        <span class="text">Years of Excellence</span>
+                    </div>
+                    <div class="story-img-main">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Himalayan Mountains">
+                    </div>
+                    <div class="story-img-small">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400" alt="Trekking Team">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="max-w-1200 mx-auto px-4">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon-large"><i class="fas fa-calendar-check"></i></div>
+                    <h3>15+</h3>
+                    <p>Years of Excellence</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-large"><i class="fas fa-users"></i></div>
+                    <h3>15K+</h3>
+                    <p>Happy Trekkers</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-large"><i class="fas fa-route"></i></div>
+                    <h3>50+</h3>
+                    <p>Trekking Routes</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon-large"><i class="fas fa-star"></i></div>
+                    <h3>4.9</h3>
+                    <p>Average Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="values-section">
+        <div class="max-w-1200 mx-auto px-4">
+            <div class="section-header">
+                <span class="section-label">Why Choose Us</span>
+                <h2>Our Core Values</h2>
+                <p>These principles guide everything we do, from planning your trek to ensuring your safety and satisfaction throughout the journey.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Safety First</h3>
+                    <p>Your safety is our top priority with experienced guides, proper equipment, and comprehensive insurance coverage</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Sustainable Travel</h3>
+                    <p>Eco-friendly practices that protect the Himalayas for future generations and minimize our environmental footprint</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Local Communities</h3>
+                    <p>Supporting local economies, preserving cultural heritage, and ensuring fair wages for our mountain communities</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Excellence</h3>
+                    <p>Unwavering commitment to quality service, attention to detail, and creating truly unforgettable experiences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="team-section">
+        <div class="max-w-1200 mx-auto px-4">
+            <div class="section-header">
+                <span class="section-label">Meet The Experts</span>
+                <h2>Our Mountain Guides</h2>
+                <p>Our team of certified, experienced local guides who know every trail and share deep passion for the Himalayas.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h4>Rajesh Gurung</h4>
+                        <p class="team-role">Lead Guide & Founder</p>
+                        <p class="team-bio">20+ years of trekking experience. Everest summiteer and expert in high-altitude mountaineering.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h4>Prakash Sherpa</h4>
+                        <p class="team-role">Mountain Expert</p>
+                        <p class="team-bio">IFMGA certified mountain guide with expertise in technical climbs and rescue operations.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h4>Suman Rai</h4>
+                        <p class="team-role">Operations Manager</p>
+                        <p class="team-bio">Ensures seamless logistics and customer satisfaction. Former Nepal Tourism Board officer.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h4>Nima Dorji</h4>
+                        <p class="team-role">Senior Guide</p>
+                        <p class="team-bio">Specialist in cultural treks with deep knowledge of Tibetan Buddhist traditions.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="certifications">
+        <div class="max-w-1200 mx-auto px-4">
+            <div class="cert-header">
+                <h2>Trusted & Certified</h2>
+                <p>We are recognized by leading tourism and mountaineering organizations worldwide.</p>
+            </div>
+            <div class="cert-logos">
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <span>NMA Certified</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <span>TAAN Member</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                    <span>ISO 9001:2015</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-leaf"></i></div>
+                    <span>Leave No Trace</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><i class="fas fa-handshake"></i></div>
+                    <span>NTB Registered</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-section" style="background: #1a2e26;">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <div class="logo-icon" style="width: 45px; height: 45px;"><i class="fas fa-mountain" style="font-size: 20px;"></i></div>
+                        <div class="logo-text"><h3 style="font-size: 22px; color: white;">RIWASH</h3><p style="font-size: 12px; color: #8CB830;">Travel & Trek</p></div>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7);">Your trusted partner for unforgettable Himalayan adventures since 2009.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 style="color: white; font-size: 16px; font-weight: 600; margin-bottom: 20px;">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="index.html" style="color: rgba(255,255,255,0.7);">Home</a></li>
+                        <li style="margin-bottom: 10px;"><a href="destinations.html" style="color: rgba(255,255,255,0.7);">Destinations</a></li>
+                        <li style="margin-bottom: 10px;"><a href="packages.html" style="color: rgba(255,255,255,0.7);">Packages</a></li>
+                        <li style="margin-bottom: 10px;"><a href="blog.html" style="color: rgba(255,255,255,0.7);">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 style="color: white; font-size: 16px; font-weight: 600; margin-bottom: 20px;">Support</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="about.html" style="color: rgba(255,255,255,0.7);">About Us</a></li>
+                        <li style="margin-bottom: 10px;"><a href="contact.html" style="color: rgba(255,255,255,0.7);">Contact</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.7);">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; font-size: 16px; font-weight: 600; margin-bottom: 20px;">Contact</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 10px;"><i class="fas fa-map-marker-alt mr-2"></i> Thamel, Kathmandu</p>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 10px;"><i class="fas fa-phone mr-2"></i> +977 1 4XXXXXX</p>
+                    <p style="color: rgba(255,255,255,0.7);"><i class="fas fa-envelope mr-2"></i> info@riwashtravel.com</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 40px; text-align: center; color: rgba(255,255,255,0.5);">
+                <p>&copy; 2024 Riwash Travel & Trek. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>

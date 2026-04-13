@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everest Base Camp Trek - 14 Days | RiwashTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A5F',
+                        accent: '#C75B39',
+                        sand: '#F5F1EB',
+                        warm: '#FEFCFA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(30,58,95,0.4) 0%, rgba(30,58,95,0.7) 100%);
+        }
+        .btn-primary {
+            background: #C75B39;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #A9482D;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(199,91,57,0.4);
+        }
+        .btn-outline {
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: #1E3A5F;
+        }
+        .section-sand {
+            background: #F5F1EB;
+        }
+        .section-warm {
+            background: #FEFCFA;
+        }
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #C75B39 0%, #E07A53 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-scrolled {
+            background: rgba(255,255,255,0.98);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .divider-accent {
+            width: 60px;
+            height: 3px;
+            background: #C75B39;
+        }
+        .tab-btn.active {
+            background: #C75B39;
+            color: white;
+        }
+        .mega-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .mega-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease;
+        }
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .itinerary-line {
+            position: absolute;
+            left: 24px;
+            top: 50px;
+            bottom: 0;
+            width: 2px;
+            background: #E5E7EB;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 16px;
+            width: 18px;
+            height: 18px;
+            background: #C75B39;
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px #C75B39;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-warm">
+
+    <!-- Header -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-18 py-4">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center"><i class="fas fa-mountain text-white text-lg"></i></div>
+                    <span class="text-xl font-serif font-bold text-primary">Riwash<span class="text-accent">Travel</span></span>
+                </a>
+                <nav class="hidden lg:flex items-center gap-6">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition text-sm">Home</a>
+                    <div class="relative" id="tours-mega-menu">
+                        <button class="flex items-center gap-1 text-primary font-medium text-sm py-2" id="tours-mega-btn">
+                            Tours <i class="fas fa-chevron-down text-xs transition-transform" id="tours-chevron"></i>
+                        </button>
+                        <div class="mega-menu absolute left-0 top-full w-[700px] bg-white shadow-2xl rounded-xl mt-2 z-50" id="tours-mega-dropdown">
+                            <div class="p-6">
+                                <div class="grid grid-cols-3 gap-6">
+                                    <div>
+                                        <h4 class="font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-mountain text-accent"></i>Trekking</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Everest Base Camp</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Annapurna Circuit</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Langtang Valley</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-om text-accent"></i>Cultural</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Kailash Mansarovar</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Tibet Overland</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Bhutan Cultural</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-hiking text-accent"></i>Adventure</h4>
+                                        <ul class="space-y-2 text-sm">
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Peak Climbing</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Jungle Safari</a></li>
+                                            <li><a href="#" class="text-gray-600 hover:text-accent transition">Rafting</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative dropdown">
+                        <a href="index.html#destinations" class="flex items-center gap-1 text-gray-600 hover:text-primary transition text-sm py-2">Destinations <i class="fas fa-chevron-down text-xs"></i></a>
+                        <div class="dropdown-menu absolute left-0 top-full w-48 bg-white shadow-xl rounded-lg mt-2 py-2 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary"><i class="fas fa-map-marker-alt mr-2 text-accent"></i>Nepal</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary"><i class="fas fa-map-marker-alt mr-2 text-accent"></i>Tibet</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary"><i class="fas fa-map-marker-alt mr-2 text-accent"></i>Bhutan</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary transition text-sm">Blog</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-primary transition text-sm">Gallery</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition text-sm">Contact</a>
+                </nav>
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+9771234567" class="text-primary font-medium text-sm flex items-center gap-2"><i class="fas fa-phone text-accent"></i>+977 123 4567</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-primary p-2"><i class="fas fa-bars text-xl"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
+            <nav class="flex flex-col py-4 px-4 gap-2">
+                <a href="index.html" class="text-gray-600 hover:text-primary py-2">Home</a>
+                <a href="tours.html" class="text-primary font-medium py-2">Tours</a>
+                <a href="blog.html" class="text-gray-600 hover:text-primary py-2">Blog</a>
+                <a href="gallery.html" class="text-gray-600 hover:text-primary py-2">Gallery</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary py-2">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop" alt="EBC" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto pt-20">
+            <div class="flex items-center justify-center gap-4 mb-6">
+                <span class="px-3 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full"><i class="fas fa-mountain mr-1"></i>Trekking</span>
+                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full"><i class="fas fa-map-marker-alt mr-1"></i>Nepal</span>
+                <span class="px-3 py-1 bg-accent text-white text-xs font-bold rounded-full"><i class="fas fa-star mr-1"></i>Popular</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4">Everest Base Camp Trek</h1>
+            <p class="text-xl md:text-2xl text-white/90 mb-8">14 Days • 5,364m • Challenging</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#booking" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center">
+                    <i class="fas fa-calendar-check mr-2"></i>Book Now
+                </a>
+                <button onclick="document.getElementById('video-modal').classList.remove('hidden')" class="btn-outline text-white px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center">
+                    <i class="fas fa-play-circle mr-2"></i>Watch Video
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Bar -->
+    <section class="bg-white shadow-lg relative z-20 -mt-8 mx-4 md:mx-8 lg:mx-16 rounded-2xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-6">
+            <div class="text-center">
+                <i class="far fa-clock text-accent text-2xl mb-2"></i>
+                <p class="text-sm text-gray-500">Duration</p>
+                <p class="font-bold text-primary">14 Days</p>
+            </div>
+            <div class="text-center border-l border-gray-100">
+                <i class="fas fa-mountain text-accent text-2xl mb-2"></i>
+                <p class="text-sm text-gray-500">Max Altitude</p>
+                <p class="font-bold text-primary">5,364m</p>
+            </div>
+            <div class="text-center border-l border-gray-100">
+                <i class="fas fa-walking text-accent text-2xl mb-2"></i>
+                <p class="text-sm text-gray-500">Difficulty</p>
+                <p class="font-bold text-primary">Challenging</p>
+            </div>
+            <div class="text-center border-l border-gray-100">
+                <i class="fas fa-users text-accent text-2xl mb-2"></i>
+                <p class="text-sm text-gray-500">Group Size</p>
+                <p class="font-bold text-primary">2-12 People</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 section-warm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Left Content -->
+                <div class="lg:col-span-2">
+                    <!-- Tabs -->
+                    <div class="flex flex-wrap gap-2 mb-8 border-b border-gray-200 pb-4">
+                        <button class="tab-btn active px-5 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 transition" data-tab="overview">Overview</button>
+                        <button class="tab-btn px-5 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition" data-tab="itinerary">Itinerary</button>
+                        <button class="tab-btn px-5 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition" data-tab="inclusions">Inclusions</button>
+                        <button class="tab-btn px-5 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition" data-tab="gallery">Gallery</button>
+                    </div>
+
+                    <!-- Overview Tab -->
+                    <div id="overview" class="tab-content bg-white rounded-2xl shadow-lg p-8">
+                        <h2 class="text-3xl font-serif font-bold text-primary mb-6">Tour Overview</h2>
+                        <div class="divider-accent mb-8"></div>
+                        <p class="text-gray-600 leading-relaxed mb-6">The Everest Base Camp trek is the ultimate bucket-list adventure for trekkers and nature enthusiasts. This 14-day journey takes you through the heart of the Khumbu region, offering breathtaking views of the world's highest peaks, including Mount Everest (8,848m), Lhotse, Nuptse, and Ama Dablam.</p>
+                        <p class="text-gray-600 leading-relaxed mb-6">You'll walk in the footsteps of legendary mountaineers, experience authentic Sherpa culture, visit ancient monasteries, and stand at the base of the world's highest mountain. The trek combines natural beauty with cultural immersion, making it one of the most rewarding adventures on Earth.</p>
+                        
+                        <h3 class="text-xl font-bold text-primary mt-8 mb-4">Highlights</h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent"></i><span class="text-gray-600">Stand at Everest Base Camp (5,364m)</span></li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent"></i><span class="text-gray-600">Hike to Kala Patthar (5,545m) for sunrise</span></li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent"></i><span class="text-gray-600">Visit Tengboche Monastery</span></li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent"></i><span class="text-gray-600">Explore Namche Bazaar</span></li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent"></i><span class="text-gray-600">See the Khumbu Icefall</span></li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent"></i><span class="text-gray-600">Experience Sherpa hospitality</span></li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold text-primary mt-8 mb-4">What's Included</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Airport transfers in Kathmandu</span></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Round-trip flight Kathmandu-Lukla</span></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">All accommodations during trek</span></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">All meals during trek (B/L/D)</span></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Experienced English-speaking guide</span></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Porter service (1:2 ratio)</span></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Sagarmatha National Park permit</span></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">TIMS card and local permits</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Itinerary Tab -->
+                    <div id="itinerary" class="tab-content hidden bg-white rounded-2xl shadow-lg p-8">
+                        <h2 class="text-3xl font-serif font-bold text-primary mb-6">Detailed Itinerary</h2>
+                        <div class="divider-accent mb-8"></div>
+                        <div class="relative space-y-8">
+                            <div class="itinerary-line"></div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 01</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Arrival in Kathmandu (1,400m)</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Welcome to Nepal! Our representative will pick you up from the airport and transfer you to your hotel. Evening trek briefing and welcome dinner.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 02</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Fly to Lukla, Trek to Phakding (2,610m)</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Early morning scenic flight to Lukla (2,840m). Begin trekking through beautiful pine and rhododendron forests to Phakding. (3-4 hours trek)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 03</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Phakding to Namche Bazaar (3,440m)</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Cross several suspension bridges including the famous Hillary Bridge. Steep ascent to Namche, the gateway to Everest. (6-7 hours trek)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 04</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Acclimatization Day in Namche</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Hike to Everest View Hotel for stunning mountain views. Visit the Sherpa Museum and explore Namche market. Essential acclimatization.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 05</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Namche to Tengboche (3,867m)</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Trek with spectacular views of Everest, Nuptse, Lhotse, and Ama Dablam. Visit the famous Tengboche Monastery. (5-6 hours trek)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 06</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Tengboche to Dingboche (4,410m)</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Descend through rhododendron forests, cross the Imja Khola, and gradual ascent to Dingboche. (5-6 hours trek)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 07</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Acclimatization in Dingboche</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Hike to Nagarjun Hill (5,100m) for panoramic views of Makalu, Lhotse, and Island Peak. Rest and acclimatize.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 08</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Dingboche to Lobuche (4,940m)</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Gradual climb past Thukla Pass with memorials to fallen climbers. Stunning views of Pumori and Nuptse. (5-6 hours trek)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 09</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Lobuche to EBC (5,364m), Back to Gorak Shep</h3>
+                                    <p class="text-gray-600 text-sm mt-2">The big day! Trek to Everest Base Camp via the Khumbu Glacier. Celebrate your achievement! Return to Gorak Shep. (7-8 hours trek)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 10</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Kala Patthar (5,545m), Descend to Pheriche</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Early morning hike to Kala Patthar for breathtaking sunrise views of Everest. Descend to Pheriche. (7-8 hours trek)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 11</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Pheriche to Namche Bazaar</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Descend through Tengboche with easier walking. Return to the comforts of Namche. (6-7 hours trek)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 12</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Namche to Lukla</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Final trekking day. Descend to Lukla for celebration with your trekking crew. (6-7 hours trek)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 13</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Fly to Kathmandu</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Morning flight back to Kathmandu. Free day for rest, shopping, or sightseeing. Farewell dinner.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pl-16">
+                                <div class="timeline-dot top-2"></div>
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <span class="text-accent font-bold text-sm">Day 14</span>
+                                    <h3 class="font-bold text-lg text-primary mt-1">Departure</h3>
+                                    <p class="text-gray-600 text-sm mt-2">Transfer to the airport for your departure. Namaste and see you again!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inclusions Tab -->
+                    <div id="inclusions" class="tab-content hidden bg-white rounded-2xl shadow-lg p-8">
+                        <h2 class="text-3xl font-serif font-bold text-primary mb-6">What's Included</h2>
+                        <div class="divider-accent mb-8"></div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-check-circle text-accent"></i>Included</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Airport transfers in Kathmandu</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Round-trip flight Kathmandu-Lukla</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">All accommodations during trek (twin sharing)</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">All meals during trek (breakfast, lunch, dinner)</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Experienced English-speaking guide</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Porter service (1 porter per 2 trekkers, 15kg max)</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Sagarmatha National Park entry permit</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">TIMS card and local permits</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">First aid kit and pulse oximeter</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-accent mt-1"></i><span class="text-gray-600">Welcome and farewell dinner</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2"><i class="fas fa-times-circle text-red-500"></i>Not Included</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i><span class="text-gray-600">International flights to/from Nepal</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i><span class="text-gray-600">Travel insurance (mandatory)</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i><span class="text-gray-600">Nepal visa fee ($30 for 30 days)</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i><span class="text-gray-600">Personal trekking equipment</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i><span class="text-gray-600">Hot showers and battery charging during trek</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i><span class="text-gray-600">WiFi and phone calls during trek</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i><span class="text-gray-600">Alcoholic and bottled beverages</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i><span class="text-gray-600">Tips for guide and porters</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i><span class="text-gray-600">Personal expenses</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i><span class="text-gray-600">Emergency evacuation costs</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 p-6 bg-sand rounded-xl">
+                            <h3 class="text-lg font-bold text-primary mb-3 flex items-center gap-2"><i class="fas fa-info-circle text-accent"></i>Important Notes</h3>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• Single room supplement available upon request ($25/night in Kathmandu, $15/night during trek)</li>
+                                <li>• Extra porter available for $25/day (carries up to 25kg)</li>
+                                <li>• Helicopter evacuation insurance highly recommended</li>
+                                <li>• Itinerary may change due to weather conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Tab -->
+                    <div id="gallery" class="tab-content hidden bg-white rounded-2xl shadow-lg p-8">
+                        <h2 class="text-3xl font-serif font-bold text-primary mb-6">Tour Gallery</h2>
+                        <div class="divider-accent mb-8"></div>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="rounded-xl overflow-hidden cursor-pointer group">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="EBC" class="w-full h-48 object-cover transition group-hover:scale-110">
+                            </div>
+                            <div class="rounded-xl overflow-hidden cursor-pointer group">
+                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=300&fit=crop" alt="Mountains" class="w-full h-48 object-cover transition group-hover:scale-110">
+                            </div>
+                            <div class="rounded-xl overflow-hidden cursor-pointer group">
+                                <img src="https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=400&h=300&fit=crop" alt="Annapurna" class="w-full h-48 object-cover transition group-hover:scale-110">
+                            </div>
+                            <div class="rounded-xl overflow-hidden cursor-pointer group">
+                                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=300&fit=crop" alt="Nature" class="w-full h-48 object-cover transition group-hover:scale-110">
+                            </div>
+                            <div class="rounded-xl overflow-hidden cursor-pointer group">
+                                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&h=300&fit=crop" alt="Village" class="w-full h-48 object-cover transition group-hover:scale-110">
+                            </div>
+                            <div class="rounded-xl overflow-hidden cursor-pointer group">
+                                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=300&fit=crop" alt="Ladakh" class="w-full h-48 object-cover transition group-hover:scale-110">
+                            </div>
+                            <div class="rounded-xl overflow-hidden cursor-pointer group">
+                                <img src="https://images.unsplash.com/photo-1545063328-c8e3fcf02ec1?w=400&h=300&fit=crop" alt="Tibet" class="w-full h-48 object-cover transition group-hover:scale-110">
+                            </div>
+                            <div class="rounded-xl overflow-hidden cursor-pointer group">
+                                <img src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=400&h=300&fit=crop" alt="Bhutan" class="w-full h-48 object-cover transition group-hover:scale-110">
+                            </div>
+                            <div class="rounded-xl overflow-hidden cursor-pointer group">
+                                <img src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=400&h=300&fit=crop" alt="Temple" class="w-full h-48 object-cover transition group-hover:scale-110">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar - Booking -->
+                <aside class="lg:col-span-1" id="booking">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 sticky top-24">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <span class="text-gray-500 text-sm">Starting from</span>
+                                <p class="text-3xl font-bold text-accent">$1,899</p>
+                            </div>
+                            <span class="text-sm text-gray-500">per person</span>
+                        </div>
+                        
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Select Date</label>
+                                <input type="date" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Number of People</label>
+                                <select class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition">
+                                    <option>1 Person</option>
+                                    <option>2 People</option>
+                                    <option>3-5 People</option>
+                                    <option>6+ People</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                <input type="text" placeholder="Full name" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" placeholder="your@email.com" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                                <input type="tel" placeholder="+1 234 567 890" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition">
+                            </div>
+                            <button type="submit" class="w-full btn-primary text-white py-4 rounded-xl font-semibold text-lg">
+                                <i class="fas fa-calendar-check mr-2"></i>Book This Tour
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-100">
+                            <div class="flex items-center gap-3 mb-3">
+                                <i class="fas fa-shield-alt text-emerald-500"></i>
+                                <span class="text-sm text-gray-600">Free cancellation up to 30 days</span>
+                            </div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <i class="fas fa-lock text-emerald-500"></i>
+                                <span class="text-sm text-gray-600">Secure payment</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-phone text-emerald-500"></i>
+                                <span class="text-sm text-gray-600">24/7 support</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center"><i class="fas fa-mountain text-white text-lg"></i></div>
+                        <span class="text-xl font-serif font-bold">Riwash<span class="text-accent">Travel</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">Your trusted partner for unforgettable Himalayan adventures.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="tours.html" class="hover:text-white transition">Tours</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Destinations</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Nepal</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tibet</a></li>
+                        <li><a href="#" class="hover:text-white transition">Bhutan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent mt-1"></i><span>Kathmandu, Nepal</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone-alt text-accent"></i><span>+977 1 2345678</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <p class="text-gray-400 text-sm text-center">&copy; 2024 RiwashTravel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80">
+        <div class="relative w-full max-w-4xl mx-4">
+            <button onclick="document.getElementById('video-modal').classList.add('hidden')" class="absolute -top-12 right-0 text-white hover:text-accent transition">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="aspect-video bg-gray-900 rounded-xl flex items-center justify-center">
+                <p class="text-white/60">Video Player Placeholder</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+        
+        // Mega menu
+        const toursMegaBtn = document.getElementById('tours-mega-btn');
+        const toursMegaDropdown = document.getElementById('tours-mega-dropdown');
+        const toursChevron = document.getElementById('tours-chevron');
+        toursMegaBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toursMegaDropdown.classList.toggle('active');
+            toursChevron.classList.toggle('rotate-180');
+        });
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('tours-mega-menu').contains(e.target)) {
+                toursMegaDropdown.classList.remove('active');
+                toursChevron.classList.remove('rotate-180');
+            }
+        });
+
+        // Navbar scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('nav-scrolled', window.scrollY > 50);
+        });
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.remove('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>

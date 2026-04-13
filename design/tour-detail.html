@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal Honeymoon Tour - 6 Days Itinerary | Altitude Himalaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#C41E3A',
+                        secondary: '#1a3a4a',
+                        dark: '#0d1b1e',
+                        teal: '#1e4d5c',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+        }
+        .itinerary-line {
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: 0;
+            width: 2px;
+            background: #e5e7eb;
+        }
+        /* Hide scrollbar for nav menu */
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        /* Smooth scroll offset for sticky nav */
+        html {
+            scroll-behavior: smooth;
+        }
+        section[id] {
+            scroll-margin-top: 60px;
+        }
+        /* Hero image smooth transition */
+        .hero-bg img {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700">
+
+    <!-- Header -->
+    <header class="site-header bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="header-container flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=50&h=50&fit=crop" alt="Altitude Himalaya" class="h-12 w-12 object-contain">
+                    <span class="ml-2 text-xl font-bold text-secondary">ALTITUDE <span class="text-primary">HIMALAYA</span></span>
+                </div>
+                <nav class="main-nav hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition">Home</a>
+                    <a href="tours.html" class="text-primary font-medium">Tours</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition">Treks</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition">Company</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition">Blog</a>
+                </nav>
+                <div class="header-actions flex items-center space-x-4">
+                    <a href="tel:+9779801000000" class="phone-link hidden md:flex items-center text-primary font-medium text-sm">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        +977 9801000000
+                    </a>
+                    <button id="mobile-menu-btn" class="mobile-menu-toggle md:hidden text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu hidden md:hidden border-t">
+                <nav class="mobile-nav flex flex-col py-4 space-y-3">
+                    <a href="index.html" class="text-gray-600 hover:text-primary hover:bg-gray-50 px-4 py-2 rounded transition">Home</a>
+                    <a href="tours.html" class="text-primary font-medium px-4 py-2 bg-gray-50 rounded">Tours</a>
+                    <a href="#" class="text-gray-600 hover:text-primary hover:bg-gray-50 px-4 py-2 rounded transition">Treks</a>
+                    <a href="#" class="text-gray-600 hover:text-primary hover:bg-gray-50 px-4 py-2 rounded transition">Company</a>
+                    <a href="#" class="text-gray-600 hover:text-primary hover:bg-gray-50 px-4 py-2 rounded transition">Blog</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Gallery Section - Redesigned -->
+    <section class="hero-gallery relative h-[500px] lg:h-[600px]">
+        <!-- Background Image -->
+        <div class="hero-bg absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1920&h=1080&fit=crop" alt="Nepal Honeymoon" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+            <div class="hero-overlay-bottom absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="hero-content relative h-full flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="max-w-2xl">
+                    <!-- Badge -->
+                    <div class="hero-badge inline-flex items-center bg-primary/90 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        <i class="fas fa-heart mr-2"></i>Romantic Getaway
+                    </div>
+                    
+                    <!-- Title -->
+                    <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 leading-tight">
+                        Nepal Honeymoon Tour
+                    </h1>
+                    
+                    <!-- Subtitle -->
+                    <p class="hero-subtitle text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
+                        6 Days of Romance, Adventure & Cultural Discovery in the Heart of the Himalayas
+                    </p>
+                    
+                    <!-- Meta Info -->
+                    <div class="hero-meta flex flex-wrap items-center gap-6 text-white/80 mb-8">
+                        <div class="flex items-center">
+                            <i class="far fa-clock mr-2 text-primary"></i>
+                            <span>6 Days / 5 Nights</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-primary"></i>
+                            <span>Kathmandu, Pokhara & Nagarkot</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-users mr-2 text-primary"></i>
+                            <span>Private Tour</span>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="hero-cta flex flex-wrap gap-4">
+                        <a href="#detailed" class="btn-primary bg-primary hover:bg-red-700 text-white px-8 py-3 rounded-lg font-medium transition inline-flex items-center">
+                            <i class="fas fa-calendar-check mr-2"></i>View Itinerary
+                        </a>
+                        <a href="tel:+9779801000000" class="btn-secondary bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-lg font-medium transition inline-flex items-center backdrop-blur-sm">
+                            <i class="fas fa-phone-alt mr-2"></i>Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Thumbnail Gallery - Bottom Right -->
+        <div class="hero-thumbnails hidden lg:block absolute bottom-6 right-6">
+            <div class="flex gap-2">
+                <div class="thumb-item w-20 h-20 rounded-lg overflow-hidden border-4 border-primary hover:border-primary transition cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=200&h=200&fit=crop" alt="Temple" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                </div>
+                <div class="thumb-item w-20 h-20 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1594902644869-934ae09c5998?w=200&h=200&fit=crop" alt="Mountains" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                </div>
+                <div class="thumb-item w-20 h-20 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop" alt="Himalayas" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                </div>
+                <div class="thumb-item w-20 h-20 rounded-lg overflow-hidden border-2 border-white/30 hover:border-primary transition cursor-pointer group relative">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=200&h=200&fit=crop" alt="Lake" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-xs font-medium">
+                        +5
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Info Bar -->
+    <section class="tour-info-bar bg-white border-b border-gray-200 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                    <i class="fas fa-home text-primary"></i>
+                    <a href="index.html" class="hover:text-primary transition">Home</a>
+                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+                    <a href="tours.html" class="hover:text-primary transition">Tours</a>
+                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+                    <span class="text-gray-900">Nepal Honeymoon Tour</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center text-primary">
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <span class="font-bold">4.9</span>
+                        <span class="text-gray-500 text-sm ml-1">(128 reviews)</span>
+                    </div>
+                    <div class="h-4 w-px bg-gray-300"></div>
+                    <div class="text-sm text-gray-600">
+                        <i class="fas fa-fire text-primary mr-1"></i>
+                        <span>15 people viewing now</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabbed Navigation - Shows after scrolling past hero -->
+    <section id="tabbed-nav" class="tabbed-navigation bg-secondary/95 backdrop-blur-sm sticky top-0 z-40 shadow-md transform -translate-y-full transition-transform duration-300 opacity-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="nav-menu flex overflow-x-auto scrollbar-hide">
+                <a href="#overview" class="nav-link-overview flex items-center px-4 py-3 text-white/90 hover:text-white hover:bg-white/10 transition whitespace-nowrap border-b-2 border-primary">
+                    <i class="fas fa-info-circle mr-2"></i>OVERVIEW
+                </a>
+                <a href="#highlights" class="nav-link-highlights flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/10 transition whitespace-nowrap border-b-2 border-transparent">
+                    <i class="fas fa-star mr-2"></i>HIGHLIGHTS
+                </a>
+                <a href="#itinerary" class="nav-link-outline flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/10 transition whitespace-nowrap border-b-2 border-transparent">
+                    <i class="fas fa-list-ol mr-2"></i>OUTLINE ITINERARY
+                </a>
+                <a href="#detailed" class="nav-link-detailed flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/10 transition whitespace-nowrap border-b-2 border-transparent">
+                    <i class="fas fa-map-marked mr-2"></i>DETAILED ITINERARY
+                </a>
+                <a href="#inclusion" class="nav-link-inclusion flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/10 transition whitespace-nowrap border-b-2 border-transparent">
+                    <i class="fas fa-check-square mr-2"></i>INCLUSION/EXCLUSION
+                </a>
+                <a href="#guide" class="nav-link-guide flex items-center px-4 py-3 text-white/70 hover:text-white hover:bg-white/10 transition whitespace-nowrap border-b-2 border-transparent">
+                    <i class="fas fa-user-tie mr-2"></i>TRIP GUIDE
+                </a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Left Content -->
+            <div class="lg:col-span-2">
+                
+                <!-- Trip Info Bar - First Section -->
+                <section id="trip-info" class="trip-info-section mb-10">
+                    <h2 class="section-title text-2xl font-bold text-secondary mb-4"><i class="fas fa-info-circle text-primary mr-2"></i>Trip Information</h2>
+                    <div class="trip-info-bar bg-white border border-gray-200 rounded-lg p-4">
+                        <div class="info-row-1 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 text-center">
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-qrcode text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Trip Code</p>
+                                <p class="text-sm font-semibold text-secondary">NPTAH</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="far fa-clock text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Duration</p>
+                                <p class="text-sm font-semibold text-secondary">6 Days</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-hiking text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Trip Difficulty</p>
+                                <p class="text-sm font-semibold text-secondary">Easy</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-users text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Group Size</p>
+                                <p class="text-sm font-semibold text-secondary">2-10</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-map-marked-alt text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Area</p>
+                                <p class="text-sm font-semibold text-secondary">Kathmandu & Pokhara</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-play-circle text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Start Point</p>
+                                <p class="text-sm font-semibold text-secondary">Kathmandu</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-flag-checkered text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Trip End Point</p>
+                                <p class="text-sm font-semibold text-secondary">Kathmandu</p>
+                            </div>
+                        </div>
+                        <div class="info-row-2 grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-4 pt-4 border-t border-gray-100">
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-bed text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Accommodation</p>
+                                <p class="text-sm font-semibold text-secondary">5-Star Hotels</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-utensils text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Meals</p>
+                                <p class="text-sm font-semibold text-secondary">As Mentioned</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-car text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Transportation</p>
+                                <p class="text-sm font-semibold text-secondary">Private Vehicle</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="fas fa-mountain text-primary text-lg mb-1"></i>
+                                <p class="text-xs text-gray-500 uppercase">Max Altitude</p>
+                                <p class="text-sm font-semibold text-secondary">2,175m</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Overview Section - Second -->
+                <section id="overview" class="overview-section mb-10">
+                    <h2 class="section-title text-2xl font-bold text-secondary mb-4">Trip Overview</h2>
+                    <div class="overview-content bg-white border border-gray-200 rounded-lg p-6">
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Nepal is one of the most beautiful destinations in the world, with mountain scenery, lush green valleys, and spectacular landscapes welcoming you throughout the seasons. There are countless destinations for a panoramic experience, but this 6-day trip takes you to only the best.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Your Nepal trip starts with a short <strong class="text-secondary">Kathmandu Valley sightseeing tour</strong>, which includes the UNESCO World Heritage Sites of Kathmandu, Bhaktapur, and Patan. The trip lasts two days, and you'll get to visit numerous temples while also getting a view of each surrounding area you visit.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            After exploring Kathmandu, you'll be escorted to the <strong class="text-secondary">Nagarkot Hills</strong>, which offer a panoramic view of the Himalayas. Then, we'll take you to Bandipur, another hill station located in the Tanahun district. Once your short exploration of the valley is complete, the trip will take you to the <strong class="text-secondary">lakeside city of Pokhara</strong>, where you will enjoy boat rides on Phewa Lake with stunning views of the Annapurna range.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Explore ancient temples, enjoy boat rides on Phewa Lake, visit the sacred Manakamana Temple via cable car, and create unforgettable memories with your loved one in the land of the Himalayas. This package is specially designed for couples seeking romance, adventure, and cultural experiences.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Detailed Itinerary - Third -->
+                <section id="detailed" class="itinerary-section mb-10">
+                    <h2 class="section-title text-2xl font-bold text-secondary mb-4"><i class="fas fa-route text-primary mr-2"></i>Detailed Itinerary</h2>
+                    
+                    <div class="itinerary-days space-y-4">
+                        <!-- Day 1 -->
+                        <div class="day-card day-01 border border-gray-200 rounded-lg overflow-hidden">
+                            <button class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" onclick="toggleItinerary(this)">
+                                <div class="day-info flex items-center">
+                                    <span class="day-number w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">01</span>
+                                    <div class="day-details">
+                                        <h4 class="day-title font-bold text-secondary">Arrival in Kathmandu & Transfer to Hotel</h4>
+                                        <p class="day-location text-sm text-gray-500">Kathmandu</p>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-300"></i>
+                            </button>
+                            <div class="hidden px-4 pb-4 pt-2 bg-white">
+                                <div class="pl-14">
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                                        Upon arrival at Tribhuvan International Airport, our representative will welcome you with traditional garlands and transfer you to your luxury hotel in Kathmandu. After check-in, enjoy a welcome drink and relax. In the evening, enjoy a romantic candlelight dinner at the hotel's rooftop restaurant with views of the city.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-plane-arrival mr-1"></i>Airport Pickup</span>
+                                        <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-utensils mr-1"></i>Dinner</span>
+                                        <span class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-hotel mr-1"></i>5-Star Hotel</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 2 -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <button class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" onclick="toggleItinerary(this)">
+                                <div class="flex items-center">
+                                    <span class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">02</span>
+                                    <div>
+                                        <h4 class="font-bold text-secondary">Kathmandu Valley Sightseeing</h4>
+                                        <p class="text-sm text-gray-500">Kathmandu</p>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-300"></i>
+                            </button>
+                            <div class="hidden px-4 pb-4 pt-2 bg-white">
+                                <div class="pl-14">
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                                        After breakfast, start your day with a visit to Pashupatinath Temple, one of the most sacred Hindu temples. Continue to Boudhanath Stupa, the largest stupa in Nepal and a center of Tibetan Buddhism. Visit Kathmandu Durbar Square to see ancient palaces and temples. End the day at Swayambhunath (Monkey Temple) for panoramic city views at sunset.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <span class="bg-orange-100 text-orange-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-landmark mr-1"></i>UNESCO Sites</span>
+                                        <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-camera mr-1"></i>Sightseeing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 3 -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <button class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" onclick="toggleItinerary(this)">
+                                <div class="flex items-center">
+                                    <span class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">03</span>
+                                    <div>
+                                        <h4 class="font-bold text-secondary">Kathmandu to Pokhara via Manakamana</h4>
+                                        <p class="text-sm text-gray-500">Pokhara (200km / 6-7 hours)</p>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-300"></i>
+                            </button>
+                            <div class="hidden px-4 pb-4 pt-2 bg-white">
+                                <div class="pl-14">
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                                        Early morning drive to Pokhara, Nepal's adventure capital. En route, take a cable car ride to Manakamana Temple, dedicated to the goddess who fulfills wishes. The cable car offers stunning views of the Trishuli River valley. Continue to Pokhara and check into your lakeside hotel. Evening free for leisure walk along Phewa Lake.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <span class="bg-red-100 text-red-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-car mr-1"></i>Scenic Drive</span>
+                                        <span class="bg-yellow-100 text-yellow-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-mountain mr-1"></i>Cable Car</span>
+                                        <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-water mr-1"></i>Lakeside</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 4 -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <button class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" onclick="toggleItinerary(this)">
+                                <div class="flex items-center">
+                                    <span class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">04</span>
+                                    <div>
+                                        <h4 class="font-bold text-secondary">Pokhara Sightseeing & Sarangkot Sunrise</h4>
+                                        <p class="text-sm text-gray-500">Pokhara</p>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-300"></i>
+                            </button>
+                            <div class="hidden px-4 pb-4 pt-2 bg-white">
+                                <div class="pl-14">
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                                        Early morning drive to Sarangkot for breathtaking sunrise views over the Annapurna and Dhaulagiri mountain ranges. Return to hotel for breakfast. Later, visit Davis Falls, Gupteshwor Mahadev Cave, and the International Mountain Museum. Enjoy a romantic boat ride on Phewa Lake and visit Tal Barahi Temple located on an island. Evening free for shopping or relaxing by the lake.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <span class="bg-orange-100 text-orange-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-sun mr-1"></i>Sunrise</span>
+                                        <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-ship mr-1"></i>Boat Ride</span>
+                                        <span class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-mountain mr-1"></i>Mountain Views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 5 -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <button class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" onclick="toggleItinerary(this)">
+                                <div class="flex items-center">
+                                    <span class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">05</span>
+                                    <div>
+                                        <h4 class="font-bold text-secondary">Pokhara to Nagarkot via Kathmandu</h4>
+                                        <p class="text-sm text-gray-500">Nagarkot (210km / 7-8 hours)</p>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-300"></i>
+                            </button>
+                            <div class="hidden px-4 pb-4 pt-2 bg-white">
+                                <div class="pl-14">
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                                        After breakfast, drive to Nagarkot, a hill station famous for its sunrise and sunset views over the Himalayas. En route, visit Bhaktapur Durbar Square, known for its medieval architecture and pottery. Continue to Nagarkot and check into your resort. Evening enjoy the spectacular sunset over the Himalayan range including Mount Everest on clear days.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-city mr-1"></i>Bhaktapur</span>
+                                        <span class="bg-orange-100 text-orange-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-sun mr-1"></i>Sunset View</span>
+                                        <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-mountain mr-1"></i>Himalayan Range</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 6 -->
+                        <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <button class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" onclick="toggleItinerary(this)">
+                                <div class="flex items-center">
+                                    <span class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">06</span>
+                                    <div>
+                                        <h4 class="font-bold text-secondary">Nagarkot Sunrise & Departure</h4>
+                                        <p class="text-sm text-gray-500">Kathmandu</p>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-300"></i>
+                            </button>
+                            <div class="hidden px-4 pb-4 pt-2 bg-white">
+                                <div class="pl-14">
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                                        Early morning, enjoy the breathtaking sunrise over the Himalayas from your resort. After breakfast, drive back to Kathmandu. Depending on your flight time, you may have free time for last-minute shopping at Thamel. Our representative will transfer you to the airport for your onward journey with beautiful memories of your Nepal honeymoon.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <span class="bg-orange-100 text-orange-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-sun mr-1"></i>Sunrise</span>
+                                        <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-plane-departure mr-1"></i>Airport Drop</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Highlights -->
+                <section id="highlights" class="highlights-section mb-10 bg-blue-50 rounded-lg p-6">
+                    <h3 class="highlights-title text-xl font-bold text-secondary mb-4"><i class="fas fa-star text-yellow-500 mr-2"></i>Trip Highlights</h3>
+                    <ul class="highlights-list grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-600">
+                        <li class="highlight-item flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Explore Kathmandu Valley UNESCO World Heritage sites</li>
+                        <li class="highlight-item flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Romantic boat ride on Phewa Lake, Pokhara</li>
+                        <li class="highlight-item flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Sunrise views over Annapurna range from Sarangkot</li>
+                        <li class="highlight-item flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Visit Manakamana Temple via cable car</li>
+                        <li class="highlight-item flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Sunset and sunrise views from Nagarkot</li>
+                        <li class="highlight-item flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Candlelight dinner at premium hotels</li>
+                        <li class="highlight-item flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Visit Davis Falls and Gupteshwor Cave</li>
+                        <li class="highlight-item flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Professional English-speaking guide</li>
+                    </ul>
+                </section>
+
+                <!-- Includes/Excludes -->
+                <section id="inclusion" class="inclusion-section mb-10">
+                    <h2 class="section-title text-2xl font-bold text-secondary mb-4"><i class="fas fa-clipboard-list text-primary mr-2"></i>What's Included & Excluded</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="included-box bg-green-50 rounded-lg p-6">
+                        <h4 class="included-title font-bold text-green-800 mb-4"><i class="fas fa-check-circle mr-2"></i>What's Included</h4>
+                        <ul class="included-list space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><i class="fas fa-check text-green-600 mr-2 mt-1 text-xs"></i>5 nights accommodation in luxury hotels</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-600 mr-2 mt-1 text-xs"></i>Daily breakfast and dinner</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-600 mr-2 mt-1 text-xs"></i>All ground transportation in private vehicle</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-600 mr-2 mt-1 text-xs"></i>Professional English-speaking guide</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-600 mr-2 mt-1 text-xs"></i>All sightseeing entrance fees</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-600 mr-2 mt-1 text-xs"></i>Manakamana cable car tickets</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-600 mr-2 mt-1 text-xs"></i>Phewa Lake boat ride</li>
+                            <li class="flex items-start"><i class="fas fa-check text-green-600 mr-2 mt-1 text-xs"></i>Airport pickup and drop</li>
+                        </ul>
+                    </div>
+                    <div class="excluded-box bg-red-50 rounded-lg p-6">
+                        <h4 class="excluded-title font-bold text-red-800 mb-4"><i class="fas fa-times-circle mr-2"></i>What's Excluded</h4>
+                        <ul class="excluded-list space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start"><i class="fas fa-times text-red-500 mr-2 mt-1 text-xs"></i>International airfare</li>
+                            <li class="flex items-start"><i class="fas fa-times text-red-500 mr-2 mt-1 text-xs"></i>Nepal entry visa fees</li>
+                            <li class="flex items-start"><i class="fas fa-times text-red-500 mr-2 mt-1 text-xs"></i>Travel insurance</li>
+                            <li class="flex items-start"><i class="fas fa-times text-red-500 mr-2 mt-1 text-xs"></i>Lunch throughout the tour</li>
+                            <li class="flex items-start"><i class="fas fa-times text-red-500 mr-2 mt-1 text-xs"></i>Personal expenses (drinks, laundry)</li>
+                            <li class="flex items-start"><i class="fas fa-times text-red-500 mr-2 mt-1 text-xs"></i>Tips for guide and driver</li>
+                            <li class="flex items-start"><i class="fas fa-times text-red-500 mr-2 mt-1 text-xs"></i>Optional activities not mentioned</li>
+                        </ul>
+                    </div>
+                    </div>
+                </section>
+
+                <!-- Useful Info / Trip Guide -->
+                <section id="guide" class="trip-guide-section mb-10">
+                    <h2 class="section-title text-2xl font-bold text-secondary mb-4"><i class="fas fa-book-open text-primary mr-2"></i>Useful Information</h2>
+                    <div class="guide-content bg-gray-50 rounded-lg p-6">
+                        <div class="guide-grid grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="guide-item flex items-start">
+                            <i class="guide-icon fas fa-passport text-primary mt-1 mr-3"></i>
+                            <div class="guide-content">
+                                <h5 class="guide-label font-medium text-secondary">Visa</h5>
+                                <p class="guide-text text-sm text-gray-600">On-arrival visa available at Kathmandu airport. Bring passport photos and USD cash.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-cloud-sun text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h5 class="font-medium text-secondary">Best Time</h5>
+                                <p class="text-sm text-gray-600">October-November and March-April offer best weather and mountain views.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-tshirt text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h5 class="font-medium text-secondary">What to Pack</h5>
+                                <p class="text-sm text-gray-600">Comfortable walking shoes, warm jacket for mornings, casual wear.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-plug text-primary mt-1 mr-3"></i>
+                            <div>
+                                <h5 class="font-medium text-secondary">Electricity</h5>
+                                <p class="text-sm text-gray-600">220-240V, Type C/D plugs. Adapters available at hotels.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar lg:col-span-1">
+                <div class="sidebar-sticky sticky top-[60px]">
+                    <!-- Price Card -->
+                    <div class="price-card bg-white rounded-lg shadow-lg border border-gray-100 p-6 mb-6">
+                        <div class="price-header text-center mb-4">
+                            <p class="price-label text-gray-500 text-sm mb-1">Starting from</p>
+                            <p class="price-amount text-4xl font-bold text-primary">$1,550</p>
+                            <p class="price-note text-gray-500 text-sm">per couple</p>
+                        </div>
+                        <button class="btn-book w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-red-700 transition mb-3">
+                            <i class="fas fa-calendar-check mr-2"></i>Book This Tour
+                        </button>
+                        <button class="btn-inquiry w-full border border-secondary text-secondary py-3 rounded-lg font-medium hover:bg-secondary hover:text-white transition">
+                            <i class="fas fa-envelope mr-2"></i>Send Inquiry
+                        </button>
+                        
+                        <div class="price-details mt-6 pt-6 border-t">
+                            <div class="flex items-center justify-between text-sm mb-3">
+                                <span class="text-gray-600"><i class="far fa-clock mr-2"></i>Duration</span>
+                                <span class="font-medium">6 Days</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm mb-3">
+                                <span class="text-gray-600"><i class="fas fa-hiking mr-2"></i>Tour Type</span>
+                                <span class="font-medium">Honeymoon</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm mb-3">
+                                <span class="text-gray-600"><i class="fas fa-users mr-2"></i>Group Size</span>
+                                <span class="font-medium">Private</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm mb-3">
+                                <span class="text-gray-600"><i class="fas fa-mountain mr-2"></i>Max Altitude</span>
+                                <span class="font-medium">2,175m</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-600"><i class="fas fa-bed mr-2"></i>Accommodation</span>
+                                <span class="font-medium">5-Star</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expert Card -->
+                    <div class="expert-card bg-white rounded-lg shadow-md border border-gray-100 p-6 mb-6">
+                        <p class="expert-label text-sm text-gray-500 mb-3">Need help? Talk to our expert</p>
+                        <div class="expert-profile flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Expert" class="expert-avatar w-14 h-14 rounded-full object-cover mr-4">
+                            <div class="expert-info">
+                                <p class="expert-name font-bold text-secondary">John Smith</p>
+                                <p class="expert-role text-sm text-gray-500">Travel Expert</p>
+                                <div class="expert-rating flex items-center text-yellow-500 text-xs">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="tel:+9779801000000" class="flex items-center justify-center bg-green-500 text-white py-2 rounded-lg text-sm font-medium hover:bg-green-600 transition">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp Call
+                        </a>
+                    </div>
+
+                    <!-- Why Book -->
+                    <div class="why-book-card bg-teal rounded-lg p-6 text-white">
+                        <h4 class="why-book-title font-bold mb-4">Why Book With Us?</h4>
+                        <ul class="why-book-list space-y-3 text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1"></i>
+                                <span>Best price guarantee</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1"></i>
+                                <span>Customer care available 24/7</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1"></i>
+                                <span>Free cancellation up to 7 days</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1"></i>
+                                <span>Hand-picked hotels for couples</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle mr-2 mt-1"></i>
+                                <span>Experienced romance specialist</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-16 bg-gray-50">
+        <div class="faq-container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="faq-title text-2xl font-bold text-secondary text-center mb-8">Frequently Asked Questions</h2>
+            
+            <div class="faq-list space-y-4">
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <button class="faq-question w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+                        <span class="faq-q-text font-medium text-secondary">Can we customize this honeymoon package?</span>
+                        <i class="faq-icon fas fa-chevron-down text-gray-400 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4 text-gray-600 text-sm leading-relaxed">
+                        Yes! This package is fully customizable. We can add extra days, upgrade hotels, include spa treatments, arrange private dinners, or add adventure activities like paragliding or helicopter tours. Contact us to create your perfect honeymoon.
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <button class="faq-question w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+                        <span class="faq-q-text font-medium text-secondary">What is the best time for Nepal honeymoon?</span>
+                        <i class="faq-icon fas fa-chevron-down text-gray-400 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4 text-gray-600 text-sm leading-relaxed">
+                        The best time is October-November (post-monsoon) with clear skies and excellent mountain views, or March-April (spring) with blooming rhododendrons. Avoid June-August (monsoon season) due to rain and poor visibility.
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <button class="faq-question w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+                        <span class="faq-q-text font-medium text-secondary">Do you arrange airport pickup and drop?</span>
+                        <i class="faq-icon fas fa-chevron-down text-gray-400 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4 text-gray-600 text-sm leading-relaxed">
+                        Yes, all our packages include complimentary airport transfers. Our representative will meet you at the arrival gate with a name board and traditional welcome garlands. Drop-off to the airport is also included at the end of your tour.
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <button class="faq-question w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition" onclick="toggleFaq(this)">
+                        <span class="faq-q-text font-medium text-secondary">What type of hotels do you use for honeymooners?</span>
+                        <i class="faq-icon fas fa-chevron-down text-gray-400 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-4 pb-4 text-gray-600 text-sm leading-relaxed">
+                        We carefully select premium hotels with romantic ambiance. In Kathmandu: 5-star hotels like Hyatt or Marriott. In Pokhara: Lakeside resorts with mountain views. In Nagarkot: Hilltop resorts with panoramic Himalayan views. All rooms are specially prepared for couples.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section py-12 bg-teal">
+        <div class="partners-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="partners-label text-center text-white/80 text-sm mb-6">THE WANDERLUST FAMILY</p>
+            <div class="partners-grid grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+                <div class="partner-logo bg-white rounded-lg p-4 flex items-center justify-center h-16">
+                    <span class="text-orange-500 font-bold text-sm">KEEP NEPAL<br/>FIT</span>
+                </div>
+                <div class="partner-logo bg-white rounded-lg p-4 flex items-center justify-center h-16">
+                    <span class="text-green-600 font-bold text-sm">HIMAVAT<br/>FOUNDATION</span>
+                </div>
+                <div class="partner-logo bg-white rounded-lg p-4 flex items-center justify-center h-16">
+                    <span class="text-secondary font-bold text-sm">ALTITUDE<br/>HIMALAYA</span>
+                </div>
+                <div class="partner-logo bg-white rounded-lg p-4 flex items-center justify-center h-16">
+                    <span class="text-green-600 font-bold text-sm">Paragliding<br/>Nepal</span>
+                </div>
+                <div class="partner-logo bg-white rounded-lg p-4 flex items-center justify-center h-16">
+                    <span class="text-orange-500 font-bold text-sm">HIGH<br/>HUT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-[#0d1b1e] text-white pt-16 pb-8">
+        <div class="footer-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="footer-links grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="footer-column">
+                    <h4 class="footer-heading font-bold text-sm mb-4 text-gray-300">TRIP RESOURCES</h4>
+                    <ul class="footer-list space-y-2 text-gray-400 text-sm">
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Travel Insurance</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Best Time To Visit Nepal</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Trekking Permit Fee</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">How To Book</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading font-bold text-sm mb-4 text-gray-300">QUICK LINKS</h4>
+                    <ul class="footer-list space-y-2 text-gray-400 text-sm">
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">About Us</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Destinations</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Tour Packages</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Partner With Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading font-bold text-sm mb-4 text-gray-300">OFFICE / TRAVEL INFO</h4>
+                    <ul class="footer-list space-y-2 text-gray-400 text-sm">
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Contact Us</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Terms & Conditions</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Write Review</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading font-bold text-sm mb-4 text-gray-300">DESTINATIONS</h4>
+                    <ul class="footer-list space-y-2 text-gray-400 text-sm">
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Nepal</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Tibet</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">Bhutan</a></li>
+                        <li class="footer-item"><a href="#" class="footer-link hover:text-white transition">India</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-contact border-t border-white/10 pt-8">
+                <div class="footer-contact-grid grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <div class="footer-contact-item flex items-start">
+                        <i class="footer-icon fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                        <div class="footer-contact-info text-sm text-gray-400">
+                            <p class="footer-contact-label font-medium text-white mb-1">Address</p>
+                            <p>Thamel, Kathmandu, Nepal</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item flex items-start">
+                        <i class="footer-icon fas fa-envelope mt-1 mr-3 text-primary"></i>
+                        <div class="footer-contact-info text-sm text-gray-400">
+                            <p class="footer-contact-label font-medium text-white mb-1">Contact Email</p>
+                            <p>info@altitudehimalaya.com</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item flex items-start">
+                        <i class="footer-icon fas fa-phone-alt mt-1 mr-3 text-primary"></i>
+                        <div class="footer-contact-info text-sm text-gray-400">
+                            <p class="footer-contact-label font-medium text-white mb-1">Phone</p>
+                            <p>+977 9801000000 (WhatsApp)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-social flex justify-center space-x-4 mb-6">
+                    <a href="#" class="social-icon w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-primary transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                    <a href="#" class="social-icon w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-primary transition"><i class="fab fa-twitter text-sm"></i></a>
+                    <a href="#" class="social-icon w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-primary transition"><i class="fab fa-instagram text-sm"></i></a>
+                    <a href="#" class="social-icon w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-primary transition"><i class="fab fa-youtube text-sm"></i></a>
+                </div>
+                
+                <div class="footer-copyright text-center text-gray-500 text-sm">
+                    <p>© Copyright 2024 Altitude Himalaya. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Itinerary accordion
+        function toggleItinerary(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.fa-chevron-down');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // FAQ accordion
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.fa-chevron-down');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Show tabbed navigation on scroll - right after hero section
+        const tabbedNav = document.getElementById('tabbed-nav');
+        const heroGallery = document.querySelector('.hero-gallery');
+        const tourInfoBar = document.querySelector('.tour-info-bar');
+        
+        function updateNavVisibility() {
+            const heroHeight = heroGallery ? heroGallery.offsetHeight : 0;
+            const infoBarHeight = tourInfoBar ? tourInfoBar.offsetHeight : 0;
+            const triggerPoint = heroHeight + infoBarHeight - 80; // Show just as info bar scrolls out
+            
+            if (window.scrollY > triggerPoint) {
+                tabbedNav.classList.remove('-translate-y-full', 'opacity-0');
+                tabbedNav.classList.add('translate-y-0', 'opacity-100');
+            } else {
+                tabbedNav.classList.add('-translate-y-full', 'opacity-0');
+                tabbedNav.classList.remove('translate-y-0', 'opacity-100');
+            }
+        }
+        
+        window.addEventListener('scroll', updateNavVisibility);
+        // Initial check
+        updateNavVisibility();
+
+        // Hero Gallery Image Slider
+        const heroBgImg = document.querySelector('.hero-bg img');
+        const thumbItems = document.querySelectorAll('.thumb-item');
+        
+        // Image URLs for the gallery
+        const galleryImages = [
+            'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1920&h=1080&fit=crop',
+            'https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=1920&h=1080&fit=crop',
+            'https://images.unsplash.com/photo-1594902644869-934ae09c5998?w=1920&h=1080&fit=crop',
+            'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop'
+        ];
+        
+        thumbItems.forEach((thumb, index) => {
+            thumb.addEventListener('click', () => {
+                // Change main background image
+                if (galleryImages[index]) {
+                    heroBgImg.style.opacity = '0';
+                    setTimeout(() => {
+                        heroBgImg.src = galleryImages[index];
+                        heroBgImg.style.opacity = '1';
+                    }, 200);
+                }
+                
+                // Update active state on thumbnails
+                thumbItems.forEach(t => t.classList.remove('border-primary', 'border-4'));
+                thumbItems.forEach(t => t.classList.add('border-white/30'));
+                thumb.classList.remove('border-white/30');
+                thumb.classList.add('border-primary', 'border-4');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal Tours - Best Tour Packages 2024 | Altitude Himalaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#C41E3A',
+                        secondary: '#1a3a4a',
+                        dark: '#0d1b1e',
+                        teal: '#1e4d5c',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=50&h=50&fit=crop" alt="Altitude Himalaya" class="h-12 w-12 object-contain">
+                    <span class="ml-2 text-xl font-bold text-secondary">ALTITUDE <span class="text-primary">HIMALAYA</span></span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition">Home</a>
+                    <a href="#" class="text-primary font-medium">Destinations</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition">Tours</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition">Treks</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition">Blog</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="tel:+9779801000000" class="hidden md:flex items-center text-primary font-medium text-sm">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        +977 9801000000
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden border-t">
+                <nav class="flex flex-col py-4 space-y-3">
+                    <a href="index.html" class="text-gray-600 hover:text-primary hover:bg-gray-50 px-4 py-2 rounded transition">Home</a>
+                    <a href="#" class="text-primary font-medium px-4 py-2 bg-gray-50 rounded">Destinations</a>
+                    <a href="#" class="text-gray-600 hover:text-primary hover:bg-gray-50 px-4 py-2 rounded transition">Tours</a>
+                    <a href="#" class="text-gray-600 hover:text-primary hover:bg-gray-50 px-4 py-2 rounded transition">Treks</a>
+                    <a href="#" class="text-gray-600 hover:text-primary hover:bg-gray-50 px-4 py-2 rounded transition">Blog</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[300px] md:h-[400px]">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=500&fit=crop" alt="Nepal Mountains" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4">
+                <h1 class="text-4xl md:text-5xl font-serif font-bold mb-3">Nepal Tours</h1>
+                <p class="text-lg text-white/90">Discover the land of Himalayas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex items-center text-sm text-gray-500">
+                <a href="index.html" class="hover:text-primary transition">Home</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <a href="#" class="hover:text-primary transition">Destinations</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <span class="text-gray-700">Nepal</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <!-- Left Sidebar - Filters -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="font-bold text-lg text-secondary">Filters</h3>
+                        <button class="text-primary text-sm hover:underline">Reset All</button>
+                    </div>
+
+                    <!-- Duration Filter -->
+                    <div class="mb-6">
+                        <h4 class="font-medium text-secondary mb-3"><i class="far fa-clock mr-2"></i>Duration</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                <span class="ml-2 text-sm text-gray-600">1-5 Days</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                <span class="ml-2 text-sm text-gray-600">6-10 Days</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary" checked>
+                                <span class="ml-2 text-sm text-gray-600">10+ Days</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Trip Grade Filter -->
+                    <div class="mb-6">
+                        <h4 class="font-medium text-secondary mb-3"><i class="fas fa-signal mr-2"></i>Trip Grade</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                <span class="ml-2 text-sm text-gray-600">Easy</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary" checked>
+                                <span class="ml-2 text-sm text-gray-600">Moderate</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                <span class="ml-2 text-sm text-gray-600">Challenging</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Seasons Filter -->
+                    <div class="mb-6">
+                        <h4 class="font-medium text-secondary mb-3"><i class="fas fa-cloud-sun mr-2"></i>Seasons</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary" checked>
+                                <span class="ml-2 text-sm text-gray-600">Spring (Mar-May)</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary" checked>
+                                <span class="ml-2 text-sm text-gray-600">Autumn (Sep-Nov)</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="checkbox" class="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                                <span class="ml-2 text-sm text-gray-600">Winter (Dec-Feb)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div>
+                        <h4 class="font-medium text-secondary mb-3"><i class="fas fa-tag mr-2"></i>Price Range</h4>
+                        <div class="px-2">
+                            <input type="range" min="500" max="5000" value="2500" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <div class="flex justify-between text-sm text-gray-500 mt-2">
+                                <span>$500</span>
+                                <span>$5000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content - Tour Packages -->
+            <div class="lg:col-span-3">
+                <!-- Sort Bar -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                    <p class="text-gray-600 mb-2 sm:mb-0">Showing <span class="font-bold text-secondary">12</span> tour packages</p>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 mr-2">Sort by:</span>
+                        <select class="border border-gray-200 rounded px-3 py-1 text-sm focus:outline-none focus:border-primary">
+                            <option>Popularity</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Duration</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Tour Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Package 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Everest Base Camp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded font-medium">Best Seller</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-white/90 text-secondary text-xs px-3 py-1 rounded font-medium">14 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-secondary mb-2">Everest Base Camp Trek</h3>
+                            <p class="text-gray-500 text-sm mb-3">The ultimate trekking adventure to the base of world's highest peak.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-4"><i class="fas fa-signal text-yellow-500 mr-1"></i>Challenging</span>
+                                <span><i class="fas fa-mountain text-blue-500 mr-1"></i>5,364m</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <div>
+                                    <p class="text-xs text-gray-400">From</p>
+                                    <p class="text-primary font-bold text-xl">$1,899</p>
+                                </div>
+                                <a href="tour-detail.html" class="bg-secondary text-white px-5 py-2 rounded text-sm font-medium hover:bg-primary transition">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=600&h=400&fit=crop" alt="Nepal Honeymoon" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-green-500 text-white text-xs px-3 py-1 rounded font-medium">Romantic</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-white/90 text-secondary text-xs px-3 py-1 rounded font-medium">6 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-secondary mb-2">Nepal Honeymoon Tour</h3>
+                            <p class="text-gray-500 text-sm mb-3">Perfect romantic getaway with cultural and natural experiences.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-4"><i class="fas fa-signal text-green-500 mr-1"></i>Easy</span>
+                                <span><i class="fas fa-mountain text-blue-500 mr-1"></i>2,175m</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <div>
+                                    <p class="text-xs text-gray-400">From</p>
+                                    <p class="text-primary font-bold text-xl">$1,550</p>
+                                </div>
+                                <a href="tour-detail.html" class="bg-secondary text-white px-5 py-2 rounded text-sm font-medium hover:bg-primary transition">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=600&h=400&fit=crop" alt="Annapurna Circuit" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-orange-500 text-white text-xs px-3 py-1 rounded font-medium">Adventure</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-white/90 text-secondary text-xs px-3 py-1 rounded font-medium">16 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-secondary mb-2">Annapurna Circuit Trek</h3>
+                            <p class="text-gray-500 text-sm mb-3">Classic trek around the Annapurna massif with diverse landscapes.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-4"><i class="fas fa-signal text-orange-500 mr-1"></i>Moderate</span>
+                                <span><i class="fas fa-mountain text-blue-500 mr-1"></i>5,416m</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <div>
+                                    <p class="text-xs text-gray-400">From</p>
+                                    <p class="text-primary font-bold text-xl">$1,499</p>
+                                </div>
+                                <a href="#" class="bg-secondary text-white px-5 py-2 rounded text-sm font-medium hover:bg-primary transition">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 4 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop" alt="Nepal Luxury" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-purple-500 text-white text-xs px-3 py-1 rounded font-medium">Luxury</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-white/90 text-secondary text-xs px-3 py-1 rounded font-medium">8 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-secondary mb-2">Nepal Luxury Tour</h3>
+                            <p class="text-gray-500 text-sm mb-3">Premium experience with 5-star hotels and private guided tours.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-4"><i class="fas fa-signal text-green-500 mr-1"></i>Easy</span>
+                                <span><i class="fas fa-mountain text-blue-500 mr-1"></i>2,175m</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <div>
+                                    <p class="text-xs text-gray-400">From</p>
+                                    <p class="text-primary font-bold text-xl">$2,999</p>
+                                </div>
+                                <a href="#" class="bg-secondary text-white px-5 py-2 rounded text-sm font-medium hover:bg-primary transition">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 5 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1594902644869-934ae09c5998?w=600&h=400&fit=crop" alt="Ghorepani Poon Hill" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-blue-500 text-white text-xs px-3 py-1 rounded font-medium">Short Trek</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-white/90 text-secondary text-xs px-3 py-1 rounded font-medium">5 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-secondary mb-2">Ghorepani Poon Hill Trek</h3>
+                            <p class="text-gray-500 text-sm mb-3">Short and easy trek with spectacular sunrise mountain views.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-4"><i class="fas fa-signal text-green-500 mr-1"></i>Easy</span>
+                                <span><i class="fas fa-mountain text-blue-500 mr-1"></i>3,210m</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <div>
+                                    <p class="text-xs text-gray-400">From</p>
+                                    <p class="text-primary font-bold text-xl">$650</p>
+                                </div>
+                                <a href="#" class="bg-secondary text-white px-5 py-2 rounded text-sm font-medium hover:bg-primary transition">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 6 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&h=400&fit=crop" alt="Langtang Valley" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-teal-500 text-white text-xs px-3 py-1 rounded font-medium">Off Beat</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-white/90 text-secondary text-xs px-3 py-1 rounded font-medium">10 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-secondary mb-2">Langtang Valley Trek</h3>
+                            <p class="text-gray-500 text-sm mb-3">Beautiful valley trek close to Kathmandu with Tibetan culture.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-4"><i class="fas fa-signal text-yellow-500 mr-1"></i>Moderate</span>
+                                <span><i class="fas fa-mountain text-blue-500 mr-1"></i>4,984m</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <div>
+                                    <p class="text-xs text-gray-400">From</p>
+                                    <p class="text-primary font-bold text-xl">$1,100</p>
+                                </div>
+                                <a href="#" class="bg-secondary text-white px-5 py-2 rounded text-sm font-medium hover:bg-primary transition">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 7 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=400&fit=crop" alt="Manaslu Circuit" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-indigo-500 text-white text-xs px-3 py-1 rounded font-medium">Restricted</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-white/90 text-secondary text-xs px-3 py-1 rounded font-medium">14 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-secondary mb-2">Manaslu Circuit Trek</h3>
+                            <p class="text-gray-500 text-sm mb-3">Remote and less crowded trek around the 8th highest peak.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-4"><i class="fas fa-signal text-orange-500 mr-1"></i>Challenging</span>
+                                <span><i class="fas fa-mountain text-blue-500 mr-1"></i>5,160m</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <div>
+                                    <p class="text-xs text-gray-400">From</p>
+                                    <p class="text-primary font-bold text-xl">$1,699</p>
+                                </div>
+                                <a href="#" class="bg-secondary text-white px-5 py-2 rounded text-sm font-medium hover:bg-primary transition">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 8 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition group">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop" alt="Kathmandu Pokhara" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-cyan-500 text-white text-xs px-3 py-1 rounded font-medium">Cultural</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-white/90 text-secondary text-xs px-3 py-1 rounded font-medium">5 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-lg text-secondary mb-2">Kathmandu Pokhara Tour</h3>
+                            <p class="text-gray-500 text-sm mb-3">Classic cultural tour covering two major cities of Nepal.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-3">
+                                <span class="mr-4"><i class="fas fa-signal text-green-500 mr-1"></i>Easy</span>
+                                <span><i class="fas fa-mountain text-blue-500 mr-1"></i>1,400m</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t">
+                                <div>
+                                    <p class="text-xs text-gray-400">From</p>
+                                    <p class="text-primary font-bold text-xl">$850</p>
+                                </div>
+                                <a href="#" class="bg-secondary text-white px-5 py-2 rounded text-sm font-medium hover:bg-primary transition">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center mt-10">
+                    <nav class="flex space-x-2">
+                        <button class="w-10 h-10 rounded border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition">
+                            <i class="fas fa-chevron-left text-gray-500"></i>
+                        </button>
+                        <button class="w-10 h-10 rounded bg-primary text-white flex items-center justify-center font-medium">1</button>
+                        <button class="w-10 h-10 rounded border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition">2</button>
+                        <button class="w-10 h-10 rounded border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition">3</button>
+                        <button class="w-10 h-10 rounded border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition">
+                            <i class="fas fa-chevron-right text-gray-500"></i>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-secondary to-teal">
+        <div class="max-w-4xl mx-auto px-4 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Can't Find Your Perfect Tour?</h2>
+            <p class="text-white/90 mb-8">Let us create a custom itinerary tailored to your preferences, schedule, and budget.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-red-700 transition">
+                    <i class="fas fa-phone-alt mr-2"></i>Call Expert
+                </a>
+                <a href="#" class="bg-white text-secondary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition">
+                    <i class="fas fa-envelope mr-2"></i>Customize Tour
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-12 bg-gray-50 border-t">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-400 text-sm mb-6">THE WANDERLUST FAMILY</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+                <div class="bg-white rounded-lg p-4 flex items-center justify-center h-16 shadow-sm">
+                    <span class="text-orange-500 font-bold text-sm">KEEP NEPAL<br/>FIT</span>
+                </div>
+                <div class="bg-white rounded-lg p-4 flex items-center justify-center h-16 shadow-sm">
+                    <span class="text-green-600 font-bold text-sm">HIMAVAT<br/>FOUNDATION</span>
+                </div>
+                <div class="bg-white rounded-lg p-4 flex items-center justify-center h-16 shadow-sm">
+                    <span class="text-secondary font-bold text-sm">ALTITUDE<br/>HIMALAYA</span>
+                </div>
+                <div class="bg-white rounded-lg p-4 flex items-center justify-center h-16 shadow-sm">
+                    <span class="text-green-600 font-bold text-sm">Paragliding<br/>Nepal</span>
+                </div>
+                <div class="bg-white rounded-lg p-4 flex items-center justify-center h-16 shadow-sm">
+                    <span class="text-orange-500 font-bold text-sm">HIGH<br/>HUT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0d1b1e] text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h4 class="font-bold text-sm mb-4 text-gray-300">TRIP RESOURCES</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Travel Insurance</a></li>
+                        <li><a href="#" class="hover:text-white transition">Best Time To Visit Nepal</a></li>
+                        <li><a href="#" class="hover:text-white transition">Trekking Permit Fee</a></li>
+                        <li><a href="#" class="hover:text-white transition">How To Book</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4 text-gray-300">QUICK LINKS</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Destinations</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tour Packages</a></li>
+                        <li><a href="#" class="hover:text-white transition">Partner With Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4 text-gray-300">OFFICE / TRAVEL INFO</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-white transition">Write Review</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-4 text-gray-300">DESTINATIONS</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Nepal</a></li>
+                        <li><a href="#" class="hover:text-white transition">Tibet</a></li>
+                        <li><a href="#" class="hover:text-white transition">Bhutan</a></li>
+                        <li><a href="#" class="hover:text-white transition">India</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                        <div class="text-sm text-gray-400">
+                            <p class="font-medium text-white mb-1">Address</p>
+                            <p>Thamel, Kathmandu, Nepal</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+                        <div class="text-sm text-gray-400">
+                            <p class="font-medium text-white mb-1">Contact Email</p>
+                            <p>info@altitudehimalaya.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-phone-alt mt-1 mr-3 text-primary"></i>
+                        <div class="text-sm text-gray-400">
+                            <p class="font-medium text-white mb-1">Phone</p>
+                            <p>+977 9801000000 (WhatsApp)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center space-x-4 mb-6">
+                    <a href="#" class="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-primary transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-primary transition"><i class="fab fa-twitter text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-primary transition"><i class="fab fa-instagram text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-primary transition"><i class="fab fa-youtube text-sm"></i></a>
+                </div>
+                
+                <div class="text-center text-gray-500 text-sm">
+                    <p>© Copyright 2024 Altitude Himalaya. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+    </script>
+
+</body>
+</html>
