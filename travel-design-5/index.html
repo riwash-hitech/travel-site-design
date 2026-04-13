@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwash Hitech - Nepal Trekking Agency | Everest, Annapurna, Langtang Tours</title>
+    <meta name="description" content="Government licensed Nepal trekking agency. Expert local guides for Everest Base Camp, Annapurna Circuit, Langtang Valley. Best prices guaranteed. 15+ years experience.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a5f',
+                        secondary: '#2d5a87',
+                        accent: '#e74c3c',
+                        accentHover: '#c0392b',
+                        dark: '#0f172a',
+                        light: '#f8fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Header Styles */
+        .top-bar {
+            background: #1e3a5f;
+            color: white;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+        
+        .main-header {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        /* Mega Menu Styles */
+        .mega-menu-wrapper {
+            position: relative;
+        }
+        
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            margin-top: 10px;
+        }
+        
+        .mega-menu-wrapper:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mega-menu-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            padding: 20px 25px;
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        
+        .mega-menu-column {
+            padding: 25px;
+            border-right: 1px solid #f1f5f9;
+        }
+        
+        .mega-menu-column:last-child {
+            border-right: none;
+        }
+        
+        .mega-menu-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1e3a5f;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .mega-menu-title i {
+            color: #e74c3c;
+        }
+        
+        .mega-menu-list {
+            list-style: none;
+        }
+        
+        .mega-menu-list li {
+            margin-bottom: 10px;
+        }
+        
+        .mega-menu-list a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 14px;
+            transition: all 0.2s;
+            padding: 4px 0;
+        }
+        
+        .mega-menu-list a:hover {
+            color: #e74c3c;
+            padding-left: 5px;
+        }
+        
+        .mega-menu-list a i {
+            font-size: 10px;
+            color: #cbd5e1;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown-wrapper {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+        
+        .dropdown-wrapper:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            color: #475569;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .dropdown-item:hover {
+            background: #f8fafc;
+            color: #e74c3c;
+        }
+        
+        .dropdown-item i {
+            color: #94a3b8;
+            width: 18px;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: white;
+            z-index: 2000;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(30, 58, 95, 0.7), rgba(30, 58, 95, 0.8)), 
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=800&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .btn-main {
+            background: #e74c3c;
+            color: white;
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-main:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: #1e3a5f;
+        }
+        
+        /* Trek Cards */
+        .trek-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            transition: all 0.3s;
+        }
+        
+        .trek-card:hover {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-color: #e74c3c;
+        }
+        
+        .trek-img {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .trek-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        
+        .trek-card:hover .trek-img img {
+            transform: scale(1.05);
+        }
+        
+        .trek-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+        
+        .trek-badge.green { background: #16a34a; }
+        .trek-badge.blue { background: #2563eb; }
+        .trek-badge.gold { background: #d97706; }
+        
+        /* Region Cards */
+        .region-card {
+            position: relative;
+            height: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .region-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        
+        .region-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .region-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(30,58,95,0.9) 0%, rgba(30,58,95,0.3) 50%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            color: white;
+        }
+        
+        /* Info Boxes */
+        .info-box {
+            background: #f8fafc;
+            border-left: 4px solid #e74c3c;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Testimonials */
+        .review-card {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+        
+        .review-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        /* Stats */
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #e74c3c;
+        }
+        
+        /* Why Choose */
+        .why-item {
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+        
+        .why-item:hover {
+            border-color: #e74c3c;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .why-icon {
+            width: 50px;
+            height: 50px;
+            background: #fef2f2;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e74c3c;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        /* Blog Cards */
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+        
+        .blog-card:hover {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .blog-img {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        
+        .blog-card:hover .blog-img img {
+            transform: scale(1.05);
+        }
+        
+        /* Departure Table */
+        .departure-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .departure-table th {
+            background: #1e3a5f;
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .departure-table td {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+        }
+        
+        .departure-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .seats-available {
+            background: #dcfce7;
+            color: #16a34a;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .seats-limited {
+            background: #fef3c7;
+            color: #d97706;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* Quick Contact Bar */
+        .contact-bar {
+            background: #1e3a5f;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 60px 0 30px;
+        }
+        
+        .footer h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .footer a {
+            color: #94a3b8;
+            display: block;
+            padding: 6px 0;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .footer a:hover {
+            color: #e74c3c;
+        }
+        
+        /* Quick Links Nav */
+        .quick-nav {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 12px 0;
+        }
+        
+        .quick-nav a {
+            color: #475569;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        .quick-nav a:hover, .quick-nav a.active {
+            background: #fef2f2;
+            color: #e74c3c;
+        }
+        
+        /* Difficulty Badge */
+        .difficulty {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .difficulty.easy { background: #dcfce7; color: #16a34a; }
+        .difficulty.moderate { background: #fef3c7; color: #d97706; }
+        .difficulty.hard { background: #fee2e2; color: #e74c3c; }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .mega-menu {
+                display: none;
+            }
+            
+            .mega-menu-wrapper:hover .mega-menu {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.875rem;
+            }
+            
+            .stat-number {
+                font-size: 28px;
+            }
+            
+            .departure-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .quick-nav {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .quick-nav::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        
+        /* Utility */
+        .text-primary { color: #1e3a5f; }
+        .text-accent { color: #e74c3c; }
+        .bg-primary { background-color: #1e3a5f; }
+        .bg-accent { background-color: #e74c3c; }
+        .border-accent { border-color: #e74c3c; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <span><i class="fas fa-phone-alt mr-2"></i>+977 1 234 5678</span>
+                <span class="hidden md:inline"><i class="fas fa-envelope mr-2"></i>info@riwashhitech.com</span>
+                <span class="hidden lg:inline"><i class="fas fa-clock mr-2"></i>Sun-Fri: 9AM - 6PM NPT</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#" class="hover:text-gray-300"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header with Mega Menu -->
+    <header class="main-header">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary rounded flex items-center justify-center">
+                    <i class="fas fa-mountain text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-primary">Riwash Hitech</h1>
+                    <p class="text-xs text-gray-500">Trek & Tours Pvt. Ltd.</p>
+                </div>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-1">
+                <a href="index.html" class="px-4 py-2 text-accent font-medium bg-red-50 rounded">Home</a>
+                
+                <!-- Mega Menu for Nepal Treks -->
+                <div class="mega-menu-wrapper">
+                    <a href="tours.html" class="px-4 py-2 text-gray-600 hover:text-accent font-medium flex items-center gap-1">
+                        Nepal Treks <i class="fas fa-chevron-down text-xs"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-header">
+                            <h3 class="font-bold text-lg">Nepal Trekking Packages</h3>
+                            <p class="text-white/80 text-sm">Explore the Himalayas with expert local guides</p>
+                        </div>
+                        <div class="mega-menu-grid">
+                            <div class="mega-menu-column">
+                                <h4 class="mega-menu-title"><i class="fas fa-mountain"></i> Everest Region</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Everest Base Camp Trek</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Gokyo Lakes Trek</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Three Passes Trek</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Everest Panorama</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Island Peak Climbing</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4 class="mega-menu-title"><i class="fas fa-image"></i> Annapurna Region</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Annapurna Circuit</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Annapurna Base Camp</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Ghorepani Poon Hill</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Mardi Himal Trek</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Khopra Ridge Trek</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4 class="mega-menu-title"><i class="fas fa-compass"></i> Other Regions</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Langtang Valley</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Manaslu Circuit</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Upper Mustang</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Kanchenjunga</a></li>
+                                    <li><a href="#"><i class="fas fa-chevron-right"></i> Makalu Base Camp</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dropdown for Tours -->
+                <div class="dropdown-wrapper">
+                    <a href="nepal-tours.html" class="px-4 py-2 text-gray-600 hover:text-accent font-medium flex items-center gap-1">
+                        Tours <i class="fas fa-chevron-down text-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item"><i class="fas fa-landmark"></i> Cultural Tours</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-om"></i> Spiritual Yatra</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-paw"></i> Jungle Safari</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-city"></i> Kathmandu Valley</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-helicopter"></i> Helicopter Tours</a>
+                    </div>
+                </div>
+                
+                <!-- Dropdown for Destinations -->
+                <div class="dropdown-wrapper">
+                    <a href="#" class="px-4 py-2 text-gray-600 hover:text-accent font-medium flex items-center gap-1">
+                        Destinations <i class="fas fa-chevron-down text-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item"><i class="fas fa-flag"></i> Nepal <span class="ml-auto text-gray-400">45 treks</span></a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-mountain"></i> Tibet <span class="ml-auto text-gray-400">12 tours</span></a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-dharmachakra"></i> Bhutan <span class="ml-auto text-gray-400">8 tours</span></a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-om"></i> India <span class="ml-auto text-gray-400">15 tours</span></a>
+                    </div>
+                </div>
+                
+                <a href="about.html" class="px-4 py-2 text-gray-600 hover:text-accent font-medium">About</a>
+                <a href="blog.html" class="px-4 py-2 text-gray-600 hover:text-accent font-medium">Blog</a>
+                <a href="contact.html" class="px-4 py-2 text-gray-600 hover:text-accent font-medium">Contact</a>
+            </nav>
+            
+            <div class="flex items-center gap-4">
+                <a href="contact.html" class="btn-main text-sm hidden sm:flex">
+                    <i class="fas fa-calendar-check"></i>
+                    Book Now
+                </a>
+                <button class="lg:hidden text-gray-600 text-xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-accent rounded flex items-center justify-center">
+                        <i class="fas fa-mountain text-white"></i>
+                    </div>
+                    <span class="text-lg font-bold text-primary">Riwash Hitech</span>
+                </div>
+                <button class="text-gray-500" id="mobile-close">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <nav class="flex flex-col gap-2">
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 bg-red-50 text-accent rounded-lg font-medium">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="tours.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 text-gray-700 rounded-lg font-medium">
+                    <i class="fas fa-hiking"></i> Nepal Treks
+                </a>
+                <a href="nepal-tours.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 text-gray-700 rounded-lg font-medium">
+                    <i class="fas fa-map"></i> Tours
+                </a>
+                <a href="about.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 text-gray-700 rounded-lg font-medium">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+                <a href="blog.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 text-gray-700 rounded-lg font-medium">
+                    <i class="fas fa-blog"></i> Blog
+                </a>
+                <a href="contact.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 text-gray-700 rounded-lg font-medium">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </nav>
+            
+            <div class="mt-8 pt-6 border-t">
+                <a href="tel:+9771234567" class="flex items-center gap-3 px-4 py-3 bg-primary text-white rounded-lg font-medium mb-3">
+                    <i class="fas fa-phone-alt"></i> +977 1 234 5678
+                </a>
+                <a href="https://wa.me/9779801234567" class="flex items-center gap-3 px-4 py-3 bg-green-500 text-white rounded-lg font-medium">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Chat
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Navigation -->
+    <div class="quick-nav">
+        <div class="max-w-7xl mx-auto px-4 flex items-center gap-2 overflow-x-auto">
+            <span class="text-sm text-gray-500 mr-2 whitespace-nowrap">Quick Links:</span>
+            <a href="#treks">Popular Treks</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#departures">Departures</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#blog">Blog</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="inline-block bg-accent/90 text-white px-4 py-2 rounded text-sm font-semibold mb-4">
+                <i class="fas fa-certificate mr-2"></i>Government Licensed Agency Since 2010
+            </span>
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+                Trek Nepal with Expert Local Guides
+            </h2>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                Government licensed trekking agency. Best prices for Everest Base Camp, Annapurna Circuit, Langtang Valley. Expert local guides, all permits included.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="tours.html" class="btn-main text-base md:text-lg">
+                    <i class="fas fa-search"></i>
+                    Browse All Treks
+                </a>
+                <a href="https://wa.me/9779801234567" class="btn-outline text-base md:text-lg">
+                    <i class="fab fa-whatsapp"></i>
+                    Quick Inquiry
+                </a>
+            </div>
+            
+            <div class="mt-10 flex flex-wrap justify-center gap-4 md:gap-8 text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span>Licensed by Nepal Tourism Board</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span>All Permits Included</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span>Expert Local Guides</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4">
+            <div class="stat-box border-r border-gray-100">
+                <p class="stat-number">15+</p>
+                <p class="text-gray-600 text-sm">Years Experience</p>
+            </div>
+            <div class="stat-box border-r border-gray-100">
+                <p class="stat-number">10,000+</p>
+                <p class="text-gray-600 text-sm">Happy Trekkers</p>
+            </div>
+            <div class="stat-box border-r border-gray-100">
+                <p class="stat-number">89</p>
+                <p class="text-gray-600 text-sm">Trek Packages</p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-number">4.9/5</p>
+                <p class="text-gray-600 text-sm">TripAdvisor Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Treks Section -->
+    <section class="py-16" id="treks">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-primary mb-3">Most Popular Treks in Nepal</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">Best-selling trekking packages with guaranteed departures. All-inclusive prices with no hidden costs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- EBC -->
+                <div class="trek-card">
+                    <div class="trek-img">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Everest Base Camp">
+                        <span class="trek-badge">BEST SELLER</span>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2 flex-wrap">
+                            <span class="difficulty hard"><i class="fas fa-signal"></i> Hard</span>
+                            <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i>14 Days</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-2">Everest Base Camp Trek</h4>
+                        <p class="text-gray-600 text-sm mb-4">The classic trek to the foot of world's highest peak. Best views, Sherpa culture, Kala Patthar sunrise.</p>
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-2xl font-bold text-accent">$1,899</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <a href="#" class="text-accent font-semibold text-sm hover:underline">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Annapurna Circuit -->
+                <div class="trek-card">
+                    <div class="trek-img">
+                        <img src="https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=600&h=400&fit=crop" alt="Annapurna Circuit">
+                        <span class="trek-badge green">POPULAR</span>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2 flex-wrap">
+                            <span class="difficulty moderate"><i class="fas fa-signal"></i> Moderate</span>
+                            <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i>16 Days</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-2">Annapurna Circuit Trek</h4>
+                        <p class="text-gray-600 text-sm mb-4">Complete circuit around Annapurna massif. Cross Thorong La Pass (5,416m). Diverse landscapes.</p>
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-2xl font-bold text-accent">$1,499</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <a href="#" class="text-accent font-semibold text-sm hover:underline">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Langtang -->
+                <div class="trek-card">
+                    <div class="trek-img">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop" alt="Langtang Valley">
+                        <span class="trek-badge blue">VALUE</span>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2 flex-wrap">
+                            <span class="difficulty easy"><i class="fas fa-signal"></i> Easy-Moderate</span>
+                            <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i>10 Days</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-2">Langtang Valley Trek</h4>
+                        <p class="text-gray-600 text-sm mb-4">Beautiful valley close to Kathmandu. Rich Tamang culture, alpine scenery, less crowded than EBC.</p>
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-2xl font-bold text-accent">$999</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <a href="#" class="text-accent font-semibold text-sm hover:underline">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Manaslu -->
+                <div class="trek-card">
+                    <div class="trek-img">
+                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&h=400&fit=crop" alt="Manaslu Circuit">
+                        <span class="trek-badge">REMOTE</span>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2 flex-wrap">
+                            <span class="difficulty hard"><i class="fas fa-signal"></i> Hard</span>
+                            <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i>16 Days</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-2">Manaslu Circuit Trek</h4>
+                        <p class="text-gray-600 text-sm mb-4">Off-beaten path around world's 8th highest peak. Restricted area, special permit required.</p>
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-2xl font-bold text-accent">$1,799</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <a href="#" class="text-accent font-semibold text-sm hover:underline">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kailash -->
+                <div class="trek-card">
+                    <div class="trek-img">
+                        <img src="https://images.unsplash.com/photo-1545063328-c8e3fcf02ec1?w=600&h=400&fit=crop" alt="Kailash">
+                        <span class="trek-badge green">SPIRITUAL</span>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2 flex-wrap">
+                            <span class="difficulty hard"><i class="fas fa-signal"></i> Extreme</span>
+                            <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i>12 Days</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-2">Kailash Mansarovar Yatra</h4>
+                        <p class="text-gray-600 text-sm mb-4">Sacred pilgrimage to Lord Shiva's abode. Tibet visa, all permits, accommodation included.</p>
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-2xl font-bold text-accent">$2,999</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <a href="#" class="text-accent font-semibold text-sm hover:underline">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bhutan -->
+                <div class="trek-card">
+                    <div class="trek-img">
+                        <img src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=600&h=400&fit=crop" alt="Bhutan">
+                        <span class="trek-badge blue">LUXURY</span>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2 flex-wrap">
+                            <span class="difficulty easy"><i class="fas fa-signal"></i> Easy</span>
+                            <span class="text-sm text-gray-500"><i class="far fa-clock mr-1"></i>7 Days</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-2">Bhutan Cultural Tour</h4>
+                        <p class="text-gray-600 text-sm mb-4">Kingdom of Happiness tour. Tiger's Nest, Thimphu, Paro. All inclusive with 3-star hotels.</p>
+                        <div class="flex items-center justify-between pt-4 border-t">
+                            <div>
+                                <span class="text-2xl font-bold text-accent">$2,299</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <a href="#" class="text-accent font-semibold text-sm hover:underline">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="tours.html" class="btn-main text-lg">
+                    <i class="fas fa-th-large"></i>
+                    View All 89 Trek Packages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trekking Regions -->
+    <section class="py-16 bg-white" id="destinations">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-primary mb-3">Trek by Region</h3>
+                <p class="text-gray-600">Explore Nepal's major trekking regions</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="#" class="region-card">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=400&fit=crop" alt="Everest Region">
+                    <div class="region-overlay">
+                        <h4 class="text-xl font-bold mb-1">Everest Region</h4>
+                        <p class="text-sm text-gray-300">12 Treks | EBC, Gokyo, 3 Passes</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="region-card">
+                    <img src="https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=500&h=400&fit=crop" alt="Annapurna Region">
+                    <div class="region-overlay">
+                        <h4 class="text-xl font-bold mb-1">Annapurna Region</h4>
+                        <p class="text-sm text-gray-300">15 Treks | Circuit, ABC, Poon Hill</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="region-card">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&h=400&fit=crop" alt="Langtang Region">
+                    <div class="region-overlay">
+                        <h4 class="text-xl font-bold mb-1">Langtang Region</h4>
+                        <p class="text-sm text-gray-300">8 Treks | Valley, Gosaikunda</p>
+                    </div>
+                </a>
+                
+                <a href="#" class="region-card">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500&h=400&fit=crop" alt="Manaslu">
+                    <div class="region-overlay">
+                        <h4 class="text-xl font-bold mb-1">Manaslu & Restricted</h4>
+                        <p class="text-sm text-gray-300">6 Treks | Tsum Valley, Mustang</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Departures Section -->
+    <section class="py-16 bg-gray-50" id="departures">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-primary mb-3">Upcoming Departures</h3>
+                <p class="text-gray-600">Guaranteed group departure dates for 2025/2026</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm overflow-x-auto">
+                <table class="departure-table min-w-[800px]">
+                    <thead>
+                        <tr>
+                            <th>Trek Name</th>
+                            <th>Start Date</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            <th>Seats</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=60&h=60&fit=crop" alt="EBC" class="w-12 h-12 rounded-lg object-cover">
+                                    <div>
+                                        <p class="font-semibold text-primary">Everest Base Camp Trek</p>
+                                        <p class="text-xs text-gray-500">14 Days | Hard</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="font-medium">Mar 15, 2025</td>
+                            <td>14 Days</td>
+                            <td class="font-bold text-accent">$1,899</td>
+                            <td><span class="seats-available">8 seats left</span></td>
+                            <td><a href="#" class="btn-main text-sm py-2 px-4">Book Now</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=60&h=60&fit=crop" alt="ABC" class="w-12 h-12 rounded-lg object-cover">
+                                    <div>
+                                        <p class="font-semibold text-primary">Annapurna Base Camp</p>
+                                        <p class="text-xs text-gray-500">10 Days | Moderate</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="font-medium">Mar 20, 2025</td>
+                            <td>10 Days</td>
+                            <td class="font-bold text-accent">$1,299</td>
+                            <td><span class="seats-limited">4 seats left</span></td>
+                            <td><a href="#" class="btn-main text-sm py-2 px-4">Book Now</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=60&h=60&fit=crop" alt="Langtang" class="w-12 h-12 rounded-lg object-cover">
+                                    <div>
+                                        <p class="font-semibold text-primary">Langtang Valley Trek</p>
+                                        <p class="text-xs text-gray-500">10 Days | Easy</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="font-medium">Apr 5, 2025</td>
+                            <td>10 Days</td>
+                            <td class="font-bold text-accent">$999</td>
+                            <td><span class="seats-available">12 seats left</span></td>
+                            <td><a href="#" class="btn-main text-sm py-2 px-4">Book Now</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1545063328-c8e3fcf02ec1?w=60&h=60&fit=crop" alt="Kailash" class="w-12 h-12 rounded-lg object-cover">
+                                    <div>
+                                        <p class="font-semibold text-primary">Kailash Mansarovar Yatra</p>
+                                        <p class="text-xs text-gray-500">12 Days | Extreme</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="font-medium">May 15, 2025</td>
+                            <td>12 Days</td>
+                            <td class="font-bold text-accent">$2,999</td>
+                            <td><span class="seats-available">6 seats left</span></td>
+                            <td><a href="#" class="btn-main text-sm py-2 px-4">Book Now</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=60&h=60&fit=crop" alt="Manaslu" class="w-12 h-12 rounded-lg object-cover">
+                                    <div>
+                                        <p class="font-semibold text-primary">Manaslu Circuit Trek</p>
+                                        <p class="text-xs text-gray-500">16 Days | Hard</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="font-medium">Apr 12, 2025</td>
+                            <td>16 Days</td>
+                            <td class="font-bold text-accent">$1,799</td>
+                            <td><span class="seats-available">10 seats left</span></td>
+                            <td><a href="#" class="btn-main text-sm py-2 px-4">Book Now</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="text-accent font-semibold hover:underline">
+                    View All Departure Dates <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-primary mb-3">Why Trek with Riwash Hitech</h3>
+                <p class="text-gray-600">What makes us different from other agencies</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-1">Government Licensed</h4>
+                        <p class="text-sm text-gray-600">Registered with Nepal Tourism Board. All legal documents, tax compliant.</p>
+                    </div>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-1">All Permits Included</h4>
+                        <p class="text-sm text-gray-600">TIMS, National Park permits, restricted area permits - all handled by us.</p>
+                    </div>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-1">Expert Local Guides</h4>
+                        <p class="text-sm text-gray-600">Native Nepali guides with 10+ years experience. First aid certified.</p>
+                    </div>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-1">Best Price Guarantee</h4>
+                        <p class="text-sm text-gray-600">No hidden costs. All-inclusive prices. Match any lower quote.</p>
+                    </div>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-1">24/7 Support</h4>
+                        <p class="text-sm text-gray-600">Emergency contact during trek. Office support before & after.</p>
+                    </div>
+                </div>
+                
+                <div class="why-item">
+                    <div class="why-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-1">Safety First</h4>
+                        <p class="text-sm text-gray-600">Oxygen cylinders, satellite phone, emergency evacuation plan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50" id="testimonials">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-primary mb-3">What Our Clients Say</h3>
+                <p class="text-gray-600">Verified reviews from trekkers worldwide</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="review-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">TripAdvisor</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"EBC trek was perfectly organized. Guide Ram was excellent, always ensuring our safety. All permits, hotels, flights handled smoothly. Highly recommend!"</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&crop=face" alt="Sarah" class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="font-semibold text-sm">Sarah Johnson</p>
+                            <p class="text-xs text-gray-500">UK • EBC Trek Oct 2024</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">Google Reviews</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Best price I found after comparing 5 agencies. Annapurna Circuit was amazing. Bikash personally checked on us during the trek. Great service!"</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Michael" class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="font-semibold text-sm">Michael Chen</p>
+                            <p class="text-xs text-gray-500">Singapore • ABC Trek Nov 2024</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">Trustpilot</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Kailash Yatra organized flawlessly. All Tibet permits, visa, accommodation taken care of. Professional team, respectful of spiritual aspects."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face" alt="Rajesh" class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="font-semibold text-sm">Rajesh Sharma</p>
+                            <p class="text-xs text-gray-500">India • Kailash Yatra June 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border shadow-sm">
+                    <i class="fab fa-tripadvisor text-green-600"></i>
+                    <span class="text-sm font-medium">TripAdvisor: 4.9/5</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border shadow-sm">
+                    <i class="fab fa-google text-blue-500"></i>
+                    <span class="text-sm font-medium">Google: 4.8/5</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border shadow-sm">
+                    <i class="fas fa-certificate text-orange-500"></i>
+                    <span class="text-sm font-medium">Trustpilot: 4.7/5</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-16 bg-white" id="blog">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
+                <div>
+                    <span class="text-accent text-sm font-semibold uppercase tracking-wider">Travel Blog</span>
+                    <h3 class="text-2xl md:text-3xl font-bold text-primary mt-2">Latest Articles & Tips</h3>
+                </div>
+                <a href="blog.html" class="text-accent font-semibold hover:underline flex items-center gap-2">
+                    View All Articles <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="EBC Guide">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-xs font-medium text-accent bg-red-50 px-3 py-1 rounded-full">Trekking Guide</span>
+                            <span class="text-xs text-gray-500">Jan 10, 2025</span>
+                        </div>
+                        <h4 class="font-bold text-primary mb-2 hover:text-accent transition-colors cursor-pointer">
+                            Best Time for Everest Base Camp Trek: Complete Season Guide
+                        </h4>
+                        <p class="text-gray-600 text-sm mb-4">Discover the optimal seasons for EBC trek, weather patterns, and what to expect each month...</p>
+                        <a href="#" class="text-accent font-semibold text-sm hover:underline">Read More <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?w=600&h=400&fit=crop" alt="Solo Trek">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-xs font-medium text-accent bg-red-50 px-3 py-1 rounded-full">Safety Tips</span>
+                            <span class="text-xs text-gray-500">Jan 5, 2025</span>
+                        </div>
+                        <h4 class="font-bold text-primary mb-2 hover:text-accent transition-colors cursor-pointer">
+                            Solo Trekking in Nepal 2026: New Rules & Safety Guide
+                        </h4>
+                        <p class="text-gray-600 text-sm mb-4">Updated regulations for solo trekkers, mandatory guide requirements, and safety recommendations...</p>
+                        <a href="#" class="text-accent font-semibold text-sm hover:underline">Read More <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1545063328-c8e3fcf02ec1?w=600&h=400&fit=crop" alt="Packing">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-xs font-medium text-accent bg-red-50 px-3 py-1 rounded-full">Gear Guide</span>
+                            <span class="text-xs text-gray-500">Dec 28, 2024</span>
+                        </div>
+                        <h4 class="font-bold text-primary mb-2 hover:text-accent transition-colors cursor-pointer">
+                            Essential Packing List for Himalayan Treks
+                        </h4>
+                        <p class="text-gray-600 text-sm mb-4">Complete checklist of gear, clothing, and equipment you need for high-altitude trekking...</p>
+                        <a href="#" class="text-accent font-semibold text-sm hover:underline">Read More <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Bar -->
+    <section class="contact-bar">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-bold mb-1">Ready to book your trek?</h4>
+                <p class="text-gray-400 text-sm">Get free itinerary customization and quote within 24 hours</p>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="tel:+9771234567" class="text-xl font-bold hover:text-accent flex items-center gap-2">
+                    <i class="fas fa-phone-alt"></i>+977 1 234 5678
+                </a>
+                <a href="contact.html" class="btn-main bg-white text-primary hover:bg-gray-100">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Get Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-accent rounded flex items-center justify-center">
+                        <i class="fas fa-mountain text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold">Riwash Hitech</h4>
+                        <p class="text-xs text-gray-500">Trek & Tours Pvt. Ltd.</p>
+                    </div>
+                </div>
+                <p class="text-sm mb-4">Government licensed Nepal trekking agency since 2010. Expert local guides, best prices, all permits included.</p>
+                <div class="flex gap-3">
+                    <a href="#" class="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-accent transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-accent transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-accent transition"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="w-8 h-8 bg-white/10 rounded flex items-center justify-center hover:bg-accent transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="footer-title">Popular Treks</h4>
+                <a href="#">Everest Base Camp Trek</a>
+                <a href="#">Annapurna Circuit Trek</a>
+                <a href="#">Langtang Valley Trek</a>
+                <a href="#">Manaslu Circuit Trek</a>
+                <a href="#">Gokyo Lakes Trek</a>
+                <a href="#">Kailash Mansarovar Yatra</a>
+            </div>
+            
+            <div>
+                <h4 class="footer-title">Destinations</h4>
+                <a href="#">Nepal Treks</a>
+                <a href="#">Tibet Tours</a>
+                <a href="#">Bhutan Tours</a>
+                <a href="#">India Himalaya</a>
+                <a href="#">Multi Country</a>
+            </div>
+            
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <p class="text-sm mb-2"><i class="fas fa-map-marker-alt mr-2 text-accent"></i>Thamel, Kathmandu, Nepal</p>
+                <p class="text-sm mb-2"><i class="fas fa-phone-alt mr-2 text-accent"></i>+977 1 234 5678</p>
+                <p class="text-sm mb-2"><i class="fas fa-mobile-alt mr-2 text-accent"></i>+977 980 123 4567</p>
+                <p class="text-sm mb-2"><i class="fas fa-envelope mr-2 text-accent"></i>info@riwashhitech.com</p>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/10 pt-6 text-center">
+            <p class="text-sm">&copy; 2010 - 2025 Riwash Hitech Trek & Tours Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const mobileClose = document.getElementById('mobile-close');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileClose.addEventListener('click', closeMobileMenu);
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
