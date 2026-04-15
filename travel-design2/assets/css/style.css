@@ -2457,7 +2457,7 @@ img {
    ======================================== */
 
 /* Header - Sticky with green background for itinerary */
-.itinerary-page #main-header {
+ #main-header {
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -2491,7 +2491,7 @@ img {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    height: 500px;
+    height: auto;
 }
 
 .gallery-main img {
