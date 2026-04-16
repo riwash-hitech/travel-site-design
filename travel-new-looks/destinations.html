@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Explore Nepal | Riwash Travel</title>
+    <meta name="description" content="Explore all trekking destinations in Nepal. Everest, Annapurna, Langtang, Manaslu and more with Riwash Travel.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .destinations-hero {
+            min-height: 50vh;
+            background: linear-gradient(rgba(26,46,38,0.8), rgba(26,46,38,0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .region-filter {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .region-btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            color: #64748b;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .region-btn:hover, .region-btn.active {
+            background: #8CB830;
+            border-color: #8CB830;
+            color: white;
+        }
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .destination-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+        .destination-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .destination-img {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+        .destination-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .destination-item:hover .destination-img img {
+            transform: scale(1.1);
+        }
+        .destination-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #8CB830;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .destination-content {
+            padding: 25px;
+        }
+        .destination-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .destination-content p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .destination-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        .destination-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .destination-meta i {
+            color: #8CB830;
+        }
+        .destination-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .destination-price {
+            font-size: 13px;
+            color: #64748b;
+        }
+        .destination-price strong {
+            font-size: 20px;
+            color: #8CB830;
+        }
+        .explore-link {
+            color: #8CB830;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .explore-link:hover {
+            color: #7aa62a;
+        }
+        @media (max-width: 992px) {
+            .destination-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - Two Row Design -->
+    <header id="main-header">
+        <!-- Top Bar: Logo & Contact Info -->
+        <div class="header-top">
+            <div class="header-top-container">
+                <!-- Logo -->
+                <div id="header-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>RIWASH</h1>
+                        <p>Travel & Trek</p>
+                    </div>
+                </div>
+                
+                <!-- Top Right Info -->
+                <div class="header-top-info">
+                    <div class="top-info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <span>Call Us</span>
+                            <strong>+977 1 4XXXXXX</strong>
+                        </div>
+                    </div>
+                    <div class="top-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <span>Email Us</span>
+                            <strong>info@riwashtravel.com</strong>
+                        </div>
+                    </div>
+                    <div class="top-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar: Main Menu Navigation -->
+        <div class="header-bottom">
+            <div class="header-bottom-container">
+                <!-- Left: Navigation -->
+                <nav id="main-nav">
+                <!-- Home -->
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </div>
+                
+                <!-- Destinations Mega Menu -->
+                <div class="nav-item">
+                    <a href="destinations.html" class="nav-link active">
+                        Destinations <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <div>
+                                <h4 class="mega-menu-title"><i class="fas fa-mountain"></i> Everest Region</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="itinerary.html"><i class="fas fa-hiking"></i> Everest Base Camp Trek</a></li>
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Gokyo Lakes Trek</a></li>
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Three Passes Trek</a></li>
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Everest View Trek</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="mega-menu-title"><i class="fas fa-mountain"></i> Annapurna Region</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Annapurna Circuit</a></li>
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Annapurna Base Camp</a></li>
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Poon Hill Trek</a></li>
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Mardi Himal Trek</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="mega-menu-title"><i class="fas fa-mountain"></i> Other Regions</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Langtang Valley</a></li>
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Manaslu Circuit</a></li>
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Upper Mustang</a></li>
+                                    <li><a href="#"><i class="fas fa-hiking"></i> Kanchenjunga Trek</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-featured">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" alt="Featured Trek">
+                                <h4>Special Offer</h4>
+                                <p>20% OFF on EBC Trek</p>
+                                <a href="#" class="btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tours Mega Menu -->
+                <div class="nav-item">
+                    <a href="packages.html" class="nav-link">
+                        Packages <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-grid">
+                            <div>
+                                <h4 class="mega-menu-title"><i class="fas fa-walking"></i> Trekking</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="#"><i class="fas fa-check"></i> Tea House Trekking</a></li>
+                                    <li><a href="#"><i class="fas fa-check"></i> Camping Trekking</a></li>
+                                    <li><a href="#"><i class="fas fa-check"></i> Guided Trekking</a></li>
+                                    <li><a href="#"><i class="fas fa-check"></i> Group Trekking</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="mega-menu-title"><i class="fas fa-spa"></i> Activities</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="#"><i class="fas fa-check"></i> Peak Climbing</a></li>
+                                    <li><a href="#"><i class="fas fa-check"></i> Mountaineering</a></li>
+                                    <li><a href="#"><i class="fas fa-check"></i> Rock Climbing</a></li>
+                                    <li><a href="#"><i class="fas fa-check"></i> Paragliding</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="mega-menu-title"><i class="fas fa-om"></i> Cultural</h4>
+                                <ul class="mega-menu-list">
+                                    <li><a href="#"><i class="fas fa-check"></i> Heritage Tours</a></li>
+                                    <li><a href="#"><i class="fas fa-check"></i> Spiritual Tours</a></li>
+                                    <li><a href="#"><i class="fas fa-check"></i> Festival Tours</a></li>
+                                    <li><a href="#"><i class="fas fa-check"></i> Village Homestay</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-featured">
+                                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400" alt="Popular Package">
+                                <h4>Most Popular</h4>
+                                <p>Annapurna Circuit</p>
+                                <a href="#" class="btn-primary">View Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Dropdown Menu -->
+                <div class="nav-item dropdown-single">
+                    <a href="#" class="nav-link">
+                        Services <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu-single">
+                        <ul class="dropdown-list">
+                            <li><a href="#"><i class="fas fa-user-tie"></i> Trekking Guide</a></li>
+                            <li><a href="#"><i class="fas fa-route"></i> Trip Planning</a></li>
+                            <li><a href="#"><i class="fas fa-plane"></i> Flight Booking</a></li>
+                            <li><a href="#"><i class="fas fa-hotel"></i> Hotel Reservation</a></li>
+                            <li><a href="#"><i class="fas fa-car"></i> Transport Service</a></li>
+                            <li><a href="#"><i class="fas fa-passport"></i> Permit Assistance</a></li>
+                            <li><a href="#"><i class="fas fa-first-aid"></i> Travel Insurance</a></li>
+                            <li><a href="#"><i class="fas fa-camera"></i> Photography Tours</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- About -->
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                
+                <!-- Blog -->
+                <div class="nav-item">
+                    <a href="blog.html" class="nav-link">Blog</a>
+                </div>
+                
+                <!-- Contact -->
+                <div class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                </nav>
+                
+                <!-- Right: CTA Button -->
+                <div id="header-actions">
+                    <a href="#" class="btn-white">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Now
+                    </a>
+                    <button id="mobile-menu-btn" style="color: white;"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden" style="background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);">
+            <div class="container mx-auto px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-white py-3 border-b border-white/20">Home</a>
+                <a href="destinations.html" class="block text-white py-3 border-b border-white/20">Destinations</a>
+                <a href="packages.html" class="block text-white py-3 border-b border-white/20">Packages</a>
+                
+                <!-- Services with Dropdown in Mobile -->
+                <div class="dropdown-single">
+                    <a href="#" class="block text-white py-3 border-b border-white/20 flex justify-between items-center">
+                        Services <i class="fas fa-chevron-down text-sm"></i>
+                    </a>
+                    <div class="dropdown-menu-single hidden md:block">
+                        <ul class="dropdown-list">
+                            <li><a href="#"><i class="fas fa-user-tie"></i> Trekking Guide</a></li>
+                            <li><a href="#"><i class="fas fa-route"></i> Trip Planning</a></li>
+                            <li><a href="#"><i class="fas fa-plane"></i> Flight Booking</a></li>
+                            <li><a href="#"><i class="fas fa-hotel"></i> Hotel Reservation</a></li>
+                            <li><a href="#"><i class="fas fa-car"></i> Transport Service</a></li>
+                            <li><a href="#"><i class="fas fa-passport"></i> Permit Assistance</a></li>
+                            <li><a href="#"><i class="fas fa-first-aid"></i> Travel Insurance</a></li>
+                            <li><a href="#"><i class="fas fa-camera"></i> Photography Tours</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <a href="about.html" class="block text-white py-3 border-b border-white/20">About</a>
+                <a href="blog.html" class="block text-white py-3 border-b border-white/20">Blog</a>
+                <a href="contact.html" class="block text-white py-3">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="destinations-hero">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Our Destinations</h1>
+            <p class="text-xl text-gray-200 max-w-2xl mx-auto">Discover the most breathtaking trekking destinations in the Himalayas</p>
+        </div>
+    </section>
+
+    <!-- Destinations -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-1400 mx-auto px-4">
+            <!-- Region Filter -->
+            <div class="region-filter">
+                <button class="region-btn active">All Regions</button>
+                <button class="region-btn">Everest Region</button>
+                <button class="region-btn">Annapurna Region</button>
+                <button class="region-btn">Langtang Region</button>
+                <button class="region-btn">Other Regions</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="destination-grid">
+                <!-- Everest Base Camp -->
+                <div class="destination-item">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600" alt="Everest Base Camp">
+                        <span class="destination-badge">Popular</span>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Everest Base Camp</h3>
+                        <p>The ultimate trekking adventure to the foot of the world's highest peak at 5,364m.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 14 Days</span>
+                            <span><i class="fas fa-signal"></i> Moderate</span>
+                            <span><i class="fas fa-mountain"></i> 5,364m</span>
+                        </div>
+                        <div class="destination-footer">
+                            <span class="destination-price">From <strong>$1,299</strong></span>
+                            <a href="itinerary.html" class="explore-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annapurna Circuit -->
+                <div class="destination-item">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600" alt="Annapurna Circuit">
+                        <span class="destination-badge" style="background: #ff6b6b;">Trending</span>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Annapurna Circuit</h3>
+                        <p>Circumnavigate the Annapurna massif through diverse landscapes and Thorong La Pass.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 16 Days</span>
+                            <span><i class="fas fa-signal"></i> Challenging</span>
+                            <span><i class="fas fa-mountain"></i> 5,416m</span>
+                        </div>
+                        <div class="destination-footer">
+                            <span class="destination-price">From <strong>$1,499</strong></span>
+                            <a href="#" class="explore-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Langtang Valley -->
+                <div class="destination-item">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600" alt="Langtang Valley">
+                        <span class="destination-badge">Valley</span>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Langtang Valley</h3>
+                        <p>The valley of glaciers with stunning mountain views and rich Tamang culture.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 10 Days</span>
+                            <span><i class="fas fa-signal"></i> Moderate</span>
+                            <span><i class="fas fa-mountain"></i> 3,870m</span>
+                        </div>
+                        <div class="destination-footer">
+                            <span class="destination-price">From <strong>$899</strong></span>
+                            <a href="#" class="explore-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manaslu Circuit -->
+                <div class="destination-item">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600" alt="Manaslu Circuit">
+                        <span class="destination-badge">Remote</span>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Manaslu Circuit</h3>
+                        <p>Trek around the world's 8th highest peak through restricted area with special permits.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 18 Days</span>
+                            <span><i class="fas fa-signal"></i> Challenging</span>
+                            <span><i class="fas fa-mountain"></i> 5,106m</span>
+                        </div>
+                        <div class="destination-footer">
+                            <span class="destination-price">From <strong>$1,699</strong></span>
+                            <a href="#" class="explore-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upper Mustang -->
+                <div class="destination-item">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=600" alt="Upper Mustang">
+                        <span class="destination-badge">Culture</span>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Upper Mustang</h3>
+                        <p>Explore the mystical Forbidden Kingdom with unique Tibetan culture and desert landscapes.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 12 Days</span>
+                            <span><i class="fas fa-signal"></i> Moderate</span>
+                            <span><i class="fas fa-mountain"></i> 3,810m</span>
+                        </div>
+                        <div class="destination-footer">
+                            <span class="destination-price">From <strong>$1,899</strong></span>
+                            <a href="#" class="explore-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gokyo Lakes -->
+                <div class="destination-item">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600" alt="Gokyo Lakes">
+                        <span class="destination-badge">Lakes</span>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Gokyo Lakes Trek</h3>
+                        <p>Visit the sacred turquoise alpine lakes and climb Gokyo Ri for panoramic views.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 14 Days</span>
+                            <span><i class="fas fa-signal"></i> Moderate</span>
+                            <span><i class="fas fa-mountain"></i> 5,357m</span>
+                        </div>
+                        <div class="destination-footer">
+                            <span class="destination-price">From <strong>$1,399</strong></span>
+                            <a href="#" class="explore-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kanchenjunga -->
+                <div class="destination-item">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1596329063725-2e9983a0af1d?w=600" alt="Kanchenjunga">
+                        <span class="destination-badge">Remote</span>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Kanchenjunga Trek</h3>
+                        <p>Journey to the base of world's 3rd highest peak in pristine eastern Nepal.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 24 Days</span>
+                            <span><i class="fas fa-signal"></i> Challenging</span>
+                            <span><i class="fas fa-mountain"></i> 5,143m</span>
+                        </div>
+                        <div class="destination-footer">
+                            <span class="destination-price">From <strong>$2,499</strong></span>
+                            <a href="#" class="explore-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poon Hill -->
+                <div class="destination-item">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" alt="Poon Hill">
+                        <span class="destination-badge" style="background: #3b82f6;">Best Value</span>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Poon Hill Trek</h3>
+                        <p>Short and scenic trek with the best sunrise views over Annapurna range.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 5 Days</span>
+                            <span><i class="fas fa-signal"></i> Easy</span>
+                            <span><i class="fas fa-mountain"></i> 3,210m</span>
+                        </div>
+                        <div class="destination-footer">
+                            <span class="destination-price">From <strong>$599</strong></span>
+                            <a href="#" class="explore-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Makalu Base Camp -->
+                <div class="destination-item">
+                    <div class="destination-img">
+                        <img src="https://images.unsplash.com/photo-1605648916319-cf082f7524a1?w=600" alt="Makalu">
+                        <span class="destination-badge">Wild</span>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Makalu Base Camp</h3>
+                        <p>Remote trek to the base of world's 5th highest peak through Makalu Barun National Park.</p>
+                        <div class="destination-meta">
+                            <span><i class="fas fa-clock"></i> 20 Days</span>
+                            <span><i class="fas fa-signal"></i> Challenging</span>
+                            <span><i class="fas fa-mountain"></i> 4,870m</span>
+                        </div>
+                        <div class="destination-footer">
+                            <span class="destination-price">From <strong>$1,999</strong></span>
+                            <a href="#" class="explore-link">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16" style="background: linear-gradient(135deg, #8CB830, #7aa62a);">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Can't Find What You're Looking For?</h2>
+            <p class="text-white text-lg mb-8 opacity-90">Contact us for custom itineraries and private group treks</p>
+            <a href="contact.html" class="inline-block bg-white text-green-700 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer-section">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-about">
+                    <div class="logo">
+                        <div class="logo-icon" style="width: 45px; height: 45px;">
+                            <i class="fas fa-mountain" style="font-size: 20px;"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3 style="font-size: 22px;">RIWASH</h3>
+                            <p style="font-size: 12px; color: var(--primary-color);">Travel & Trek</p>
+                        </div>
+                    </div>
+                    <p>Your trusted partner for unforgettable Himalayan adventures. Discover Nepal with expert local guides since 2009.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="packages.html"><i class="fas fa-chevron-right"></i> Our Tours</a></li>
+                        <li><a href="destinations.html"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Travel Blog</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Popular Tours -->
+                <div class="footer-links">
+                    <h4>Popular Tours</h4>
+                    <ul>
+                        <li><a href="itinerary.html"><i class="fas fa-chevron-right"></i> Everest Base Camp</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Annapurna Circuit</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Langtang Valley</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Manaslu Circuit</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Upper Mustang</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Gallery -->
+                <div>
+                    <div class="footer-links" style="margin-bottom: 25px;">
+                        <h4>Contact Us</h4>
+                        <div class="footer-contact">
+                            <p><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu 44600, Nepal</p>
+                            <p><i class="fas fa-phone"></i> +977 1 4XXXXXX</p>
+                            <p><i class="fas fa-envelope"></i> info@riwashtravel.com</p>
+                        </div>
+                    </div>
+                    <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: var(--accent-color);">Instagram</h4>
+                    <div class="footer-gallery">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=150" alt="Gallery">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=150" alt="Gallery">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=150" alt="Gallery">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=150" alt="Gallery">
+                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=150" alt="Gallery">
+                        <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=150" alt="Gallery">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Riwash Travel & Trek. All rights reserved.</p>
+                <div class="footer-payment">
+                    <i class="fab fa-cc-visa" style="font-size: 30px; color: white;"></i>
+                    <i class="fab fa-cc-mastercard" style="font-size: 30px; color: white;"></i>
+                    <i class="fab fa-cc-paypal" style="font-size: 30px; color: white;"></i>
+                    <i class="fab fa-cc-amex" style="font-size: 30px; color: white;"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div id="scroll-top"><i class="fas fa-chevron-up"></i></div>
+
+    <script>
+        const headerBottom = document.querySelector('.header-bottom');
+        const headerTop = document.querySelector('.header-top');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // Sticky Bottom Header
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > headerTop.offsetHeight) {
+                headerBottom.classList.add('sticky');
+            } else {
+                headerBottom.classList.remove('sticky');
+            }
+        });
+        
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Region filter
+        document.querySelectorAll('.region-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.region-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
