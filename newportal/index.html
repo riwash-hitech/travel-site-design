@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RiwashNews - नेपाली समाचार पोर्टल</title>
+    <meta name="description" content="नेपाली समाचार पोर्टलको होमपेज डिजाइन, टेलविन्ड CSS, कस्टम CSS र JS सहित।" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#9f145f',
+                            secondary: '#0077b6',
+                            cyan: '#00a8c8',
+                            lime: '#7aa320',
+                            sand: '#f7f3ef',
+                            text: '#1f2937'
+                        }
+                    },
+                    fontFamily: {
+                        nepali: ['Mukta', 'sans-serif'],
+                        headline: ['Noto Serif Devanagari', 'serif']
+                    },
+                    boxShadow: {
+                        news: '0 6px 18px rgba(15, 23, 42, 0.08)'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="font-nepali bg-[#f3f3f3] text-brand-text">
+    <div class="top-strip text-white">
+        <div class="site-shell mx-auto flex flex-wrap items-center justify-between gap-3 px-3 py-2 text-[12px]">
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#">समाचार</a>
+                <a href="category.html">राजनीति</a>
+                <a href="#">समाज</a>
+                <a href="#">अन्तर्राष्ट्रिय</a>
+                <a href="#">खेलकुद</a>
+            </div>
+            <div class="flex items-center gap-3 text-[11px]">
+                <span id="nepali-date">आइतबार, १० जेठ २०८३</span>
+                <span class="h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>ताजा अपडेट</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="border-b border-slate-200 bg-white">
+        <div class="site-shell mx-auto px-3 py-3">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <div class="flex items-center justify-center gap-3 lg:justify-start">
+                    <div class="logo-mark">RN</div>
+                    <div>
+                        <div class="site-title">RiwashNews</div>
+                        <p class="text-center text-[11px] uppercase tracking-[0.28em] text-slate-500 lg:text-left">Online News Portal</p>
+                    </div>
+                </div>
+                <a href="#" class="top-ad block overflow-hidden rounded-md shadow-news">
+                    <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Header banner advertisement" class="h-auto w-full object-cover" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav sticky top-0 z-30 shadow-md">
+        <div class="site-shell mx-auto px-3">
+            <div class="flex items-center justify-end gap-3 py-3 lg:hidden">
+                <button id="menu-toggle" type="button" aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="inline-flex h-10 w-10 items-center justify-center rounded border border-white/30 text-white">
+                    <svg data-menu-icon="open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg data-menu-icon="close" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="main-menu" class="hidden pb-3 lg:block lg:pb-0">
+                <div class="flex flex-col gap-2 text-sm font-semibold text-white lg:flex-row lg:flex-wrap lg:items-center lg:gap-5 lg:py-3">
+                    <a href="#">होमपेज</a>
+                    <a href="#top-story">मुख्य समाचार</a>
+                    <a href="category.html">राजनीति</a>
+                    <a href="#samaj">समाज</a>
+                    <a href="#artha">अर्थ</a>
+                    <a href="#bichar">विचार</a>
+                    <a href="#khel">खेलकुद</a>
+                    <a href="#manoranjan">मनोरञ्जन</a>
+                    <a href="#pradesh">प्रदेश</a>
+                    <a href="#video">भिडियो</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="quick-links-bar border-b border-slate-200 bg-white">
+        <div class="site-shell mx-auto px-3 py-3">
+            <div class="flex flex-col gap-3 lg:flex-row lg:items-start">
+                <div class="quick-links-label">द्रुत लिंक</div>
+                <div class="quick-links-list">
+               
+                    <a href="#rajneeti">सरकार</a>
+                    <a href="#samaj">हत्या</a>
+                    <a href="#top-story">आजकाे राशिफल</a>
+                    <a href="#khel">क्रिकेट</a>
+                    <a href="#samaj">नेपाल पत्रकार महासंघ</a>
+                    <a href="#artha">कम्बोडिया</a>
+                    <a href="#bichar">चित्रबहादुर केसी</a>
+                    <a href="news-details.html">शुसिला कार्की</a>
+                    <a href="#artha">तमिलनाडु</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="breaking-bar border-y border-[#f1d3e3] bg-white">
+        <div class="site-shell mx-auto flex flex-col gap-2 px-3 py-3 lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-3">
+                <span class="breaking-pill">ब्रेकिङ</span>
+                <div class="overflow-hidden">
+                    <div id="ticker-track" class="ticker-track whitespace-nowrap text-sm font-medium text-slate-700">
+                        प्रधानमन्त्री र अर्थमन्त्रीबीच समन्वय अभाव बढ्दै • राष्ट्रपतिले सहमतिको राजनीति गर्न दलहरूलाई आग्रह • पोखरामा विमानस्थल सञ्चालनबारे फेरि बहस • शिक्षक आन्दोलनका कारण विद्यालयमा पठनपाठन प्रभावित
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-slate-500">प्रत्येक केही मिनेटमा अपडेट हुने शीर्षक क्षेत्र</p>
+        </div>
+    </div>
+
+    <main class="site-shell mx-auto bg-white px-3 pb-12 pt-4 shadow-news">
+        <section class="detail-hero mb-8 border-b border-slate-200 pb-8">
+            <div class="mx-auto max-w-[980px]">
+                <div class="flex justify-center">
+                    <div class="detail-chip">प्रधानन्यायाधीश सिफारिस प्रकरण</div>
+                </div>
+                <h1 class="detail-headline mt-5 text-center font-extrabold text-slate-900">
+                    <a href="news-details.html">
+                        प्रधानमन्त्री शाक्य र सुशीला कार्कीको सम्बन्धमा दरार, पत्रकारलाई भनिन्- ‘बालेनकी श्रीमतीलाई आमा भन्नू’
+                    </a>
+                </h1>
+                <a href="news-details.html" class="detail-hero-media mt-6 block overflow-hidden rounded-sm border border-slate-200">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="मुख्य समाचार तस्वीर" class="h-[260px] w-full object-cover md:h-[430px] xl:h-[520px]" />
+                </a>
+                <div class="mt-4 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
+                    <a href="author.html" class="font-semibold text-brand-primary hover:underline">RiwashNews डेस्क</a>
+                    <span class="h-1.5 w-1.5 rounded-full bg-slate-300"></span>
+                    <span>१० जेठ २०८३, आइतबार</span>
+                    <span class="h-1.5 w-1.5 rounded-full bg-slate-300"></span>
+                    <span>विशेष समाचार</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="top-story" class="mb-6 grid gap-5 xl:grid-cols-[minmax(0,1.7fr)_320px]">
+            <div>
+                <div class="section-chip">मुख्य समाचार</div>
+                <h1 class="lead-headline mt-3 text-center text-[2rem] font-extrabold leading-tight text-slate-900 md:text-[2.8rem]">
+                    प्रधानमन्त्री र अर्थमन्त्रीका कारण मन्त्रिपरिषद् असफल बन्दै गएको आरोप
+                </h1>
+                <p class="mt-3 text-center text-[15px] text-slate-600">
+                    एकपछि अर्को निर्णय विवादमा तानिएपछि सत्तारूढ गठबन्धनभित्रै जिम्मेवारी र कार्यक्षमतामाथि प्रश्न उठ्न थालेको छ।
+                </p>
+                <div class="mt-4 overflow-hidden rounded-sm border border-slate-200">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="टप स्टोरी तस्वीर" class="aspect-[16/9] w-full object-cover" />
+                </div>
+                <div class="mt-4 grid gap-4 md:grid-cols-3">
+                    <article class="story-box p-4">
+                        <div class="mini-tag">विशेष</div>
+                        <h2 class="mt-2 text-[1.08rem] font-bold leading-7">रास्वपाले उपसभापति चयनबाट के सन्देश दियो ?</h2>
+                        <p class="mt-2 text-sm text-slate-600">दलभित्र शक्ति सन्तुलन र आगामी रणनीतिबारे नयाँ संकेत देखिएको विश्लेषण।</p>
+                    </article>
+                    <article class="story-box p-4">
+                        <div class="mini-tag">राजनीति</div>
+                        <h2 class="mt-2 text-[1.08rem] font-bold leading-7">राष्ट्रपति स्वीटजरल्यान्ड भ्रमणमा जाँदा प्रतिनिधिमण्डलमा को-को ?</h2>
+                        <p class="mt-2 text-sm text-slate-600">कूटनीतिक भेटघाट र सम्भावित आर्थिक सहकार्यबारे चासो।</p>
+                    </article>
+                    <article class="story-box p-4">
+                        <div class="mini-tag">अपडेट</div>
+                        <h2 class="mt-2 text-[1.08rem] font-bold leading-7">शिक्षक महासंघको आन्दोलन जारी, आज पनि वार्ता निष्कर्षविहीन</h2>
+                        <p class="mt-2 text-sm text-slate-600">विद्यालय शिक्षण, परीक्षा तालिका र अभिभावकमा परेको असर।</p>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="space-y-4">
+                <a href="#" class="sidebar-ad block h-[250px] overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Sidebar advertisement" class="h-full w-full object-cover" />
+                </a>
+
+                <div class="side-panel p-4">
+                    <div class="section-chip">लोकप्रिय</div>
+                    <div class="mt-3 space-y-3 text-sm">
+                        <a href="#" class="side-link">नेपाली कांग्रेसको बैठकले सरकारलाई दिएको नयाँ सन्देश</a>
+                        <a href="#" class="side-link">पोखरामा पर्यटक बढेपछि होटल व्यवसायी उत्साहित</a>
+                        <a href="#" class="side-link">बजारमा सुनचाँदीको मूल्य फेरि बढ्यो, कारोबार सुस्त</a>
+                        <a href="#" class="side-link">भेरी करिडोर सडकको काम ढिलाइ हुँदा स्थानीय चिन्तित</a>
+                    </div>
+                </div>
+
+                <article class="side-card overflow-hidden rounded-sm border border-slate-200 bg-white">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="अन्तर्वार्ता तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <div class="mini-tag">अन्तर्वार्ता</div>
+                        <h3 class="mt-2 text-[1.05rem] font-bold leading-7">‘आर्थिक नीतिमा स्थिरता भए निजी क्षेत्रले ठूलो लगानी गर्छ’</h3>
+                    </div>
+                </article>
+
+                <a href="#" class="sidebar-ad alt block h-[250px] overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Sidebar advertisement" class="h-full w-full object-cover" />
+                </a>
+            </aside>
+        </section>
+
+        <a href="#" class="section-ad mb-6 block overflow-hidden rounded-sm">
+            <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Section banner advertisement" class="h-auto w-full object-cover" />
+        </a>
+
+        <section id="rajneeti" class="news-section mb-8">
+            <div class="section-header">
+                <div class="section-chip">राजनीति</div>
+                <a href="#" class="section-more">सबै हेर्नुहोस्</a>
+            </div>
+            <div class="mt-4 grid gap-5 xl:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_300px]">
+                <article class="feature-story overflow-hidden rounded-sm border border-slate-200 bg-white">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="राजनीति मुख्य तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-4">
+                        <h2 class="text-[1.7rem] font-extrabold leading-[1.35]">राष्ट्रपतिले सहमतिका लागि प्रमुख दलका शीर्ष नेतालाई शीतलनिवास बोलाइन्</h2>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">संवैधानिक नियुक्ति, बजेट तयारी र प्रदेश सरकारमा देखिएको अस्थिरताबारे छलफल भएको स्रोतको दाबी।</p>
+                    </div>
+                </article>
+                <div class="space-y-4">
+                    <article class="story-box p-4">
+                        <div class="mini-tag">सरकार</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">मन्त्रीपरिषद् हेरफेरको चर्चा तीव्र, तीन मन्त्रालयमा नयाँ अनुहारको सम्भावना</h3>
+                    </article>
+                    <article class="story-box p-4">
+                        <div class="mini-tag">संसद्</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">विपक्षी दलले सदन अवरोध गर्ने चेतावनी दिँदै विशेष समय माग्यो</h3>
+                    </article>
+                    <article class="story-box p-4">
+                        <div class="mini-tag">दल</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">माओवादी केन्द्रको केन्द्रीय समिति बैठकमा संगठन विस्तार र सरकार दुवै एजेन्डा</h3>
+                    </article>
+                </div>
+                <div class="space-y-4">
+                    <a href="#" class="sidebar-ad block h-[250px] overflow-hidden rounded-sm">
+                        <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Politics sidebar advertisement" class="h-full w-full object-cover" />
+                    </a>
+                    <div class="side-panel p-4">
+                        <div class="mini-tag">छोटो खबर</div>
+                        <ul class="mt-3 space-y-3 text-sm leading-6 text-slate-700">
+                            <li>प्रदेश प्रमुख नियुक्तिबारे सत्तापक्षभित्र छलफल</li>
+                            <li>गठबन्धन बैठक सोमबार पुनः बस्ने</li>
+                            <li>स्थानीय तहको बजेट समयमै ल्याउन परिपत्र</li>
+                            <li>विदेश भ्रमण खर्च मापदण्ड पुनरावलोकन हुँदै</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="samaj" class="news-section mb-8">
+            <div class="section-header">
+                <div class="section-chip">समाज</div>
+                <a href="#" class="section-more">सबै हेर्नुहोस्</a>
+            </div>
+            <div class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                <article class="story-grid-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="समाज खबर तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.08rem] font-bold leading-7">काठमाडौंमा सडक मर्मत तीव्र, यात्रु र व्यवसायी दुवै प्रभावित</h3>
+                    </div>
+                </article>
+                <article class="story-grid-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="समाज खबर तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.08rem] font-bold leading-7">तराईका जिल्लामा गर्मी बढेसँगै स्वास्थ्य सचेतना अभियान</h3>
+                    </div>
+                </article>
+                <article class="story-grid-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="समाज खबर तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.08rem] font-bold leading-7">समुदायस्तरको खानेपानी परियोजनामा अनियमितता भएको स्थानीयको गुनासो</h3>
+                    </div>
+                </article>
+                <article class="story-grid-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="समाज खबर तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.08rem] font-bold leading-7">विद्यालयमा मनोसामाजिक परामर्श कार्यक्रम विस्तारको तयारी</h3>
+                    </div>
+                </article>
+            </div>
+            <a href="#" class="inline-ad mt-4 block overflow-hidden rounded-sm">
+                <img src="https://npcdn.ratopati.com/media/promo/prabhu-agro-loan_xhDcGb4JcK.jpg" alt="Inline promotional advertisement" class="h-auto w-full object-cover" />
+            </a>
+        </section>
+
+        <section id="artha" class="news-section mb-8">
+            <div class="section-header">
+                <div class="section-chip">अर्थ</div>
+                <a href="#" class="section-more">सबै हेर्नुहोस्</a>
+            </div>
+            <div class="mt-4 grid gap-5 xl:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+                <article class="economy-feature rounded-sm p-5 text-white">
+                    <div class="mini-tag alt">अर्थ विशेष</div>
+                    <h2 class="mt-3 text-[1.9rem] font-extrabold leading-[1.45]">शेयर बजारमा सुधार संकेत, बैंकिङ र जलविद्युत् समूहमा लगानीकर्ता सक्रिय</h2>
+                    <p class="mt-3 max-w-2xl text-sm leading-7 text-white/85">तरलता, ब्याजदर र मौद्रिक नीतिको संकेत हेरेर लगानीकर्ता फेरि सक्रिय हुन थालेका छन्।</p>
+                </article>
+                <div class="space-y-4">
+                    <article class="story-box p-4">
+                        <div class="mini-tag">बजार</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">सुनको मूल्य तोलामा पुनः बढ्यो, ग्राहक पर्खाइमा</h3>
+                    </article>
+                    <article class="story-box p-4">
+                        <div class="mini-tag">पर्यटन</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">पर्यटक आगमन बढेसँगै पोखरा र चितवनका होटलमा अकुपेन्सी सुधार</h3>
+                    </article>
+                    <article class="story-box p-4">
+                        <div class="mini-tag">पूर्वाधार</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">सीमावर्ती क्षेत्रमा गोदाम र लजिस्टिक्स पार्क निर्माणमा निजी क्षेत्रको रुचि</h3>
+                    </article>
+                    <a href="#" class="sidebar-ad alt block h-[180px] overflow-hidden rounded-sm">
+                        <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Economy sidebar advertisement" class="h-full w-full object-cover" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="bichar" class="news-section mb-8">
+            <div class="section-header">
+                <div class="section-chip">विचार</div>
+                <a href="#" class="section-more">सबै हेर्नुहोस्</a>
+            </div>
+            <div class="mt-4 grid gap-5 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_300px]">
+                <article class="opinion-quote rounded-sm p-6 text-white">
+                    <p class="text-5xl font-black leading-none text-white/40">“</p>
+                    <h2 class="mt-3 text-[1.9rem] font-extrabold leading-[1.45]">घोषणाभन्दा काम देखियो भने मात्रै नागरिकको विश्वास फर्किन्छ</h2>
+                    <p class="mt-3 text-sm leading-7 text-white/85">सम्पादकीय वा विशेष विचारका लागि बलियो हाइलाइट ब्लक।</p>
+                </article>
+                <div class="space-y-4">
+                    <article class="story-box p-4">
+                        <div class="mini-tag">सम्पादकीय</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">संघीयताको सफलताका लागि वित्तीय अनुशासन किन अनिवार्य छ ?</h3>
+                    </article>
+                    <article class="story-box p-4">
+                        <div class="mini-tag">विचार</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">डिजिटल सार्वजनिक सेवा विस्तारले नागरिकको समय र लागत कसरी बचाउँछ ?</h3>
+                    </article>
+                </div>
+                <div class="side-panel p-4">
+                    <div class="section-chip">मत</div>
+                    <div class="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+                        <p>राज्य संयन्त्रको जवाफदेहिता बढाउन खुला तथ्यांक नीतिको आवश्यकता</p>
+                        <p>कृषि आधुनिकिकरणमा स्थानीय सरकारको ठोस कार्यक्रम अझै अपुग</p>
+                        <p>उद्योगमैत्री कर प्रणाली बिना रोजगारी सिर्जना कठिन</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a href="#" class="section-ad blue mb-8 block overflow-hidden rounded-sm">
+            <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Mid page banner advertisement" class="h-auto w-full object-cover" />
+        </a>
+
+        <section id="khel" class="news-section mb-8">
+            <div class="section-header">
+                <div class="section-chip">खेलकुद</div>
+                <a href="#" class="section-more">सबै हेर्नुहोस्</a>
+            </div>
+            <div class="sports-wrap mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                <article class="sports-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="खेलकुद तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.05rem] font-bold leading-7">राष्ट्रिय टोलीले युवा खेलाडी समेटेर नयाँ स्क्वाड घोषणा गर्‍यो</h3>
+                    </div>
+                </article>
+                <article class="sports-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="खेलकुद तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.05rem] font-bold leading-7">क्रिकेट बोर्डले घरेलु प्रतियोगिताको क्यालेन्डर सार्वजनिक गर्‍यो</h3>
+                    </div>
+                </article>
+                <article class="sports-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="खेलकुद तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.05rem] font-bold leading-7">एथलेटिक्समा नयाँ कीर्तिमान, प्रशिक्षक भन्छन् अझै सुधार सम्भव</h3>
+                    </div>
+                </article>
+                <article class="sports-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="खेलकुद तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.05rem] font-bold leading-7">एन्फा लिगमा निर्णायक खेलअघि क्लबहरू तयारीमा</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="pradesh" class="news-section mb-8">
+            <div class="section-header">
+                <div class="section-chip">प्रदेश</div>
+                <a href="#" class="section-more">सबै हेर्नुहोस्</a>
+            </div>
+            <div class="mt-4 grid gap-5 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_300px]">
+                <article class="feature-story overflow-hidden rounded-sm border border-slate-200 bg-white">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="प्रदेश मुख्य तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-4">
+                        <h2 class="text-[1.6rem] font-extrabold leading-[1.4]">सुदूरपश्चिमदेखि कोशीसम्म विकास बजेट खर्चको गति कमजोर</h2>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">प्रदेश सरकारहरूले योजना स्वीकृति, ठेक्का प्रक्रिया र अनुगमनमा ढिलाइ गरिरहेको टिप्पणी।</p>
+                    </div>
+                </article>
+                <div class="space-y-4">
+                    <article class="story-box p-4">
+                        <div class="mini-tag">कोशी</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">बाढी पूर्वतयारीका लागि स्थानीय तहलाई पूर्वसूचना प्रणाली जडान</h3>
+                    </article>
+                    <article class="story-box p-4">
+                        <div class="mini-tag">लुम्बिनी</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">औद्योगिक क्षेत्र विस्तारमा जग्गा अधिग्रहण प्रक्रिया तीव्र</h3>
+                    </article>
+                    <article class="story-box p-4">
+                        <div class="mini-tag">मधेश</div>
+                        <h3 class="text-[1.1rem] font-bold leading-7">सिंचाइ आयोजना पूरा नहुँदा किसान मर्कामा, बजेट थप्न माग</h3>
+                    </article>
+                </div>
+                <div class="space-y-4">
+                    <a href="#" class="sidebar-ad block h-[250px] overflow-hidden rounded-sm">
+                        <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Province sidebar advertisement" class="h-full w-full object-cover" />
+                    </a>
+                    <div class="side-panel p-4">
+                        <div class="mini-tag">द्रुत अपडेट</div>
+                        <ul class="mt-3 space-y-3 text-sm leading-6 text-slate-700">
+                            <li>कर्णालीमा सडक अवरुद्ध, वैकल्पिक मार्ग प्रयोग गर्न आग्रह</li>
+                            <li>गण्डकीमा पर्यटन प्रवर्द्धन वर्ष घोषणा</li>
+                            <li>बागमतीमा फोहोर व्यवस्थापन मोडल परियोजना सुरु</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="manoranjan" class="news-section mb-8">
+            <div class="section-header">
+                <div class="section-chip">मनोरञ्जन</div>
+                <a href="#" class="section-more">सबै हेर्नुहोस्</a>
+            </div>
+            <div class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                <article class="story-grid-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="मनोरञ्जन तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.05rem] font-bold leading-7">नयाँ चलचित्रको टिजर सार्वजनिक, सामाजिक सञ्जालमा चर्चा</h3>
+                    </div>
+                </article>
+                <article class="story-grid-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="मनोरञ्जन तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.05rem] font-bold leading-7">लोकदोहोरी महोत्सवमा नयाँ पुस्ताका कलाकारको आकर्षक प्रस्तुति</h3>
+                    </div>
+                </article>
+                <article class="story-grid-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="मनोरञ्जन तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.05rem] font-bold leading-7">युट्युब सामग्री नियमन र सर्जकको स्वतन्त्रताबारे बहस</h3>
+                    </div>
+                </article>
+                <article class="story-grid-card">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="मनोरञ्जन तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <h3 class="text-[1.05rem] font-bold leading-7">स्टेज कार्यक्रमको तयारीमा व्यस्त कलाकार, टिकट बुकिङ तीव्र</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="video" class="footer-highlight rounded-sm p-6 text-white">
+            <div class="section-header mb-4 !border-white/20 !pb-3">
+                <div class="section-chip light">भिडियो</div>
+                <a href="#" class="text-sm text-white/90">सबै हेर्नुहोस्</a>
+            </div>
+            <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                <article class="video-card">
+                    <div class="overflow-hidden rounded-sm bg-black">
+                        <iframe class="h-[215px] w-full" src="https://www.youtube.com/embed/ysz5S6PUM-U?rel=0" title="आजको मुख्य ५ खबर एकै भिडियोमा" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="mt-3 text-[1.05rem] font-bold leading-7">आजको मुख्य ५ खबर एकै भिडियोमा</h3>
+                </article>
+                <article class="video-card">
+                    <div class="overflow-hidden rounded-sm bg-black">
+                        <iframe class="h-[215px] w-full" src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0" title="विशेष अन्तर्वार्ता: सरकारको गति र जनअपेक्षा" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="mt-3 text-[1.05rem] font-bold leading-7">विशेष अन्तर्वार्ता: सरकारको गति र जनअपेक्षा</h3>
+                </article>
+                <article class="video-card">
+                    <div class="overflow-hidden rounded-sm bg-black">
+                        <iframe class="h-[215px] w-full" src="https://www.youtube.com/embed/aqz-KE-bpKQ?rel=0" title="अर्थतन्त्र सुधारका संकेतबारे विश्लेषण" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="mt-3 text-[1.05rem] font-bold leading-7">अर्थतन्त्र सुधारका संकेतबारे विश्लेषण</h3>
+                </article>
+                <article class="video-card">
+                    <div class="overflow-hidden rounded-sm bg-black">
+                        <iframe class="h-[215px] w-full" src="https://www.youtube.com/embed/ScMzIvxBSi4?rel=0" title="खेलकुद सप्ताह: प्रशिक्षक र कप्तानसँग संवाद" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="mt-3 text-[1.05rem] font-bold leading-7">खेलकुद सप्ताह: प्रशिक्षक र कप्तानसँग संवाद</h3>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0b4567] text-white">
+        <div class="site-shell mx-auto grid gap-6 px-3 py-8 md:grid-cols-2 xl:grid-cols-4">
+            <div>
+                <div class="site-title text-white">RiwashNews</div>
+                <p class="mt-3 text-sm leading-7 text-white/80">स्क्रीनशटको शैली नजिक पर्ने गरी नेपाली होमपेज संरचना, साइडबार विज्ञापन, इनलाइन विज्ञापन र सेक्शन-टु-सेक्शन भिजुअल विविधता सहित।</p>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">मुख्य लिंक</h3>
+                <ul class="mt-3 space-y-2 text-sm text-white/85">
+                    <li>हाम्रो बारेमा</li>
+                    <li>विज्ञापन</li>
+                    <li>सम्पर्क</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">ठेगाना</h3>
+                <ul class="mt-3 space-y-2 text-sm text-white/85">
+                    <li>काठमाडौं, नेपाल</li>
+                    <li>०१-५५५०१०१</li>
+                    <li>news@riwashnews.com</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">सोसल</h3>
+                <div class="mt-3 flex gap-2 text-sm">
+                    <a href="https://www.facebook.com/riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">Facebook</a>
+                    <a href="https://www.youtube.com/@riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">YouTube</a>
+                    <a href="https://www.tiktok.com/@riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">TikTok</a>
+                </div>
+                <div class="mt-4 overflow-hidden rounded-sm border border-white/15 bg-white p-2">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Friwashnews&tabs=timeline&width=280&height=140&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="140" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10">
+            <div class="site-shell mx-auto flex flex-col gap-2 px-3 py-4 text-sm text-white/80 md:flex-row md:items-center md:justify-between">
+                <p>Copyright © 2026 RiwashNews. All rights reserved.</p>
+                <p>Powered by <a href="https://riwash.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-white">riwash.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

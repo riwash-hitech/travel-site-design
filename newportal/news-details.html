@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>प्रधानमन्त्री शाक्य र सुशीला कार्कीको सम्बन्धमा दरार - RiwashNews</title>
+    <meta name="description" content="RiwashNews को समाचार विवरण पृष्ठ, मुख्य समाचार, लेखक विवरण, सम्बन्धित खबर र साइडबार विज्ञापन सहित।" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#9f145f',
+                            secondary: '#0077b6',
+                            cyan: '#00a8c8',
+                            lime: '#7aa320',
+                            sand: '#f7f3ef',
+                            text: '#1f2937'
+                        }
+                    },
+                    fontFamily: {
+                        nepali: ['Mukta', 'sans-serif'],
+                        headline: ['Noto Serif Devanagari', 'serif']
+                    },
+                    boxShadow: {
+                        news: '0 6px 18px rgba(15, 23, 42, 0.08)'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="font-nepali bg-[#f3f3f3] text-brand-text">
+    <div class="top-strip text-white">
+        <div class="site-shell mx-auto flex flex-wrap items-center justify-between gap-3 px-3 py-2 text-[12px]">
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="index.html">होम</a>
+                <a href="category.html">राजनीति</a>
+                <a href="#">समाज</a>
+                <a href="#">अन्तर्राष्ट्रिय</a>
+                <a href="#">खेलकुद</a>
+            </div>
+            <div class="flex items-center gap-3 text-[11px]">
+                <span id="nepali-date">आइतबार, १० जेठ २०८३</span>
+                <span class="h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>ताजा अपडेट</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="border-b border-slate-200 bg-white">
+        <div class="site-shell mx-auto px-3 py-3">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <a href="index.html" class="flex items-center justify-center gap-3 lg:justify-start">
+                    <div class="logo-mark">ga</div>
+                    <div>
+                        <div class="site-title">RiwashNews</div>
+                        <p class="text-center text-[11px] uppercase tracking-[0.28em] text-slate-500 lg:text-left">Online News Portal</p>
+                    </div>
+                </a>
+                <a href="#" class="top-ad block overflow-hidden rounded-md shadow-news">
+                    <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Header banner advertisement" class="h-auto w-full object-cover" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav sticky top-0 z-30 shadow-md">
+        <div class="site-shell mx-auto px-3">
+            <div class="flex items-center justify-end gap-3 py-3 lg:hidden">
+                <button id="menu-toggle" type="button" aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="inline-flex h-10 w-10 items-center justify-center rounded border border-white/30 text-white">
+                    <svg data-menu-icon="open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg data-menu-icon="close" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="main-menu" class="hidden pb-3 lg:block lg:pb-0">
+                <div class="flex flex-col gap-2 text-sm font-semibold text-white lg:flex-row lg:flex-wrap lg:items-center lg:gap-5 lg:py-3">
+                    <a href="index.html">होमपेज</a>
+                    <a href="#article-top">समाचार</a>
+                    <a href="#related-news">सम्बन्धित</a>
+                    <a href="#comments">प्रतिक्रिया</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="breaking-bar border-y border-[#f1d3e3] bg-white">
+        <div class="site-shell mx-auto flex flex-col gap-2 px-3 py-3 lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-3">
+                <span class="breaking-pill">अपडेट</span>
+                <div class="overflow-hidden">
+                    <div id="ticker-track" class="ticker-track whitespace-nowrap text-sm font-medium text-slate-700">
+                        सर्वोच्च अदालत सम्बन्धी बहस अझै जारी • पत्रकार सम्मेलनपछि सामाजिक सञ्जालमा तीव्र प्रतिक्रिया • सम्बन्धित दलहरूले आधिकारिक धारणा सार्वजनिक गर्ने तयारी
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-slate-500">समाचार विवरण पृष्ठ</p>
+        </div>
+    </div>
+
+    <main id="article-top" class="site-shell mx-auto bg-white px-3 pb-12 pt-5 shadow-news">
+        <div class="article-breadcrumbs mb-5 text-sm text-slate-500">
+            <a href="index.html">होमपेज</a>
+            <span>/</span>
+            <a href="category.html">राजनीति</a>
+            <span>/</span>
+            <span>समाचार विवरण</span>
+        </div>
+
+        <a href="#" class="article-banner-ad mb-6 block overflow-hidden rounded-sm">
+            <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Top banner advertisement" class="h-auto w-full object-cover" />
+        </a>
+
+        <section class="article-layout grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
+            <article>
+                <a href="#" class="article-inline-banner before-title-ad mb-5 block overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Before title banner advertisement" class="h-auto w-full object-cover" />
+                </a>
+
+                <div class="flex flex-wrap items-center gap-3">
+                    <div class="detail-chip">प्रधानन्यायाधीश सिफारिस प्रकरण</div>
+                    <span class="article-readtime">५ मिनेट पढाइ</span>
+                </div>
+
+                <h1 class="detail-headline mt-5 text-slate-900">
+                    प्रधानमन्त्री शाक्य र सुशीला कार्कीको सम्बन्धमा दरार, पत्रकारलाई भनिन्- ‘बालेनकी श्रीमतीलाई आमा भन्नू’
+                </h1>
+
+                <a href="#" class="article-inline-banner after-title-ad mt-5 block overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="After title banner advertisement" class="h-auto w-full object-cover" />
+                </a>
+
+                <p class="article-subtitle mt-4 text-slate-600">
+                    पछिल्ला सार्वजनिक अभिव्यक्ति, राजनीतिक संकेत र निजी सम्बन्धबारे उठेका प्रश्नले यो प्रकरणलाई राष्ट्रिय बहसको विषय बनाएको छ।
+                </p>
+
+                <div class="article-meta mt-5 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+                    <a href="author.html" class="font-semibold text-brand-primary hover:underline">RiwashNews डेस्क</a>
+                    <span class="h-1.5 w-1.5 rounded-full bg-slate-300"></span>
+                    <span>१० जेठ २०८३, आइतबार</span>
+                    <span class="h-1.5 w-1.5 rounded-full bg-slate-300"></span>
+                    <span>काठमाडौं</span>
+                </div>
+
+                <div class="detail-hero-media mt-6 overflow-hidden rounded-sm border border-slate-200">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="समाचार विवरण तस्वीर" class="h-[260px] w-full object-cover md:h-[430px] xl:h-[520px]" />
+                </div>
+
+                <div class="article-share mt-4 flex flex-wrap items-center gap-3">
+                    <span class="text-sm font-semibold text-slate-600">शेयर</span>
+                    <a href="#" class="share-pill">Facebook</a>
+                    <a href="#" class="share-pill">Twitter</a>
+                    <a href="#" class="share-pill">Viber</a>
+                    <a href="#" class="share-pill">WhatsApp</a>
+                </div>
+
+                <div class="article-body mt-8 space-y-6 text-slate-800">
+                    <p>
+                        प्रधानमन्त्री शाक्य र पूर्वप्रधानन्यायाधीश सुशीला कार्कीबीचको सम्बन्धलाई लिएर सार्वजनिक रूपमा आएका अभिव्यक्तिले फेरि एकपटक राजनीतिक वृत्त तरंगित भएको छ। पत्रकार सम्मेलनका क्रममा गरिएको टिप्पणीलाई लिएर सत्ता पक्ष, विपक्ष र सामाजिक सञ्जाल सबै तातिएको देखिन्छ।
+                    </p>
+                    <p>
+                        घटनाको पृष्ठभूमि हेर्दा, केही दिनयता सार्वजनिक पदमा रहेका व्यक्तिहरूबीचको संवाद र जिम्मेवारीबारे उठेका प्रश्नहरू अझै तीव्र रूपमा अघि बढिरहेका छन्। राजनीतिक विश्लेषकहरूका अनुसार, यस्तो प्रकृतिको अभिव्यक्तिले व्यक्तिगत सम्बन्धभन्दा पनि संस्थागत व्यवहार र सार्वजनिक मर्यादालाई केन्द्रमा ल्याएको छ।
+                    </p>
+
+                    <div class="article-box-ads grid gap-4 md:grid-cols-3">
+                        <a href="#" class="box-ad box-ad-one block overflow-hidden rounded-sm">
+                            <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Box advertisement" class="h-full w-full object-cover" />
+                        </a>
+                        <a href="#" class="box-ad box-ad-two block overflow-hidden rounded-sm">
+                            <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Box advertisement" class="h-full w-full object-cover" />
+                        </a>
+                        <a href="#" class="box-ad box-ad-three block overflow-hidden rounded-sm">
+                            <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Box advertisement" class="h-full w-full object-cover" />
+                        </a>
+                    </div>
+
+                    <blockquote class="article-quote">
+                        सार्वजनिक पदमा रहेकाहरूका हरेक शब्दले राजनीतिक संकेत दिन्छ, त्यसैले निजी टिप्पणी पनि सार्वजनिक बहसको विषय बन्न सक्छ।
+                    </blockquote>
+
+                    <p>
+                        संसद् र अदालत वरपर चलिरहेको बहसले यो विषयलाई थप जटिल बनाएको छ। सत्तारूढ पक्षले यसलाई सामान्य प्रसंगका रूपमा लिन आग्रह गरिरहेको भए पनि, प्रतिपक्षले यसलाई शासनशैली र राजनीतिक संस्कारसँग जोडेर हेर्न थालेको छ।
+                    </p>
+
+                    <a href="#" class="inline-ad block overflow-hidden rounded-sm">
+                        <img src="https://npcdn.ratopati.com/media/promo/prabhu-agro-loan_xhDcGb4JcK.jpg" alt="Inline article advertisement" class="h-auto w-full object-cover" />
+                    </a>
+
+                    <p>
+                        सामाजिक सञ्जालमा विषय तीव्र रूपमा फैलिरहँदा सम्बन्धित पक्षले स्पष्ट धारणा सार्वजनिक गर्नुपर्ने माग उठेको छ। कतिपयले यसलाई शब्द चयनको त्रुटि भनेका छन् भने अरूले राजनीतिक सन्देशसहितको नियोजित अभिव्यक्ति भएको आशंका गरेका छन्।
+                    </p>
+                    <p>
+                        उता कानुनी क्षेत्रका जानकारहरू सार्वजनिक संस्थाहरूबीच समन्वय, शिष्टता र सीमाबारे पुनः बहस गर्नुपर्ने मत राख्छन्। उनीहरूका अनुसार व्यक्तिको वक्तव्यले संस्थाको गरिमा प्रभावित हुने भएकाले यस्ता टिप्पणीलाई सामान्य रूपमा लिन नहुने तर्क छ।
+                    </p>
+                </div>
+
+                <div class="article-tags mt-8 flex flex-wrap gap-2">
+                    <span class="tag-pill">प्रधानमन्त्री</span>
+                    <span class="tag-pill">सुशीला कार्की</span>
+                    <span class="tag-pill">राजनीति</span>
+                    <span class="tag-pill">विशेष समाचार</span>
+                </div>
+
+                <a href="#" class="article-inline-banner content-end-ad mt-8 block overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Content end banner advertisement" class="h-auto w-full object-cover" />
+                </a>
+
+                <section id="related-news" class="mt-10">
+                    <div class="section-header">
+                        <div class="section-chip">सम्बन्धित खबर</div>
+                        <a href="index.html" class="section-more">होमपेज फर्कनुहोस्</a>
+                    </div>
+                    <div class="mt-4 grid gap-4 md:grid-cols-3">
+                        <article class="story-grid-card">
+                            <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="सम्बन्धित खबर तस्वीर" class="h-[190px] w-full object-cover" />
+                            <div class="p-3">
+                                <h3>प्रधानन्यायाधीश नियुक्तिबारे दलहरूबीच फेरि नयाँ सम्वाद</h3>
+                            </div>
+                        </article>
+                        <article class="story-grid-card">
+                            <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="सम्बन्धित खबर तस्वीर" class="h-[190px] w-full object-cover" />
+                            <div class="p-3">
+                                <h3>पत्रकार सम्मेलनपछि सामाजिक सञ्जालमा प्रतिक्रिया वर्षा</h3>
+                            </div>
+                        </article>
+                        <article class="story-grid-card">
+                            <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="सम्बन्धित खबर तस्वीर" class="h-[190px] w-full object-cover" />
+                            <div class="p-3">
+                                <h3>सार्वजनिक पदाधिकारीको अभिव्यक्तिमा मर्यादा आवश्यक : विश्लेषक</h3>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="comments" class="mt-10">
+                    <div class="section-header">
+                        <div class="section-chip">प्रतिक्रिया</div>
+                    </div>
+                    <div class="comment-box mt-4 rounded-sm border border-slate-200 bg-slate-50 p-4">
+                        <p class="text-slate-600">यहाँ पाठक प्रतिक्रिया वा कमेन्ट फर्म राख्न सकिन्छ।</p>
+                    </div>
+                </section>
+
+                <a href="#" class="article-footer-banner mt-10 block overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Footer banner advertisement" class="h-auto w-full object-cover" />
+                </a>
+            </article>
+
+            <aside class="space-y-4">
+                <a href="#" class="sidebar-ad block h-[250px] overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Sidebar advertisement" class="h-full w-full object-cover" />
+                </a>
+
+                <div class="side-panel p-4">
+                    <div class="section-chip">ताजा अपडेट</div>
+                    <div class="mt-3 space-y-3 text-sm">
+                        <a href="#" class="side-link">संसद् बैठकमा प्रतिपक्षले सरकारसँग जवाफ माग्यो</a>
+                        <a href="#" class="side-link">राजनीतिक टिप्पणीपछि कानुनी बहस पनि सुरु</a>
+                        <a href="#" class="side-link">सामाजिक सञ्जालमा समर्थन र विरोध दुवै देखियो</a>
+                    </div>
+                </div>
+
+                <article class="side-card overflow-hidden rounded-sm border border-slate-200 bg-white">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="विश्लेषण तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <div class="mini-tag">विश्लेषण</div>
+                        <h3 class="mt-2">व्यक्तिगत सम्बन्ध र सार्वजनिक जिम्मेवारीबीचको सीमारेखा कहाँ छ ?</h3>
+                    </div>
+                </article>
+
+                <a href="#" class="sidebar-ad alt block h-[250px] overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Sidebar advertisement" class="h-full w-full object-cover" />
+                </a>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="bg-[#0b4567] text-white">
+        <div class="site-shell mx-auto grid gap-6 px-3 py-8 md:grid-cols-2 xl:grid-cols-4">
+            <div>
+                <div class="site-title text-white">RiwashNews</div>
+                <p class="mt-3 text-sm leading-7 text-white/80">समाचार विवरण पृष्ठ, साइडबार विज्ञापन, सम्बन्धित खबर र इनलाइन विज्ञापन सहित।</p>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">मुख्य लिंक</h3>
+                <ul class="mt-3 space-y-2 text-sm text-white/85">
+                    <li><a href="index.html">होमपेज</a></li>
+                    <li>विज्ञापन</li>
+                    <li>सम्पर्क</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">ठेगाना</h3>
+                <ul class="mt-3 space-y-2 text-sm text-white/85">
+                    <li>काठमाडौं, नेपाल</li>
+                    <li>०१-५५५०१०१</li>
+                    <li>news@riwashnews.com</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">सोसल</h3>
+                <div class="mt-3 flex gap-2 text-sm">
+                    <a href="https://www.facebook.com/riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">Facebook</a>
+                    <a href="https://www.youtube.com/@riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">YouTube</a>
+                    <a href="https://www.tiktok.com/@riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">TikTok</a>
+                </div>
+                <div class="mt-4 overflow-hidden rounded-sm border border-white/15 bg-white p-2">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Friwashnews&tabs=timeline&width=280&height=140&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="140" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10">
+            <div class="site-shell mx-auto flex flex-col gap-2 px-3 py-4 text-sm text-white/80 md:flex-row md:items-center md:justify-between">
+                <p>Copyright © 2026 RiwashNews. All rights reserved.</p>
+                <p>Powered by <a href="https://riwash.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-white">riwash.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

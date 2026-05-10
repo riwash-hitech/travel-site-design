@@ -1,0 +1,74 @@
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(77, 173, 143, 0.1), transparent 30%),
+    linear-gradient(180deg, #f7f8f6 0%, #f5f8f6 40%, #f9fbfa 100%);
+}
+
+.hero-noise {
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.18) 0.8px, transparent 0.8px),
+    radial-gradient(rgba(255, 255, 255, 0.12) 0.8px, transparent 0.8px);
+  background-position: 0 0, 18px 18px;
+  background-size: 36px 36px;
+}
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(14, 26, 31, 0.3), rgba(14, 26, 31, 0.45));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.section-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  background: rgba(31, 115, 91, 0.09);
+  color: #1f735b;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  padding: 0.7rem 1rem;
+  text-transform: uppercase;
+}
+
+.destination-card,
+.shadow-card,
+.glass-panel {
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.destination-card:hover,
+.shadow-card:hover,
+.glass-panel:hover {
+  transform: translateY(-6px);
+}
+
+.mountain-divider {
+  background-image: url("data:image/svg+xml,%3Csvg width='1600' height='240' viewBox='0 0 1600 240' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 202L80 176L142 188L258 112L336 166L402 88L484 155L560 90L688 180L814 55L922 146L1010 80L1104 166L1178 102L1250 146L1336 76L1434 170L1520 126L1600 160V240H0V202Z' fill='%23eaf4ef'/%3E%3C/svg%3E");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-landscape {
+  background-image: url("data:image/svg+xml,%3Csvg width='1600' height='240' viewBox='0 0 1600 240' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.65' d='M0 176L66 164L122 186L222 115L304 170L420 92L506 158L602 106L706 176L806 78L912 168L1006 110L1102 152L1190 102L1310 184L1428 124L1514 146L1600 138V240H0V176Z' fill='%235bacf0'/%3E%3Cpath d='M0 192L80 180L166 198L272 126L338 170L428 116L534 170L656 110L744 188L836 132L928 170L1034 124L1118 194L1208 136L1304 176L1396 140L1498 188L1600 176V240H0V192Z' fill='%232d8f72'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 1024px) {
+  .glass-panel:hover,
+  .destination-card:hover,
+  .shadow-card:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RiwashNews डेस्क - लेखक प्रोफाइल</title>
+    <meta name="description" content="RiwashNews डेस्कको लेखक प्रोफाइल, परिचय, प्रकाशित समाचार सूची र सम्पर्क जानकारी।" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#9f145f',
+                            secondary: '#0077b6',
+                            cyan: '#00a8c8',
+                            lime: '#7aa320',
+                            sand: '#f7f3ef',
+                            text: '#1f2937'
+                        }
+                    },
+                    fontFamily: {
+                        nepali: ['Mukta', 'sans-serif'],
+                        headline: ['Noto Serif Devanagari', 'serif']
+                    },
+                    boxShadow: {
+                        news: '0 6px 18px rgba(15, 23, 42, 0.08)'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="font-nepali bg-[#f3f3f3] text-brand-text">
+    <div class="top-strip text-white">
+        <div class="site-shell mx-auto flex flex-wrap items-center justify-between gap-3 px-3 py-2 text-[12px]">
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="index.html">होम</a>
+                <a href="category.html">राजनीति</a>
+                <a href="author.html">लेखक</a>
+                <a href="news-details.html">समाचार</a>
+                <a href="#author-articles">लेख सूची</a>
+            </div>
+            <div class="flex items-center gap-3 text-[11px]">
+                <span id="nepali-date">आइतबार, १० जेठ २०८३</span>
+                <span class="h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>लेखक प्रोफाइल</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="border-b border-slate-200 bg-white">
+        <div class="site-shell mx-auto px-3 py-3">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <a href="index.html" class="flex items-center justify-center gap-3 lg:justify-start">
+                    <div class="logo-mark">ga</div>
+                    <div>
+                        <div class="site-title">RiwashNews</div>
+                        <p class="text-center text-[11px] uppercase tracking-[0.28em] text-slate-500 lg:text-left">Online News Portal</p>
+                    </div>
+                </a>
+                <a href="#" class="top-ad block overflow-hidden rounded-md shadow-news">
+                    <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Header banner advertisement" class="h-auto w-full object-cover" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav sticky top-0 z-30 shadow-md">
+        <div class="site-shell mx-auto px-3">
+            <div class="flex items-center justify-end gap-3 py-3 lg:hidden">
+                <button id="menu-toggle" type="button" aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="inline-flex h-10 w-10 items-center justify-center rounded border border-white/30 text-white">
+                    <svg data-menu-icon="open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg data-menu-icon="close" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="main-menu" class="hidden pb-3 lg:block lg:pb-0">
+                <div class="flex flex-col gap-2 text-sm font-semibold text-white lg:flex-row lg:flex-wrap lg:items-center lg:gap-5 lg:py-3">
+                    <a href="index.html">होमपेज</a>
+                    <a href="news-details.html">समाचार विवरण</a>
+                    <a href="#author-profile">प्रोफाइल</a>
+                    <a href="#author-articles">लेख सूची</a>
+                    <a href="#author-sidebar">सम्पर्क</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="quick-links-bar border-b border-slate-200 bg-white">
+        <div class="site-shell mx-auto px-3 py-3">
+            <div class="flex flex-col gap-3 lg:flex-row lg:items-start">
+                <div class="quick-links-label">लेखक ट्याग</div>
+                <div class="quick-links-list">
+                    <a href="#author-articles">राजनीति</a>
+                    <a href="#author-articles">विश्लेषण</a>
+                    <a href="#author-articles">अन्तर्वार्ता</a>
+                    <a href="#author-articles">अपडेट</a>
+                    <a href="#author-articles">विशेष रिपोर्ट</a>
+                    <a href="#author-sidebar">सम्पर्क</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="breaking-bar border-y border-[#f1d3e3] bg-white">
+        <div class="site-shell mx-auto flex flex-col gap-2 px-3 py-3 lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-3">
+                <span class="breaking-pill">लेखक अपडेट</span>
+                <div class="overflow-hidden">
+                    <div id="ticker-track" class="ticker-track whitespace-nowrap text-sm font-medium text-slate-700">
+                        RiwashNews डेस्कबाट राजनीति, अर्थ, समाज र विशेष रिपोर्टका नियमित समाचार • सम्पादकीय शैली, तथ्य-जाँच र द्रुत अपडेटमा केन्द्रित • पाठकका लागि विश्वसनीय समाचार प्रस्तुति
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-slate-500">लेखक प्रोफाइल पृष्ठ</p>
+        </div>
+    </div>
+
+    <main class="site-shell mx-auto bg-white px-3 pb-12 pt-5 shadow-news">
+        <div class="article-breadcrumbs mb-5 text-sm text-slate-500">
+            <a href="index.html">होमपेज</a>
+            <span>/</span>
+            <span>लेखक</span>
+            <span>/</span>
+            <span>RiwashNews डेस्क</span>
+        </div>
+
+        <a href="#" class="article-banner-ad mb-6 block overflow-hidden rounded-sm">
+            <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Author page banner advertisement" class="h-auto w-full object-cover" />
+        </a>
+
+        <section id="author-profile" class="mb-8 rounded-sm border border-slate-200 bg-white p-5">
+            <div class="grid gap-6 xl:grid-cols-[260px_minmax(0,1fr)_320px]">
+                <div class="overflow-hidden rounded-sm border border-slate-200 bg-slate-50">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="RiwashNews डेस्क प्रोफाइल" class="h-[300px] w-full object-cover" />
+                </div>
+                <div>
+                    <div class="section-chip">लेखक प्रोफाइल</div>
+                    <h1 class="detail-headline mt-4 text-slate-900">RiwashNews डेस्क</h1>
+                    <p class="article-subtitle mt-4 text-slate-600">RiwashNews डेस्कले राष्ट्रिय राजनीति, समाज, अर्थतन्त्र, अन्तर्वार्ता र ब्रेकिङ अपडेटलाई प्राथमिकताका साथ प्रस्तुत गर्दै आएको छ। हाम्रो सम्पादकीय टोलीले तथ्य-जाँच, सन्तुलित प्रस्तुति र पाठकमैत्री भाषालाई केन्द्रमा राख्छ।</p>
+                    <div class="mt-5 flex flex-wrap gap-3 text-sm text-slate-600">
+                        <span class="rounded-full bg-slate-100 px-4 py-2 font-semibold">१,२८४ प्रकाशित समाचार</span>
+                        <span class="rounded-full bg-slate-100 px-4 py-2 font-semibold">राजनीति र विश्लेषण</span>
+                        <span class="rounded-full bg-slate-100 px-4 py-2 font-semibold">काठमाडौं, नेपाल</span>
+                    </div>
+                    <div class="mt-5 grid gap-4 md:grid-cols-3">
+                        <div class="rounded-sm border border-slate-200 bg-slate-50 p-4">
+                            <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">अनुभव</p>
+                            <p class="mt-2 text-lg font-bold text-slate-900">८+ वर्ष</p>
+                        </div>
+                        <div class="rounded-sm border border-slate-200 bg-slate-50 p-4">
+                            <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">फोकस</p>
+                            <p class="mt-2 text-lg font-bold text-slate-900">ब्रेकिङ र रिपोर्टिङ</p>
+                        </div>
+                        <div class="rounded-sm border border-slate-200 bg-slate-50 p-4">
+                            <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">सम्पर्क</p>
+                            <p class="mt-2 text-lg font-bold text-slate-900">desk@riwashnews.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <a href="#" class="sidebar-ad block h-[250px] overflow-hidden rounded-sm">
+                        <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Sidebar advertisement" class="h-full w-full object-cover" />
+                    </a>
+                    <div id="author-sidebar" class="side-panel p-4">
+                        <div class="section-chip">सम्पर्क र सोसल</div>
+                        <div class="mt-4 space-y-3 text-sm text-slate-700">
+                            <p><strong>Email:</strong> desk@riwashnews.com</p>
+                            <p><strong>फोन:</strong> ०१-५५५०१०१</p>
+                            <p><strong>बीट:</strong> राजनीति, विशेष रिपोर्ट, सार्वजनिक नीति</p>
+                        </div>
+                        <div class="mt-4 flex flex-wrap gap-2 text-sm">
+                            <a href="https://www.facebook.com/riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">Facebook</a>
+                            <a href="https://www.youtube.com/@riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="author-articles" class="grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
+            <div class="space-y-6">
+                <a href="#" class="article-inline-banner before-title-ad block overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Author page inline banner advertisement" class="h-auto w-full object-cover" />
+                </a>
+
+                <section>
+                    <div class="section-header">
+                        <div class="section-chip">प्रकाशित समाचार</div>
+                        <a href="index.html" class="section-more">होमपेज फर्कनुहोस्</a>
+                    </div>
+                    <div class="mt-4 grid gap-5 md:grid-cols-2">
+                        <article class="category-list-card overflow-hidden rounded-sm border border-slate-200 bg-white">
+                            <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="लेखक समाचार तस्वीर" class="h-[190px] w-full object-cover" />
+                            <div class="p-4">
+                                <div class="mini-tag">मुख्य समाचार</div>
+                                <h3 class="mt-3">प्रधानमन्त्री शाक्य र सुशीला कार्कीको सम्बन्धमा दरार, पत्रकारलाई भनिन्- ‘बालेनकी श्रीमतीलाई आमा भन्नू’</h3>
+                                <p class="mt-2 text-slate-600">न्यायपालिका, राजनीति र सार्वजनिक अभिव्यक्तिको सीमारेखामाथि केन्द्रित विशेष रिपोर्ट।</p>
+                                <a href="news-details.html" class="mt-4 inline-flex rounded-full bg-[#9f145f] px-4 py-2 text-sm font-bold text-white">पूरा समाचार</a>
+                            </div>
+                        </article>
+                        <article class="category-list-card overflow-hidden rounded-sm border border-slate-200 bg-white">
+                            <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="लेखक समाचार तस्वीर" class="h-[190px] w-full object-cover" />
+                            <div class="p-4">
+                                <div class="mini-tag">राजनीति</div>
+                                <h3 class="mt-3">राष्ट्रपतिले सहमतिका लागि प्रमुख दलका शीर्ष नेतालाई शीतलनिवास बोलाइन्</h3>
+                                <p class="mt-2 text-slate-600">दलहरूमाझ बढ्दो संवाद र सहमतिका सम्भावनाबारे गहिरो रिपोर्टिङ।</p>
+                                <a href="category.html" class="mt-4 inline-flex rounded-full bg-[#9f145f] px-4 py-2 text-sm font-bold text-white">क्याटेगोरी हेर्नुहोस्</a>
+                            </div>
+                        </article>
+                        <article class="category-list-card overflow-hidden rounded-sm border border-slate-200 bg-white">
+                            <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="लेखक समाचार तस्वीर" class="h-[190px] w-full object-cover" />
+                            <div class="p-4">
+                                <div class="mini-tag">विश्लेषण</div>
+                                <h3 class="mt-3">घोषणाभन्दा काम देखियो भने मात्रै नागरिकको विश्वास फर्किन्छ</h3>
+                                <p class="mt-2 text-slate-600">शासन, सार्वजनिक नीतिनिर्माण र जवाफदेहिताबारे सम्पादकीय विश्लेषण।</p>
+                                <a href="index.html#bichar" class="mt-4 inline-flex rounded-full bg-[#9f145f] px-4 py-2 text-sm font-bold text-white">विचार हेर्नुहोस्</a>
+                            </div>
+                        </article>
+                        <article class="category-list-card overflow-hidden rounded-sm border border-slate-200 bg-white">
+                            <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="लेखक समाचार तस्वीर" class="h-[190px] w-full object-cover" />
+                            <div class="p-4">
+                                <div class="mini-tag">अपडेट</div>
+                                <h3 class="mt-3">शिक्षक महासंघको आन्दोलन जारी, आज पनि वार्ता निष्कर्षविहीन</h3>
+                                <p class="mt-2 text-slate-600">दैनिक अपडेट, स्थल रिपोर्ट र सरोकारवालाका प्रतिक्रियासहित।</p>
+                                <a href="index.html#top-story" class="mt-4 inline-flex rounded-full bg-[#9f145f] px-4 py-2 text-sm font-bold text-white">होम सेक्शन</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="article-box-ads grid gap-4 md:grid-cols-3">
+                    <a href="#" class="box-ad box-ad-one block overflow-hidden rounded-sm">
+                        <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Box advertisement" class="h-full w-full object-cover" />
+                    </a>
+                    <a href="#" class="box-ad box-ad-two block overflow-hidden rounded-sm">
+                        <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Box advertisement" class="h-full w-full object-cover" />
+                    </a>
+                    <a href="#" class="box-ad box-ad-three block overflow-hidden rounded-sm">
+                        <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Box advertisement" class="h-full w-full object-cover" />
+                    </a>
+                </section>
+
+                <section>
+                    <div class="section-header">
+                        <div class="section-chip">छोटो परिचय</div>
+                    </div>
+                    <div class="mt-4 rounded-sm border border-slate-200 bg-slate-50 p-5 text-[1.02rem] leading-8 text-slate-700">
+                        RiwashNews डेस्कले देशभरका संवाददाता, सम्पादक र डिजिटल प्रस्तुति टोलीसँग सहकार्य गरेर समाचार तयार पार्छ। सार्वजनिक चासोका विषय, ताजा राजनीतिक घटनाक्रम, संस्थागत निर्णय, सार्वजनिक नीति र सामाजिक असरका कथालाई पाठकसम्म छिटो र स्पष्ट रूपमा पुर्‍याउनु नै हाम्रो मुख्य उद्देश्य हो।
+                    </div>
+                </section>
+
+                <a href="#" class="article-footer-banner block overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/1140x95_y7fCywwMJo.png" alt="Author page footer banner advertisement" class="h-auto w-full object-cover" />
+                </a>
+            </div>
+
+            <aside class="space-y-4">
+                <a href="#" class="sidebar-ad block h-[250px] overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Sidebar advertisement" class="h-full w-full object-cover" />
+                </a>
+
+                <div class="side-panel p-4">
+                    <div class="section-chip">लोकप्रिय लेख</div>
+                    <div class="mt-3 space-y-3 text-sm">
+                        <a href="news-details.html" class="side-link">प्रधानमन्त्री शाक्य र सुशीला कार्कीको सम्बन्धमा दरार</a>
+                        <a href="category.html" class="side-link">राष्ट्रपतिले सहमतिका लागि प्रमुख दलका शीर्ष नेतालाई शीतलनिवास बोलाइन्</a>
+                        <a href="index.html#samaj" class="side-link">काठमाडौंमा सडक मर्मत तीव्र, यात्रु र व्यवसायी दुवै प्रभावित</a>
+                        <a href="index.html#artha" class="side-link">शेयर बजारमा सुधार संकेत, बैंकिङ र जलविद्युत् समूहमा लगानीकर्ता सक्रिय</a>
+                    </div>
+                </div>
+
+                <article class="side-card overflow-hidden rounded-sm border border-slate-200 bg-white">
+                    <img src="https://npcdn.ratopati.com/media/news/yatayat-byawasayi-chakkajam-(11)_kK3b62zASN.jpg" alt="लेखक विशेष तस्वीर" class="h-[190px] w-full object-cover" />
+                    <div class="p-3">
+                        <div class="mini-tag">विशेष रिपोर्ट</div>
+                        <h3 class="mt-2">सार्वजनिक पदाधिकारीको अभिव्यक्तिमा मर्यादा आवश्यक : विश्लेषक</h3>
+                    </div>
+                </article>
+
+                <a href="#" class="sidebar-ad alt block h-[250px] overflow-hidden rounded-sm">
+                    <img src="https://npcdn.ratopati.com/media/promo/unnamed_KkTlv2v62b.gif" alt="Sidebar advertisement" class="h-full w-full object-cover" />
+                </a>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="bg-[#0b4567] text-white">
+        <div class="site-shell mx-auto grid gap-6 px-3 py-8 md:grid-cols-2 xl:grid-cols-4">
+            <div>
+                <div class="site-title text-white">RiwashNews</div>
+                <p class="mt-3 text-sm leading-7 text-white/80">लेखक प्रोफाइल पृष्ठ, प्रकाशित समाचार सूची, सम्पर्क विवरण र विज्ञापन प्लेसमेन्ट सहित।</p>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">मुख्य लिंक</h3>
+                <ul class="mt-3 space-y-2 text-sm text-white/85">
+                    <li><a href="index.html">होमपेज</a></li>
+                    <li><a href="news-details.html">समाचार विवरण</a></li>
+                    <li><a href="category.html">क्याटेगोरी</a></li>
+                    <li><a href="author.html">लेखक</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">ठेगाना</h3>
+                <ul class="mt-3 space-y-2 text-sm text-white/85">
+                    <li>काठमाडौं, नेपाल</li>
+                    <li>०१-५५५०१०१</li>
+                    <li>desk@riwashnews.com</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">सोसल</h3>
+                <div class="mt-3 flex gap-2 text-sm">
+                    <a href="https://www.facebook.com/riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">Facebook</a>
+                    <a href="https://www.youtube.com/@riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">YouTube</a>
+                    <a href="https://www.tiktok.com/@riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">TikTok</a>
+                </div>
+                <div class="mt-4 overflow-hidden rounded-sm border border-white/15 bg-white p-2">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Friwashnews&tabs=timeline&width=280&height=140&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="140" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10">
+            <div class="site-shell mx-auto flex flex-col gap-2 px-3 py-4 text-sm text-white/80 md:flex-row md:items-center md:justify-between">
+                <p>Copyright © 2026 RiwashNews. All rights reserved.</p>
+                <p>Powered by <a href="https://riwash.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-white">riwash.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

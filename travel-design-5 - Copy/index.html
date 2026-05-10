@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summit Trails Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              alpine: {
+                50: '#eef8f4',
+                100: '#d9efe6',
+                200: '#b6dfd0',
+                300: '#86c9b3',
+                400: '#4fad8f',
+                500: '#2d8f72',
+                600: '#1f735b',
+                700: '#195c49',
+                800: '#16483b',
+                900: '#133c31'
+              },
+              skytrail: {
+                50: '#f1f8fe',
+                100: '#dceefd',
+                200: '#bedffa',
+                300: '#91c9f6',
+                400: '#5bacf0',
+                500: '#358fe7',
+                600: '#2372c4',
+                700: '#205c9f',
+                800: '#214f82',
+                900: '#21446d'
+              },
+              stonepeak: '#1d2a30',
+              sandglow: '#f3e4cf'
+            },
+            fontFamily: {
+              display: ['Poppins', 'ui-sans-serif', 'system-ui'],
+              body: ['Manrope', 'ui-sans-serif', 'system-ui']
+            },
+            boxShadow: {
+              soft: '0 24px 60px rgba(25, 92, 73, 0.14)',
+              card: '0 14px 30px rgba(28, 49, 63, 0.08)'
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-stone-50 font-body text-stonepeak antialiased">
+    <div class="relative overflow-hidden">
+      <div class="hero-noise absolute inset-0 opacity-40"></div>
+      <header class="relative z-20">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
+          <a href="#" class="flex items-center gap-3">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-alpine-600 text-lg font-extrabold text-white shadow-soft">ST</div>
+            <div>
+              <p class="font-display text-lg font-semibold text-white">Summit Trails</p>
+              <p class="text-sm text-white/70">Trekking & Himalayan Journeys</p>
+            </div>
+          </a>
+          <nav class="hidden items-center gap-8 text-sm font-semibold text-white/85 lg:flex">
+            <a href="#destinations" class="transition hover:text-white">Destinations</a>
+            <a href="#packages" class="transition hover:text-white">Packages</a>
+            <a href="#stories" class="transition hover:text-white">Stories</a>
+            <a href="#about" class="transition hover:text-white">About</a>
+            <a href="#contact" class="transition hover:text-white">Contact</a>
+          </nav>
+          <a href="#contact" class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-white/20 sm:px-5 sm:py-3 sm:text-sm sm:normal-case sm:tracking-normal">Plan My Trip</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="relative isolate min-h-[96vh] px-6 pb-24 pt-10 lg:px-8">
+          <div class="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(14,26,31,0.24)_0%,rgba(14,26,31,0.7)_70%,rgba(247,248,246,1)_100%)]"></div>
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80"
+            alt="Himalayan mountain landscape"
+            class="absolute inset-0 -z-30 h-full w-full object-cover"
+          />
+          <div class="mx-auto grid max-w-7xl gap-16 pt-12 lg:grid-cols-[1.2fr_0.8fr] lg:pt-24">
+            <div class="max-w-3xl">
+              <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/80 backdrop-blur-md">
+                <span class="inline-block h-2 w-2 rounded-full bg-emerald-300"></span>
+                Handcrafted Nepal journeys with local guides
+              </div>
+              <h1 class="mt-8 font-display text-5xl font-extrabold leading-tight text-white md:text-6xl lg:text-7xl">
+                Explore Nepal in a way that feels rare, grounded, and unforgettable.
+              </h1>
+              <p class="mt-6 max-w-2xl text-lg leading-8 text-white/78">
+                Curated trekking routes, cultural escapes, and luxury mountain camps designed for travelers who want cinematic views with real local connection.
+              </p>
+              <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+                <a href="#packages" class="inline-flex items-center justify-center rounded-full bg-alpine-500 px-7 py-4 text-sm font-bold uppercase tracking-[0.24em] text-white shadow-soft transition hover:bg-alpine-400">Explore Treks</a>
+                <a href="#about" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 py-4 text-sm font-bold uppercase tracking-[0.24em] text-white backdrop-blur-md transition hover:bg-white/20">Why Travel With Us</a>
+              </div>
+              <dl class="mt-12 grid gap-6 border-t border-white/10 pt-8 text-white sm:grid-cols-3">
+                <div>
+                  <dt class="text-sm uppercase tracking-[0.22em] text-white/55">Journeys Planned</dt>
+                  <dd class="mt-2 font-display text-3xl font-bold">4,200+</dd>
+                </div>
+                <div>
+                  <dt class="text-sm uppercase tracking-[0.22em] text-white/55">Top Routes</dt>
+                  <dd class="mt-2 font-display text-3xl font-bold">18 Regions</dd>
+                </div>
+                <div>
+                  <dt class="text-sm uppercase tracking-[0.22em] text-white/55">Guest Rating</dt>
+                  <dd class="mt-2 font-display text-3xl font-bold">4.9/5</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="self-end lg:pb-10">
+              <div class="glass-panel rounded-[2rem] p-6 shadow-soft">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-alpine-100">Featured Journey</p>
+                    <h2 class="mt-3 font-display text-2xl font-bold text-white">Everest Panorama Escape</h2>
+                  </div>
+                  <span class="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white">9 Days</span>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-white/75">
+                  Sunrise over Ama Dablam, Sherpa villages, boutique tea houses, and helicopter return options for a seamless high-altitude experience.
+                </p>
+                <div class="mt-6 overflow-hidden rounded-[1.5rem]">
+                  <img
+                    src="https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?auto=format&fit=crop&w=900&q=80"
+                    alt="Travelers on a Himalayan trail"
+                    class="h-56 w-full object-cover"
+                  />
+                </div>
+                <div class="mt-6 grid grid-cols-2 gap-3 text-sm text-white/78">
+                  <div class="rounded-2xl bg-white/10 p-4">
+                    <p class="text-white/55">Difficulty</p>
+                    <p class="mt-1 font-semibold text-white">Moderate</p>
+                  </div>
+                  <div class="rounded-2xl bg-white/10 p-4">
+                    <p class="text-white/55">Best Season</p>
+                    <p class="mt-1 font-semibold text-white">Mar to May</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="relative z-10 -mt-20 px-6 lg:px-8">
+          <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <div class="rounded-[2rem] bg-white p-8 shadow-card lg:p-10">
+              <div class="section-chip">Sustainable tourism</div>
+              <h2 class="mt-6 font-display text-3xl font-bold text-stonepeak md:text-4xl">Mountain experiences with thoughtful pacing, expert logistics, and a distinctly modern feel.</h2>
+              <p class="mt-5 text-base leading-8 text-slate-600">
+                We build itineraries around immersive landscapes, flexible comfort levels, and respectful community partnerships. That means better mountain days, cleaner planning, and itineraries that feel personal instead of packaged.
+              </p>
+              <div class="mt-8 grid gap-5 sm:grid-cols-2">
+                <div class="rounded-3xl bg-alpine-50 p-5">
+                  <p class="text-sm font-semibold uppercase tracking-[0.18em] text-alpine-700">Responsible stays</p>
+                  <p class="mt-3 text-sm leading-7 text-slate-600">Locally owned lodges, low-impact routes, and teams paid fairly across every trip.</p>
+                </div>
+                <div class="rounded-3xl bg-skytrail-50 p-5">
+                  <p class="text-sm font-semibold uppercase tracking-[0.18em] text-skytrail-700">Flexible design</p>
+                  <p class="mt-3 text-sm leading-7 text-slate-600">Private departures, premium upgrades, and gentle acclimatization options.</p>
+                </div>
+              </div>
+            </div>
+            <div class="grid gap-8">
+              <div class="rounded-[2rem] bg-gradient-to-br from-alpine-700 via-alpine-600 to-skytrail-700 p-8 text-white shadow-soft">
+                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">Why Us</p>
+                <div class="mt-6 grid gap-5 sm:grid-cols-2">
+                  <div class="rounded-3xl bg-white/10 p-5 backdrop-blur-md">
+                    <h3 class="font-display text-xl font-semibold">Local Guide Network</h3>
+                    <p class="mt-2 text-sm leading-7 text-white/78">Experienced teams from Everest, Annapurna, Langtang, and Mustang.</p>
+                  </div>
+                  <div class="rounded-3xl bg-white/10 p-5 backdrop-blur-md">
+                    <h3 class="font-display text-xl font-semibold">Seamless Logistics</h3>
+                    <p class="mt-2 text-sm leading-7 text-white/78">Permits, airport pickups, domestic flights, and mountain support handled.</p>
+                  </div>
+                  <div class="rounded-3xl bg-white/10 p-5 backdrop-blur-md">
+                    <h3 class="font-display text-xl font-semibold">Private Customization</h3>
+                    <p class="mt-2 text-sm leading-7 text-white/78">We tune the pace, accommodation style, and add-ons around your goals.</p>
+                  </div>
+                  <div class="rounded-3xl bg-white/10 p-5 backdrop-blur-md">
+                    <h3 class="font-display text-xl font-semibold">Clear Pricing</h3>
+                    <p class="mt-2 text-sm leading-7 text-white/78">Transparent inclusions with premium support before and during the trek.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-[2rem] bg-sandglow p-8 shadow-card">
+                <p class="text-sm font-semibold uppercase tracking-[0.18em] text-stonepeak/60">Best for first-timers</p>
+                <h3 class="mt-3 font-display text-2xl font-bold text-stonepeak">Not sure where to start?</h3>
+                <p class="mt-3 text-sm leading-7 text-stonepeak/75">Start with a moderate trek, cultural Kathmandu stay, and a scenic helicopter flight for a balanced first Nepal trip.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="destinations" class="relative mt-24 px-6 py-24 lg:px-8">
+          <div class="mountain-divider absolute left-0 top-0 h-32 w-full -translate-y-20"></div>
+          <div class="mx-auto max-w-7xl">
+            <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div class="max-w-2xl">
+                <div class="section-chip">Top destinations</div>
+                <h2 class="mt-5 font-display text-3xl font-bold text-stonepeak md:text-4xl">Choose a mood, not just a map.</h2>
+                <p class="mt-4 text-base leading-8 text-slate-600">From iconic base camp routes to quiet valleys and heritage-rich cities, these journeys balance landscape, access, and atmosphere.</p>
+              </div>
+              <a href="#contact" class="inline-flex rounded-full border border-alpine-200 px-6 py-3 text-sm font-semibold text-alpine-700 transition hover:border-alpine-500 hover:text-alpine-900">Build a custom itinerary</a>
+            </div>
+
+            <div class="mt-12 grid gap-6 lg:grid-cols-3">
+              <article class="destination-card overflow-hidden rounded-[2rem] bg-white shadow-card">
+                <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=900&q=80" alt="Everest region mountain view" class="h-64 w-full object-cover" />
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <h3 class="font-display text-2xl font-bold text-stonepeak">Everest Region</h3>
+                    <span class="rounded-full bg-alpine-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-alpine-700">High altitude</span>
+                  </div>
+                  <p class="mt-4 text-sm leading-7 text-slate-600">Epic ridgelines, Sherpa culture, heli returns, and premium lodges for a refined Everest experience.</p>
+                  <div class="mt-6 flex items-center justify-between text-sm font-semibold text-slate-500">
+                    <span>5 to 14 days</span>
+                    <span>From $1,290</span>
+                  </div>
+                </div>
+              </article>
+              <article class="destination-card overflow-hidden rounded-[2rem] bg-white shadow-card">
+                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=80" alt="Annapurna trekking route" class="h-64 w-full object-cover" />
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <h3 class="font-display text-2xl font-bold text-stonepeak">Annapurna Trails</h3>
+                    <span class="rounded-full bg-skytrail-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-skytrail-700">Scenic mix</span>
+                  </div>
+                  <p class="mt-4 text-sm leading-7 text-slate-600">Alpine passes, warm villages, and lakefront recovery days make this ideal for varied travelers.</p>
+                  <div class="mt-6 flex items-center justify-between text-sm font-semibold text-slate-500">
+                    <span>4 to 12 days</span>
+                    <span>From $940</span>
+                  </div>
+                </div>
+              </article>
+              <article class="destination-card overflow-hidden rounded-[2rem] bg-white shadow-card">
+                <img src="https://images.unsplash.com/photo-1518085250887-2f903c200fee?auto=format&fit=crop&w=900&q=80" alt="Mustang desert mountains" class="h-64 w-full object-cover" />
+                <div class="p-6">
+                  <div class="flex items-center justify-between">
+                    <h3 class="font-display text-2xl font-bold text-stonepeak">Upper Mustang</h3>
+                    <span class="rounded-full bg-sandglow px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-amber-900">Cultural rare</span>
+                  </div>
+                  <p class="mt-4 text-sm leading-7 text-slate-600">Desert palettes, cave monasteries, and a remote trans-Himalayan landscape unlike anywhere else.</p>
+                  <div class="mt-6 flex items-center justify-between text-sm font-semibold text-slate-500">
+                    <span>8 to 14 days</span>
+                    <span>From $1,650</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="packages" class="bg-white px-6 py-24 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+            <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div class="max-w-2xl">
+                <div class="section-chip">Signature packages</div>
+                <h2 class="mt-5 font-display text-3xl font-bold text-stonepeak md:text-4xl">Popular itineraries designed for strong visuals and easy decision-making.</h2>
+              </div>
+              <p class="max-w-xl text-base leading-8 text-slate-600">Each package can be adapted for private groups, couples, photographers, or first-time trekkers wanting more comfort and less friction.</p>
+            </div>
+
+            <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              <article class="rounded-[2rem] border border-slate-100 bg-stone-50 p-6 shadow-card">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <span class="rounded-full bg-alpine-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-alpine-700">Best Seller</span>
+                    <h3 class="mt-4 font-display text-2xl font-bold text-stonepeak">Annapurna Base Camp</h3>
+                  </div>
+                  <p class="text-lg font-bold text-alpine-700">$1,180</p>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-slate-600">A balanced trekking classic with rhododendron forests, mountain amphitheaters, and relaxed village rhythm.</p>
+                <ul class="mt-6 space-y-3 text-sm text-slate-600">
+                  <li>10 days total duration</li>
+                  <li>Comfort lodge upgrade available</li>
+                  <li>Ideal for moderately active travelers</li>
+                </ul>
+                <a href="#contact" class="mt-8 inline-flex rounded-full bg-stonepeak px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700">Reserve this route</a>
+              </article>
+
+              <article class="rounded-[2rem] border border-alpine-100 bg-gradient-to-br from-alpine-700 to-skytrail-700 p-6 text-white shadow-soft">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <span class="rounded-full bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-white">Luxury Trek</span>
+                    <h3 class="mt-4 font-display text-2xl font-bold">Everest View Escape</h3>
+                  </div>
+                  <p class="text-lg font-bold">$2,490</p>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-white/78">High mountain views with upgraded stays, guided acclimatization, and optional helicopter return.</p>
+                <ul class="mt-6 space-y-3 text-sm text-white/78">
+                  <li>7 days curated itinerary</li>
+                  <li>Private guide and porter team</li>
+                  <li>Excellent for couples and premium travelers</li>
+                </ul>
+                <a href="#contact" class="mt-8 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-alpine-700 transition hover:bg-slate-100">Request details</a>
+              </article>
+
+              <article class="rounded-[2rem] border border-slate-100 bg-stone-50 p-6 shadow-card">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <span class="rounded-full bg-skytrail-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-skytrail-700">Remote Favorite</span>
+                    <h3 class="mt-4 font-display text-2xl font-bold text-stonepeak">Upper Mustang Passage</h3>
+                  </div>
+                  <p class="text-lg font-bold text-alpine-700">$1,960</p>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-slate-600">A rare route for travelers seeking desert landscapes, Tibetan heritage, and fewer crowds.</p>
+                <ul class="mt-6 space-y-3 text-sm text-slate-600">
+                  <li>12 days with cultural stops</li>
+                  <li>Jeep-supported access options</li>
+                  <li>Great for repeat Nepal visitors</li>
+                </ul>
+                <a href="#contact" class="mt-8 inline-flex rounded-full bg-stonepeak px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700">Customize journey</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="stories" class="relative overflow-hidden px-6 py-24 lg:px-8">
+          <div class="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top_left,rgba(77,173,143,0.16),transparent_45%),radial-gradient(circle_at_top_right,rgba(53,143,231,0.14),transparent_40%)]"></div>
+          <div class="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <div class="section-chip">Guest stories</div>
+              <h2 class="mt-5 font-display text-3xl font-bold text-stonepeak md:text-4xl">Travelers remember how the trip felt, not just where it went.</h2>
+              <p class="mt-4 max-w-xl text-base leading-8 text-slate-600">We shape each route around pace, confidence, and atmosphere so the days feel expansive instead of rushed.</p>
+              <div class="mt-10 rounded-[2rem] bg-white p-8 shadow-card">
+                <p class="text-lg leading-8 text-slate-700">“Everything felt considered. The guide read the group perfectly, the lodges were excellent, and the mountain days never felt chaotic.”</p>
+                <div class="mt-6 flex items-center gap-4">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Traveler portrait" class="h-14 w-14 rounded-full object-cover" />
+                  <div>
+                    <p class="font-semibold text-stonepeak">Maya Thompson</p>
+                    <p class="text-sm text-slate-500">Everest View Escape, Australia</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-2">
+              <article class="rounded-[2rem] bg-white p-6 shadow-card">
+                <div class="flex items-center gap-3">
+                  <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-alpine-100 text-alpine-700">01</div>
+                  <h3 class="font-display text-xl font-bold text-stonepeak">Pre-trip clarity</h3>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-slate-600">Fast response times, clear packing guidance, and route choices matched to your actual travel style.</p>
+              </article>
+              <article class="rounded-[2rem] bg-white p-6 shadow-card">
+                <div class="flex items-center gap-3">
+                  <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-skytrail-100 text-skytrail-700">02</div>
+                  <h3 class="font-display text-xl font-bold text-stonepeak">On-route comfort</h3>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-slate-600">Smarter pacing, rest buffers, better lodges, and support teams that keep the trip calm and enjoyable.</p>
+              </article>
+              <article class="rounded-[2rem] bg-white p-6 shadow-card md:col-span-2">
+                <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80" alt="Travelers with mountain backdrop" class="h-64 w-full rounded-[1.5rem] object-cover" />
+                <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <h3 class="font-display text-2xl font-bold text-stonepeak">Voices From the Trail</h3>
+                    <p class="mt-2 text-sm leading-7 text-slate-600">Small groups. Flexible planning. Strong mountain support.</p>
+                  </div>
+                  <div class="flex gap-3">
+                    <div class="rounded-2xl bg-stone-50 px-4 py-3 text-center">
+                      <p class="font-display text-2xl font-bold text-alpine-700">98%</p>
+                      <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Recommend us</p>
+                    </div>
+                    <div class="rounded-2xl bg-stone-50 px-4 py-3 text-center">
+                      <p class="font-display text-2xl font-bold text-skytrail-700">24h</p>
+                      <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Avg reply</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="px-6 pb-24 lg:px-8">
+          <div class="mx-auto max-w-7xl">
+            <div class="rounded-[2.5rem] bg-gradient-to-r from-skytrail-100 via-white to-alpine-100 p-8 shadow-card lg:p-12">
+              <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+                <div>
+                  <div class="section-chip">Ready to go</div>
+                  <h2 class="mt-5 font-display text-3xl font-bold text-stonepeak md:text-4xl">Tell us your pace, budget, and travel month. We’ll shape the route around that.</h2>
+                  <p class="mt-4 max-w-2xl text-base leading-8 text-slate-600">From one polished suggestion to a fully custom itinerary, we can help you move from inspiration to a practical plan fast.</p>
+                </div>
+                <div id="contact" class="flex flex-col gap-4 sm:flex-row lg:flex-col">
+                  <a href="mailto:hello@summittrailsnepal.com" class="inline-flex justify-center rounded-full bg-alpine-600 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] text-white transition hover:bg-alpine-500">Email Us</a>
+                  <a href="tel:+9779800000000" class="inline-flex justify-center rounded-full border border-alpine-200 bg-white px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] text-alpine-700 transition hover:border-alpine-400 hover:text-alpine-900">Call Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="relative overflow-hidden bg-stonepeak px-6 pb-10 pt-20 text-white lg:px-8">
+        <div class="footer-landscape absolute inset-x-0 top-0 h-32 -translate-y-1/2 opacity-70"></div>
+        <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+          <div>
+            <a href="#" class="flex items-center gap-3">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-alpine-500 text-lg font-extrabold text-white">ST</div>
+              <div>
+                <p class="font-display text-lg font-semibold">Summit Trails</p>
+                <p class="text-sm text-white/60">Trekking & Himalayan Journeys</p>
+              </div>
+            </a>
+            <p class="mt-6 max-w-sm text-sm leading-7 text-white/65">Beautifully planned Nepal journeys with strong local grounding, modern presentation, and guest-first logistics.</p>
+          </div>
+          <div>
+            <h3 class="font-display text-lg font-semibold">Explore</h3>
+            <ul class="mt-5 space-y-3 text-sm text-white/65">
+              <li><a href="#destinations" class="transition hover:text-white">Regions</a></li>
+              <li><a href="#packages" class="transition hover:text-white">Packages</a></li>
+              <li><a href="#stories" class="transition hover:text-white">Testimonials</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display text-lg font-semibold">Company</h3>
+            <ul class="mt-5 space-y-3 text-sm text-white/65">
+              <li><a href="#about" class="transition hover:text-white">About us</a></li>
+              <li><a href="#contact" class="transition hover:text-white">Contact</a></li>
+              <li><a href="#" class="transition hover:text-white">Travel journal</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-display text-lg font-semibold">Reach us</h3>
+            <ul class="mt-5 space-y-3 text-sm text-white/65">
+              <li>Thamel, Kathmandu, Nepal</li>
+              <li>hello@summittrailsnepal.com</li>
+              <li>+977 9800000000</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
