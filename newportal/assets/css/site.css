@@ -677,6 +677,144 @@ button {
     font-size: 12px;
 }
 
+.about-hero-panel,
+.contact-hero-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0b4567, #0077b6 50%, #9f145f);
+}
+
+.about-hero-panel::before,
+.contact-hero-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.2), transparent 26%);
+    pointer-events: none;
+}
+
+.about-stat-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.about-stat-card,
+.office-card {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(7, 18, 33, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.info-card,
+.team-card,
+.contact-form-shell,
+.contact-info-item,
+.process-card {
+    border: 1px solid var(--border);
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.info-card {
+    border-top: 3px solid var(--primary);
+}
+
+.process-card {
+    position: relative;
+    padding: 20px 20px 20px 68px;
+}
+
+.process-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: var(--secondary);
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.process-card h3,
+.team-card h3 {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 1.16rem;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+}
+
+.process-card p,
+.team-card p,
+.info-card p,
+.contact-info-item p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.contact-form-shell {
+    padding: 22px;
+}
+
+.field-input,
+.field-textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: #f8fafc;
+    color: var(--text);
+    font: inherit;
+    padding: 13px 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field-input:focus,
+.field-textarea:focus {
+    outline: none;
+    border-color: #d88ab5;
+    box-shadow: 0 0 0 3px rgba(159, 20, 95, 0.08);
+}
+
+.field-textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--primary), #c52d78);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contact-info-stack {
+    display: grid;
+    gap: 16px;
+}
+
+.contact-info-item {
+    padding: 18px;
+}
+
 @media (max-width: 1024px) {
     .site-title {
         font-size: 1.9rem;
@@ -688,6 +826,11 @@ button {
 
     .detail-hero-image {
         min-height: 430px;
+    }
+
+    .about-stat-card,
+    .office-card {
+        backdrop-filter: none;
     }
 }
 
@@ -741,5 +884,18 @@ button {
 
     .ticker-track {
         animation-duration: 18s;
+    }
+
+    .process-card {
+        padding-left: 20px;
+        padding-top: 64px;
+    }
+
+    .process-number {
+        left: 20px;
+    }
+
+    .contact-form-shell {
+        padding: 18px;
     }
 }

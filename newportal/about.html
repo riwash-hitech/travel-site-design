@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>हाम्रो बारेमा - RiwashNews</title>
+    <meta name="description" content="RiwashNews को बारेमा पृष्ठ, सम्पादकीय दृष्टि, टोली, यात्रा र पाठकप्रतिको प्रतिबद्धता सहित।" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#9f145f',
+                            secondary: '#0077b6',
+                            cyan: '#00a8c8',
+                            lime: '#7aa320',
+                            sand: '#f7f3ef',
+                            text: '#1f2937'
+                        }
+                    },
+                    fontFamily: {
+                        nepali: ['Mukta', 'sans-serif'],
+                        headline: ['Noto Serif Devanagari', 'serif']
+                    },
+                    boxShadow: {
+                        news: '0 6px 18px rgba(15, 23, 42, 0.08)'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="font-nepali bg-[#f3f3f3] text-brand-text">
+    <div class="top-strip text-white">
+        <div class="site-shell mx-auto flex flex-wrap items-center justify-between gap-3 px-3 py-2 text-[12px]">
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="index.html">होम</a>
+                <a href="category.html">राजनीति</a>
+                <a href="about.html">हाम्रो बारेमा</a>
+                <a href="contact.html">सम्पर्क</a>
+                <a href="author.html">लेखक</a>
+            </div>
+            <div class="flex items-center gap-3 text-[11px]">
+                <span id="nepali-date">आइतबार, १० जेठ २०८३</span>
+                <span class="h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>संस्थागत प्रोफाइल</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="border-b border-slate-200 bg-white">
+        <div class="site-shell mx-auto px-3 py-3">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <a href="index.html" class="flex items-center justify-center gap-3 lg:justify-start">
+                    <div class="logo-mark">RN</div>
+                    <div>
+                        <div class="site-title">RiwashNews</div>
+                        <p class="text-center text-[11px] uppercase tracking-[0.28em] text-slate-500 lg:text-left">Online News Portal</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav sticky top-0 z-30 shadow-md">
+        <div class="site-shell mx-auto px-3">
+            <div class="flex items-center justify-end gap-3 py-3 lg:hidden">
+                <button id="menu-toggle" type="button" aria-controls="main-menu" aria-expanded="false" aria-label="Open menu" class="inline-flex h-10 w-10 items-center justify-center rounded border border-white/30 text-white">
+                    <svg data-menu-icon="open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg data-menu-icon="close" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="main-menu" class="hidden pb-3 lg:block lg:pb-0">
+                <div class="flex flex-col gap-2 text-sm font-semibold text-white lg:flex-row lg:flex-wrap lg:items-center lg:gap-5 lg:py-3">
+                    <a href="index.html">होमपेज</a>
+                    <a href="#about-story">हाम्रो कथा</a>
+                    <a href="#editorial-values">सम्पादकीय मूल्य</a>
+                    <a href="#team-grid">टोली</a>
+                    <a href="contact.html">सम्पर्क</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="site-shell mx-auto bg-white px-3 pb-12 pt-5 shadow-news">
+        <div class="article-breadcrumbs mb-5 text-sm text-slate-500">
+            <a href="index.html">होमपेज</a>
+            <span>/</span>
+            <span>हाम्रो बारेमा</span>
+        </div>
+
+        <section id="about-story" class="rounded-sm border border-slate-200 bg-white p-6 lg:p-8">
+            <h1 class="detail-headline text-slate-900">हाम्रो बारेमा</h1>
+            <div class="mt-6 max-w-[860px] space-y-5 text-[1.05rem] leading-8 text-slate-700">
+                <p>RiwashNews नेपाली पाठकका लागि स्पष्ट, भरपर्दो र व्यवस्थित डिजिटल समाचार अनुभव तयार गर्ने उद्देश्यले सञ्चालनमा आएको समाचार पोर्टल हो। हामी समाचारलाई केवल शीर्षकका रूपमा होइन, सन्दर्भसहित बुझ्न सकिने सामग्रीका रूपमा प्रस्तुत गर्न ध्यान दिन्छौं।</p>
+                <p>हाम्रो प्राथमिकता राजनीति, समाज, अर्थतन्त्र, सार्वजनिक सरोकार र समसामयिक विषयमा तथ्यमा आधारित सामग्री प्रकाशन गर्नु हो। सामग्री तयार गर्दा भाषा, सन्तुलन, तथ्य-जाँच र पाठकलाई उपयोगी हुने ढाँचामा विशेष ध्यान दिइन्छ।</p>
+                <p>हामी डिजिटल माध्यममा सरल प्रस्तुति, छिटो पहुँच र जिम्मेवार सम्पादकीय अभ्यासमार्फत पाठकसँग विश्वासिलो सम्बन्ध बनाइराख्न प्रतिबद्ध छौं। थप जानकारी वा सहकार्यका लागि <a href="contact.html" class="font-semibold text-brand-primary hover:underline">सम्पर्क पृष्ठ</a> मार्फत हामीलाई सिधै सम्पर्क गर्न सकिन्छ।</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0b4567] text-white">
+        <div class="site-shell mx-auto grid gap-6 px-3 py-8 md:grid-cols-2 xl:grid-cols-4">
+            <div>
+                <div class="site-title text-white">RiwashNews</div>
+                <p class="mt-3 text-sm leading-7 text-white/80">हाम्रो बारेमा पृष्ठ, सम्पादकीय दृष्टि, न्युजरुम प्रक्रिया, टोली परिचय र संस्थागत जानकारी सहित।</p>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">मुख्य लिंक</h3>
+                <ul class="mt-3 space-y-2 text-sm text-white/85">
+                    <li><a href="index.html">होमपेज</a></li>
+                    <li><a href="category.html">क्याटेगोरी</a></li>
+                    <li><a href="about.html">हाम्रो बारेमा</a></li>
+                    <li><a href="contact.html">सम्पर्क</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">ठेगाना</h3>
+                <ul class="mt-3 space-y-2 text-sm text-white/85">
+                    <li>काठमाडौं, नेपाल</li>
+                    <li>०१-५५५०१०१</li>
+                    <li>info@riwashnews.com</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">सोसल</h3>
+                <div class="mt-3 flex gap-2 text-sm">
+                    <a href="https://www.facebook.com/riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">Facebook</a>
+                    <a href="https://www.youtube.com/@riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">YouTube</a>
+                    <a href="https://www.tiktok.com/@riwashnews" target="_blank" rel="noopener noreferrer" class="social-pill">TikTok</a>
+                </div>
+                <div class="mt-4 overflow-hidden rounded-sm border border-white/15 bg-white p-2">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Friwashnews&tabs=timeline&width=280&height=140&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="140" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10">
+            <div class="site-shell mx-auto flex flex-col gap-2 px-3 py-4 text-sm text-white/80 md:flex-row md:items-center md:justify-between">
+                <p>Copyright © 2026 RiwashNews. All rights reserved.</p>
+                <p>Powered by <a href="https://riwash.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-white">riwash.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+</body>
+</html>
